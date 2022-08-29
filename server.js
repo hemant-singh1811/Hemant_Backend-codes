@@ -4,9 +4,8 @@ const app=express();
 
 let Port=process.env.PORT  || 5000
 
-app.get("/get",(req,res)=>{
-res.send("hi this is / request to sever")
-})
+
+app.use(express.static(__dirname+'/public'))
 
 app.listen(Port,()=>{
     console.log("server is running",Port);
