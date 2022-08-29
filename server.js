@@ -23,7 +23,7 @@ app.post('/',(req,res)=>{
 io.on("connection",(socket)=>{
     console.log("new connection :",socket.id);
     socket.emit("newuser",{
-        id:socket.id;
+        id:socket.id
     });
 })
 
