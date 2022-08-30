@@ -1,0 +1,48 @@
+h1{
+    color: blue
+}
+
+.rcd{
+
+    background-color: rgba(57, 56, 56, 0.092);
+
+}
+
+#chatbox{
+    display: none;
+}
+
+.rcd#receiver{
+    background-color: black;
+}
+
+#chatbox{
+    margin-top: 20px;
+    display: none;
+    flex-direction: row; 
+    flex-direction: row;
+    align-items: center;
+}
+
+span
+{
+    margin-left: 20px;
+}
+
+#online-users{
+    border: '1px solid black';
+}
+
+#logoutbtn{
+    width: fit-content;
+    height: fit-content;
+    padding: 10px ;
+    font-size: 20px;
+    margin-left: 90%;
+}
+
+#online-users{
+    margin-top: 30px;
+    margin-left: 40px;
+}
+
