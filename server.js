@@ -1,22 +1,36 @@
-const express=require("express")
-const app=express();
-const http=require("http");
-const server=http.createServer(app);
-const socket=require('socket.io');
-const io=socket(server);
+const e = require("express");
+const express = require("express")
+const app = express();
+const http = require("http");
+const server = http.createServer(app);
+const socket = require('socket.io');
+const io = socket(server);
 
 let idname = new Map();
 let idtime = new Map();
 
-let Port=process.env.PORT  || 5000
+let Port = process.env.PORT || 5000
 
-app.use("/",express.static(__dirname+'/public'))
- 
-app.get('/data',(req,res)=>{    
-  res.json({
-    name:'hemant',
-    id:'212'
-  })
+app.use(express.urlencoded({ extended: true }));
+
+app.use("/", express.static(__dirname + '/public'))
+
+app.get('/data', (req, res) => {
+    res.json({
+        name: 'hemant',
+        id: '212'
+    })
+})
+
+app.post("/postreq", (req, res) => {
+    let phoneno = req.body.phoneno; 
+    if (phoneno == '9958256360') {
+        res.send('found');
+        return;
+    } else {
+        res.send("not found");
+        return;
+    }
 })
 
 function getTime() {
@@ -35,28 +49,36 @@ io.on('connection', (socket) => {
 
     io.emit('getback');
 
-    function online(self)
-    {
-        io.emit("OnUser",{
-            onusers:getname(self)
+    function online(self) {
+        io.emit("OnUser", {
+            onusers: getname(self)
         })
     }
 
-    socket.on("register", (data) => {
-        
+    socket.on("register", async (data) => {
+        let duplicate = false;
         let username = data.username;
-        
-        console.log(idname.get("dasdas"));
+        duplicate = await checkifalreadyexist(username)
 
-        console.log('new user :', data.username);
-        socket.join(username);
-        idname.set(socket.id, username)
-        let room = io.sockets.adapter.rooms
+        socket.emit("wronguser", {
+            duplicate: duplicate
+        })
 
-        online(username)
-        console.log('room : ', room);
+        if (duplicate == false) {
+            console.log('new user :', username);
+            socket.join(username);
+            idname.set(socket.id, username)
+            let room = io.sockets.adapter.rooms
+
+            online(username)
+            console.log('room : ', room);
+        }
         //acknowledge will be send to client that we registerd 
     })
+
+    function checkifalreadyexist(username) {
+
+    }
 
     socket.on('msg_send', (data) => {
         console.log('msg_send socket call');
@@ -84,31 +106,31 @@ io.on('connection', (socket) => {
         }
     })
 
-    socket.on("logout",(data)=>{
+    socket.on("logout", (data) => {
 
-        let username=idname.get(socket.id);
-        
+        let username = idname.get(socket.id);
+
         socket.leave(idname.get(socket.id))
-        idname.delete(socket.id) 
-        
+        idname.delete(socket.id)
+
         online(username)
     })
 
     socket.on('disconnect', () => {
         console.log('Disconnected : ', socket.id);
 
-        let username=idname.get(socket.id);
-        
+        let username = idname.get(socket.id);
+
         socket.leave(idname.get(socket.id))
         idname.delete(socket.id)
-       console.log('idname : ',idname);
+        console.log('idname : ', idname);
         let room = io.sockets.adapter.rooms
 
         console.log('room : ', room);
         // diff(getTime(), idtime.get(socket.id))
 
         // console.log('discoonection time : ');
-        
+
         online(username)
 
     })
@@ -138,7 +160,7 @@ io.on('connection', (socket) => {
     let listener = () => {
         console.log('off propertry');
     }
- 
+
     socket.on('off', listener)
 
     socket.on('setoff', () => {
@@ -164,24 +186,23 @@ io.on('connection', (socket) => {
 
 });
 
-function getname(self){
+function getname(self) {
 
-    let value=[];
+    let value = [];
 
     const mapIter = idname.values();
 
-    
-let prev=mapIter.next();
 
-while(prev.value!=undefined)
-{
-    if(prev.value!=self)
-    value.push(prev.value)
-    prev=mapIter.next()
-}
-return value;
+    let prev = mapIter.next();
+
+    while (prev.value != undefined) {
+        if (prev.value != self)
+            value.push(prev.value)
+        prev = mapIter.next()
+    }
+    return value;
 }
 
-server.listen(Port,()=>{
-    console.log("server is running",Port);
+server.listen(Port, () => {
+    console.log("server is running", Port);
 })

@@ -1,5 +1,4 @@
-let socket=io();
-
+let socket = io();
 
 let username = document.getElementById("username")
 let uname = '';
@@ -10,19 +9,20 @@ let sendbtn = document.getElementById("sendbtn");
 let dochat = false;
 let username1 = document.getElementById('name')
 let chat = document.getElementById('chat')
-let logoutbtn=document.getElementById("logoutbtn")
-let sender=document.getElementById("sender")
-let online=document.createElement('online')
+let logoutbtn = document.getElementById("logoutbtn")
+let sender = document.getElementById("sender")
+let online = document.createElement('online')
+
+let duplicate = false;
 
 
-
-logoutbtn.onclick=function(){
+logoutbtn.onclick = function () {
     console.log('you clicked');
 
     socket.emit("logout");
 
     localStorage.setItem("username", '');
-    location.reload() 
+    location.reload()
 }
 
 let socket1 = io({
@@ -93,24 +93,56 @@ socket.on('disconnect', () => {
 
 
 
-if (localStorage.getItem("username") == undefined || localStorage.getItem("username")=="") {
+if (localStorage.getItem("username") == undefined || localStorage.getItem("username") == "") {
     console.log('not found ');
 } else {
-register()
+    register()
 }
 
 loginbtn.onclick = function () {
-    register('click')
+    let name = username.value
+    console.log('username : ', name);
+    socket.emit("register", {
+        username: name
+})
+
+    socket.on("wronguser", (data) => {
+        if (!data.duplicate) {
+            // new user
+            //call to function
+            console.log("is duplicate :",data.duplicate);
+            register(name)
+        } else {
+            // already register user
+        }
+    })
 }
+
+// function emit(event, data) {
+//     return new Promise((resolve, reject) => {
+//         if (!this.socket) {
+//             reject('No socket connection.');
+//         } else {
+//             this.socket.emit(event, data, (response) => {
+//                 if (response.error) {
+//                     console.error(response.error);
+//                     reject(response.error);
+//                 } else {
+//                     resolve();
+//                 }
+//             });
+//         }
+//     });
+// }
+
 
 
 function register(d) {
     chatbox.style.display = 'flex'
     loginbox.style.display = 'none'
- 
-    if(d=='click')
-    localStorage.setItem("username", username.value);
- 
+
+     localStorage.setItem("username", d);
+
     dochat = true;
 
     uname = localStorage.getItem("username")
@@ -118,31 +150,27 @@ function register(d) {
     //emit socket to server to make a room
     username1.innerText = localStorage.getItem("username")
 
-    socket.emit("register", {
-        username: uname
-    })
-
 }
 
 
-socket.on("OnUser",(data)=>{
-    if(dochat==false) return;
-    let onlineuser=data.onusers;
-      sender.innerHTML=''
-      console.log("online :",onlineuser);
+socket.on("OnUser", (data) => {
+    if (dochat == false) return;
+    let onlineuser = data.onusers;
+    sender.innerHTML = ''
+    console.log("online :", onlineuser);
     console.log("Online Users : ");
 
     console.log(localStorage.getItem("username"));
     onlineuser.forEach(element => {
-        if(element!=localStorage.getItem("username")) { 
-        let option=document.createElement("option")
-        option.innerText=element;
-       let span=document.createElement('span')
-span.innerHTML=element;
-online.appendChild(span)
+        if (element != localStorage.getItem("username")) {
+            let option = document.createElement("option")
+            option.innerText = element;
+            let span = document.createElement('span')
+            span.innerHTML = element;
+            online.appendChild(span)
 
-        sender.appendChild(option)
-        console.log(element);
+            sender.appendChild(option)
+            console.log(element);
         }
     });
 })
@@ -151,9 +179,9 @@ online.appendChild(span)
 // btn.onclick=function()
 // {
 //     console.log('logout btn clickedß');
-    
+
 //     localStorage.setItem('username','');
-   
+
 //     dochat=false;
 //     socket.emit("logout")
 
@@ -170,7 +198,7 @@ sendbtn.onclick = function () {
         var e = document.getElementById("sender");
         var value = e.value;
         var text = e.options[e.selectedIndex].text;
-        console.log("selected :",text);
+        console.log("selected :", text);
         //emit socket to server to sendmsg
         socket.emit('msg_send', {
             from: username.value,
