@@ -39,6 +39,15 @@ app.post('/login', (req, res) => {
     })
 })
 
+app.get('/load',(req,res)=>{
+    res.json({
+        'loadno':'2333',
+        'shipper':'JB Hunt',
+        'delivery':'CH Robinson',
+        'pickup':'appt'
+    })
+})
+
 app.get("/test", (req, res) => {
     notimetestapihit++;
     let response = "No. of time api hit : " + notimetestapihit;
