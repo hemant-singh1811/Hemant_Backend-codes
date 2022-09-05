@@ -6,8 +6,14 @@ const server = http.createServer(app);
 const socket = require('socket.io');
 const io = socket(server);
 
+const cors=require('cors')
+
 let idname = new Map();
 let idtime = new Map();
+
+app.use(cors({
+    origin:"http://127.0.0.1:9000"
+}))
 
 let Port = process.env.PORT || 5000
 
@@ -22,6 +28,10 @@ app.get('/data', (req, res) => {
     })
 })
 
+app.get("/test",(req,res)=>{
+    res.status(200).send("authorized");
+})
+
 app.post("/postreq", (req, res) => {
     let phoneno = req.body.phoneno; 
     if (phoneno == '9958256360') {
@@ -31,6 +41,15 @@ app.post("/postreq", (req, res) => {
         res.send("not found");
         return;
     }
+})
+
+app.put("/putreq",(req,res)=>{
+
+    res.sendStatus(100);
+
+    // res.sesend("Data Added")
+    
+
 })
 
 function getTime() {
@@ -49,6 +68,9 @@ io.on('connection', (socket) => {
 
     io.emit('getback');
 
+    socket.emit("new",{
+        id:"/ : "+socket.id
+    })
     function online(self) {
         io.emit("OnUser", {
             onusers: getname(self)
