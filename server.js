@@ -6,13 +6,13 @@ const server = http.createServer(app);
 const socket = require('socket.io');
 const io = socket(server);
 
-const cors=require('cors')
+const cors = require('cors')
 
 let idname = new Map();
 let idtime = new Map();
 
 app.use(cors({
-    origin:"http://127.0.0.1:9000"
+    origin: "http://127.0.0.1:9000"
 }))
 
 let Port = process.env.PORT || 5000
@@ -27,28 +27,28 @@ app.get('/data', (req, res) => {
         id: '212'
     })
 })
-let notimetestapihit=-1;
+let notimetestapihit = -1;
 
-app.post('/login',(req,res)=>{
-    
-let username=req.body.username;
-let password=req.body.password;
+app.post('/login', (req, res) => {
 
-res.json({
-    username:username,
-    password:password
+    let username = req.body.username;
+    let password = req.body.password;
+
+    res.json({
+        username: username,
+        password: password
+    })
 })
-})
 
 
-app.get("/test",(req,res)=>{
+app.get("/test", (req, res) => {
     notimetestapihit++;
-    let response="No. of time api hit : "+notimetestapihit;
-    res.status(200).json('res'=response);
+    let response = "No. of time api hit : " + notimetestapihit;
+    res.status(200).json({'res' : response});
 })
 
 app.post("/postreq", (req, res) => {
-    let phoneno = req.body.phoneno; 
+    let phoneno = req.body.phoneno;
     if (phoneno == '9958256360') {
         res.send('found');
         return;
@@ -58,12 +58,12 @@ app.post("/postreq", (req, res) => {
     }
 })
 
-app.put("/putreq",(req,res)=>{
+app.put("/putreq", (req, res) => {
 
     res.sendStatus(100);
 
     // res.sesend("Data Added")
-    
+
 
 })
 
@@ -83,8 +83,8 @@ io.on('connection', (socket) => {
 
     io.emit('getback');
 
-    socket.emit("new",{
-        id:"/ : "+socket.id
+    socket.emit("new", {
+        id: "/ : " + socket.id
     })
     function online(self) {
         io.emit("OnUser", {
