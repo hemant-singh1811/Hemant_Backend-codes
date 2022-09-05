@@ -30,16 +30,14 @@ app.get('/data', (req, res) => {
 let notimetestapihit = -1;
 
 app.post('/login', (req, res) => {
-
     let username = req.body.username;
     let password = req.body.password;
 
-    res.json({
+    res.status(200).json({
         username: username,
         password: password
     })
 })
-
 
 app.get("/test", (req, res) => {
     notimetestapihit++;
