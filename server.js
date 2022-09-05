@@ -27,9 +27,12 @@ app.get('/data', (req, res) => {
         id: '212'
     })
 })
+let notimetestapihit=-1;
 
 app.get("/test",(req,res)=>{
-    res.status(200).send("authorized");
+    notimetestapihit++;
+    let response="No. of time api hit : "+notimetestapihit;
+    res.status(200).send(response);
 })
 
 app.post("/postreq", (req, res) => {
