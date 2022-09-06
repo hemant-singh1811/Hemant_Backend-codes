@@ -38,12 +38,11 @@ app.post('/login', (req, res) => {
         password: password
     })
 })
-
+ 
 //steam work
 app.post("/getkeys",(req,res)=>{
-    let {token}=req.body;
-
-    if(token=='7092022'){
+    let {token}=req.body; 
+    if(token=='vinay@alphalionlogistics.com' || token=='hemant@alphalionlogistics.com' || token=="sumit@alphalionlogistics.com"){
         res.json({
             'STREAM_app_id':'1206058',
             'STREAM_api_key':'z69d4mqmt5k9',
@@ -52,7 +51,6 @@ app.post("/getkeys",(req,res)=>{
     }else{
         res.status(401).send('not authorized')
     }
-    
 })
 
 
