@@ -40,12 +40,19 @@ app.post('/login', (req, res) => {
 })
 
 //steam work
-app.get("/getkeys",(req,res)=>{
-    res.json({
-        'STREAM_app_id':'1206058',
-        'STREAM_api_key':'z69d4mqmt5k9',
-        'STREAM_api_secret':'dpyn7u4un96ddpe82ada5243qbngwxp4grs9v4nxnqamnsy4u79md6vxfduuuzp4'
-    })
+app.post("/getkeys",(req,res)=>{
+    let {token}=req.body;
+
+    if(token=='7092022'){
+        res.json({
+            'STREAM_app_id':'1206058',
+            'STREAM_api_key':'z69d4mqmt5k9',
+            'STREAM_api_secret':'dpyn7u4un96ddpe82ada5243qbngwxp4grs9v4nxnqamnsy4u79md6vxfduuuzp4'
+        })
+    }else{
+        res.status(401).send('not authorized')
+    }
+    
 })
 
 
