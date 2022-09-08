@@ -6,19 +6,18 @@ const server = http.createServer(app);
 const socket = require('socket.io');
 const io = socket(server);
 
-const cors = require('cors')
+const cors = require('cors');
+const { json } = require("express");
 
 let idname = new Map();
 let idtime = new Map();
 
-app.use(cors({
-    origin: "http://127.0.0.1:9000"
-}))
+ 
 
 let Port = process.env.PORT || 5000
 
 app.use(express.urlencoded({ extended: true }));
-
+app.use(json())
 app.use("/", express.static(__dirname + '/public'))
 
 app.get('/data', (req, res) => {
@@ -39,15 +38,16 @@ app.post('/login', (req, res) => {
     })
 })
 
-//steam work
+//#steam work
 app.post("/getkeys", (req, res) => {
-    let { token } = req.body;
- 
-    if(token==undefined){
+    let { Token } = req.body;
+     console.log('body : ',req.body);
+
+    if(Token==undefined){
         res.status(400).send("Request not have require field")
         return;
     }
-    else if (token == 'vinay@alphalionlogistics.com' || token == 'hemant@alphalionlogistics.com' || token == "sumit@alphalionlogistics.com") {
+    else if (Token == 'vinay@alphalionlogistics.com' || Token == 'hemant@alphalionlogistics.com' || Token == "sumit@alphalionlogistics.com") {
         res.json({
             'STREAM_app_id': '1206058',
             'STREAM_api_key': 'z69d4mqmt5k9',
