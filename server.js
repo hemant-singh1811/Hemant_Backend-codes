@@ -1,10 +1,13 @@
-const e = require("express");
 const express = require("express")
 const app = express();
 const http = require("http");
 const server = http.createServer(app);
-const socket = require('socket.io');
+const socket = require('socket.io')
 const io = socket(server);
+const { connect } = require('getstream');
+const bcrypt = require('bcrypt');
+const StreamChat = require('stream-chat').StreamChat;
+const crypto = require('crypto');
 
 const cors = require('cors');
 const { json } = require("express");
@@ -13,6 +16,10 @@ let idname = new Map();
 let idtime = new Map();
 
  
+const api_key = process.env.STREAM_API_KEY;
+const api_secret = process.env.STREAM_API_SECRET;
+const app_id = process.env.STREAM_APP_ID;
+
 
 let Port = process.env.PORT || 5000
 
@@ -27,8 +34,19 @@ app.get('/data', (req, res) => {
     })
 })
 let notimetestapihit = -1;
+ 
+app.post('/login',(req, res) => {
 
-app.post('/login', (req, res) => {
+    var options = {
+        port: Port,
+        host: '127.0.0.1',
+      }; 
+
+    var request = http.request(options);
+
+    request.setHeader('Content-Type', 'application/json');
+    request.setHeader('accept', 'application/json');
+
     let username = req.body.username;
     let password = req.body.password;
 
@@ -63,8 +81,8 @@ app.post("/getkeys", (req, res) => {
 
 app.post("/getchannel", (req, res) => {
 
-    let channel_id = 'driverchat_0b706870-324a-4f25-aad8-7edf9d2580db'
-    let channel_name = "driverchat"
+    let channel_id = 'messaging:212334driver'
+    let channel_name = "212334driver"
 
     let { STREAM_api_key } = req.body;
  
@@ -85,7 +103,27 @@ app.post("/getchannel", (req, res) => {
 })
 
 
+app.post('/signup',async (req,res)=>{
+    
+    try {
+        const { fullName, username, password, phoneNumber } = req.body;
 
+        const userId = crypto.randomBytes(16).toString('hex');
+
+        const serverClient = connect(api_key, api_secret, app_id);
+
+        const hashedPassword = await bcrypt.hash(password, 10);
+
+        const token = serverClient.createUserToken(userId);
+
+        res.status(200).json({ token, fullName, username, userId, hashedPassword, phoneNumber });
+    } catch (error) {
+        console.log(error);
+
+        res.status(500).json({ message: error });
+    }
+    
+})
 
 app.get('/currentload', (req, res) => {
     res.json({
