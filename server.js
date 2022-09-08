@@ -38,36 +38,71 @@ app.post('/login', (req, res) => {
         password: password
     })
 })
- 
+
 //steam work
-app.post("/getkeys",(req,res)=>{
-    let {token}=req.body; 
-    if(token=='vinay@alphalionlogistics.com' || token=='hemant@alphalionlogistics.com' || token=="sumit@alphalionlogistics.com"){
+app.post("/getkeys", (req, res) => {
+    let { token } = req.body;
+ 
+    if(token==undefined){
+        res.status(400).send("Request not have require field")
+        return;
+    }
+    else if (token == 'vinay@alphalionlogistics.com' || token == 'hemant@alphalionlogistics.com' || token == "sumit@alphalionlogistics.com") {
         res.json({
-            'STREAM_app_id':'1206058',
-            'STREAM_api_key':'z69d4mqmt5k9',
-            'STREAM_api_secret':'dpyn7u4un96ddpe82ada5243qbngwxp4grs9v4nxnqamnsy4u79md6vxfduuuzp4'
+            'STREAM_app_id': '1206058',
+            'STREAM_api_key': 'z69d4mqmt5k9',
+            'STREAM_api_secret': 'dpyn7u4un96ddpe82ada5243qbngwxp4grs9v4nxnqamnsy4u79md6vxfduuuzp4'
         })
-    }else{
-        res.status(401).send('not authorized')
+        return;
+    } else {
+        res.status(401).send('Not Authorized')
+        return;
+    }
+})
+
+
+app.post("/getchannel", (req, res) => {
+
+    let channel_id = 'driverchat_0b706870-324a-4f25-aad8-7edf9d2580db'
+    let channel_name = "driverchat"
+
+    let { STREAM_api_key } = req.body;
+ 
+    if(STREAM_api_key==undefined){
+        res.status(400).send("Request not have require field")
+        return;
+    }
+   else if (STREAM_api_key == "z69d4mqmt5k9") {
+          res.json({
+             channel_id: channel_id,
+             channel_name: channel_name
+          })
+            return;
+    } else {
+        res.status(401).send("Wrong Key");
+        return;
     }
 })
 
 
 
-app.get('/load',(req,res)=>{
+
+app.get('/currentload', (req, res) => {
     res.json({
-        'loadno':'2333',
-        'shipper':'JB Hunt',
-        'delivery':'CH Robinson',
-        'pickup':'appt'
+        'loadno': '2333',
+        'shipper': 'JB Hunt',
+        'delivery': 'CH Robinson',
+        'pickup': 'appt',
     })
+
+   // working on load assignment
+
 })
 
 app.get("/test", (req, res) => {
     notimetestapihit++;
     let response = "No. of time api hit : " + notimetestapihit;
-    res.status(200).json({'res' : response});
+    res.status(200).json({ 'res': response });
 })
 
 app.post("/postreq", (req, res) => {
