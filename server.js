@@ -1,4 +1,5 @@
 const express = require("express")
+require("dotenv").config()
 const app = express();
 const http = require("http");
 const server = http.createServer(app);
@@ -80,9 +81,10 @@ app.post("/getkeys", (req, res) => {
 
 
 app.post("/getchannel", (req, res) => {
-    
-    let channel_id = 'messaging:212334driver'
-    let channel_name = "212334driver"
+
+    let channel_id = 'driverchat_0b706870-324a-4f25-aad8-7edf9d2580db'
+    let channel_type = "driverchat"
+    let created_by_id= "hemantsingh123"
 
     let { STREAM_api_key } = req.body;
  
@@ -93,7 +95,8 @@ app.post("/getchannel", (req, res) => {
    else if (STREAM_api_key == "z69d4mqmt5k9") {
           res.json({
              channel_id: channel_id,
-             channel_name: channel_name
+             channel_type: channel_type,
+             created_by_id:created_by_id
           })
             return;
     } else {
@@ -152,15 +155,6 @@ app.post("/postreq", (req, res) => {
         res.send("not found");
         return;
     }
-})
-
-app.put("/putreq", (req, res) => {
-
-    res.sendStatus(100);
-
-    // res.sesend("Data Added")
-
-
 })
 
 function getTime() {
