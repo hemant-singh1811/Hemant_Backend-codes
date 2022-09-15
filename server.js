@@ -6,21 +6,15 @@ const server = http.createServer(app);
 const socket = require('socket.io')
 const io = socket(server);
 const { connect } = require('getstream');
-const bcrypt = require('bcrypt');
+// const bcrypt = require('bcrypt');
 const StreamChat = require('stream-chat').StreamChat;
-const crypto = require('crypto');
+// const crypto = require('crypto');
 
 const cors = require('cors');
 const { json } = require("express");
 
 let idname = new Map();
 let idtime = new Map();
-
- 
-const api_key = process.env.STREAM_API_KEY;
-const api_secret = process.env.STREAM_API_SECRET;
-const app_id = process.env.STREAM_APP_ID;
-
 
 let Port = process.env.PORT || 5000
 
@@ -169,153 +163,6 @@ function getTime() {
     return time;
 }
 
-io.on('connection', (socket) => {
-    console.log('Added : ', socket.id);
-    // console.log(socket); 
-    idtime.set(socket.id, getTime());
-
-    io.emit('getback');
-
-    socket.emit("new", {
-        id: "/ : " + socket.id
-    })
-    function online(self) {
-        io.emit("OnUser", {
-            onusers: getname(self)
-        })
-    }
-
-    socket.on("register", async (data) => {
-        let duplicate = false;
-        let username = data.username;
-        duplicate = await checkifalreadyexist(username)
-
-        socket.emit("wronguser", {
-            duplicate: duplicate
-        })
-
-        if (duplicate == false) {
-            console.log('new user :', username);
-            socket.join(username);
-            idname.set(socket.id, username)
-            let room = io.sockets.adapter.rooms
-
-            online(username)
-            console.log('room : ', room);
-        }
-        //acknowledge will be send to client that we registerd 
-    })
-
-    function checkifalreadyexist(username) {
-
-    }
-
-    socket.on('msg_send', (data) => {
-        console.log('msg_send socket call');
-        let message = data.msg;
-        let from = data.from;
-        let to = data.to;
-
-        console.log('message : ', message);
-        console.log('from : ', from);
-        console.log('to : ', to);
-
-        //lets send the message to corresponding sender.
-
-        if (to != "") {
-            io.to(to).emit('msg_rcd', {
-                message: message,
-                from: from,
-                to: to
-            })
-        } else {
-            socket.broadcast.emit("msg_rcd", {
-                message: message,
-                from: from
-            })
-        }
-    })
-
-    socket.on("logout", (data) => {
-
-        let username = idname.get(socket.id);
-
-        socket.leave(idname.get(socket.id))
-        idname.delete(socket.id)
-
-        online(username)
-    })
-
-    socket.on('disconnect', () => {
-        console.log('Disconnected : ', socket.id);
-
-        let username = idname.get(socket.id);
-
-        socket.leave(idname.get(socket.id))
-        idname.delete(socket.id)
-        console.log('idname : ', idname);
-        let room = io.sockets.adapter.rooms
-
-        console.log('room : ', room);
-        // diff(getTime(), idtime.get(socket.id))
-
-        // console.log('discoonection time : ');
-
-        online(username)
-
-    })
-
-    socket.on("send", (data) => {
-        io.send('msg_rcd', {
-            msg: data.msg
-        })
-    })
-
-    socket.on('online', (data) => {
-        let user = data.user;
-        let pass = data.pass;
-        io.emit('online_user', {
-            rcd: 'true'
-        })
-    })
-
-    socket.on('socket', () => {
-        console.log(socket.id);
-    })
-
-    //    socket.once('once',()=>{
-    //     console.log('once : ',socket.id);
-    //    })
-
-    let listener = () => {
-        console.log('off propertry');
-    }
-
-    socket.on('off', listener)
-
-    socket.on('setoff', () => {
-        console.log('set off is called');
-        socket.off("off", listener)
-    })
-
-    socket.on("details", () => {
-        console.log('empty');
-    })
-
-    socket.on("details", (data) => {
-        console.log('with data');
-    })
-
-    // let listener1=('onAny',data)=>{
-
-    // }
-
-    // socket.onAny(listener1);
-
-    // console.log('socket rooms : ',socket.rooms);
-
-});
-
 function getname(self) {
 
     let value = [];
@@ -333,6 +180,6 @@ function getname(self) {
     return value;
 }
 
-server.listen(Port, () => {
+app.listen(Port, () => {
     console.log("server is running", Port);
 })
