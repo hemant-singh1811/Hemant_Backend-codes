@@ -26,7 +26,10 @@ let Port = process.env.PORT || 5000
 
 app.use(express.urlencoded({ extended: true }));
 app.use(json())
-app.use("/", express.static(__dirname + '/public'))
+
+app.get("/",(req,res)=>{
+    res.send("i can hear you")
+})
 
 app.get('/data', (req, res) => {
     res.json({
