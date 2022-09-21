@@ -6,6 +6,7 @@ const server = http.createServer(app);
 const socket = require('socket.io')
 const io = socket(server);
 const { connect } = require('getstream');
+import {getRC} from './db4'
 // const bcrypt = require('bcrypt');
 const StreamChat = require('stream-chat').StreamChat;
 // const crypto = require('crypto');
@@ -76,7 +77,6 @@ app.post("/getkeys", (req, res) => {
     }
 })
 
-
 app.post("/getchannel", (req, res) => {
 
     let channel_id = 'driverchat_0b706870-324a-4f25-aad8-7edf9d2580db'
@@ -101,7 +101,6 @@ app.post("/getchannel", (req, res) => {
         return;
     }
 })
-
 
 app.post('/signup',async (req,res)=>{
     
@@ -151,6 +150,32 @@ app.post("/postreq", (req, res) => {
     } else {
         res.send("not found");
         return;
+    }
+})
+
+app.post("/getassignchannel",async(req,res)=>{
+
+
+
+})
+
+app.get("/getimg",async (req,res)=>{
+    let url="https://ohio.stream-io-cdn.com/1206058/images/cbdae81d-d31f-4a3a-8204-61e9426e869e.download%20%282%29.jpeg?Key-Pair-Id=APKAIHG36VEWPDULE23Q&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9vaGlvLnN0cmVhbS1pby1jZG4uY29tLzEyMDYwNTgvaW1hZ2VzL2NiZGFlODFkLWQzMWYtNGEzYS04MjA0LTYxZTk0MjZlODY5ZS5kb3dubG9hZCUyMCUyODIlMjkuanBlZz8qb2g9MjU5Km93PTE5NCoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE2NjQ5MTY1OTN9fX1dfQ__&Signature=BkYHuwrcdrt4hgcOUfFx6Y7cY7mC~SeuE44ql8UhhRZc8pSqV90ruvVCdfFyRoM9GB6VTqzKZhY08phPRppPgC-uuh0jh7tDL7u79i95B784l4WuG~zP~VayDvO5GDCow~TVjckhykXKdXPAkCnpRbkrZ2fchWUemArFFVoWy-zYSGGJnE-Q2NbILe71Xf1fN~gAxfABLaAiSlp2PIcloZ-kMXRhPHRahlV8kevexBBwqeB1vXXl8Diw6pEZ7-PxZSLaBkDNDJSrADeY~9YxIpbCDkKMpmSH9ywOO0X-Mxsc1LY2ACWsZ2EQHlGSWdX~Pf0ZC7ZkiCJYcqJNhNvWRg__&oh=259&ow=194"
+
+    res.send(url);
+    
+})
+
+app.post('/getload',async (req,res)=>{
+    let {load}=req.body;
+
+    if(load){
+        let loaddata=
+
+
+
+    }else{
+        res.status(400).send("Load not found")
     }
 })
 
