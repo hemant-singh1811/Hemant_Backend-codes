@@ -5,14 +5,14 @@ const http = require("http");
 const server = http.createServer(app);
 const socket = require('socket.io')
 const io = socket(server);
-const { connect } = require('getstream');
-import {getRC} from './db4'
+// const { connect } = require('getstream');
+// import {getRC} from './db4'
 // const bcrypt = require('bcrypt');
-const StreamChat = require('stream-chat').StreamChat;
+// const StreamChat = require('stream-chat').StreamChat;
 // const crypto = require('crypto');
 
 const cors = require('cors');
-const { json } = require("express");
+// const { json } = require("express");
 
 let idname = new Map();
 let idtime = new Map();
@@ -20,7 +20,7 @@ let idtime = new Map();
 let Port = process.env.PORT || 5000
 
 app.use(express.urlencoded({ extended: true }));
-app.use(json())
+app.use(express.json())
 
 app.get("/",(req,res)=>{
     res.send("i can hear you")
