@@ -5,6 +5,10 @@ const http = require("http");
 const server = http.createServer(app);
 const socket = require('socket.io')
 const io = socket(server);
+var bodyParser = require('body-parser');
+const fs = require('fs');
+
+
 // const { connect } = require('getstream');
 // import {getRC} from './db4'
 // const bcrypt = require('bcrypt');
@@ -12,6 +16,7 @@ const io = socket(server);
 // const crypto = require('crypto');
 
 const cors = require('cors');
+const { rmSync } = require("fs");
 // const { json } = require("express");
 
 let idname = new Map();
@@ -21,8 +26,21 @@ let Port = process.env.PORT || 5000
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json())
+app.use(cors())
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json('application/json'));
 
-app.get("/",(req,res)=>{
+// app.use((req,res,next)=>{
+    // let headers={
+    //     'Content-Type': 'application/json',
+    //     'Content-Length': '12332',
+    //     'ETag': '123453'
+    //   }
+    // res.set(headers)
+//       next()
+// })
+
+app.get("/", (req, res) => {
     res.send("i can hear you")
 })
 
@@ -33,13 +51,13 @@ app.get('/data', (req, res) => {
     })
 })
 let notimetestapihit = -1;
- 
-app.post('/login',(req, res) => {
+
+app.post('/login', (req, res) => {
 
     var options = {
         port: Port,
         host: '127.0.0.1',
-      }; 
+    };
 
     var request = http.request(options);
 
@@ -58,9 +76,9 @@ app.post('/login',(req, res) => {
 //#steam work
 app.post("/getkeys", (req, res) => {
     let { Token } = req.body;
-     console.log('body : ',req.body);
+    console.log('body : ', req.body);
 
-    if(Token==undefined){
+    if (Token == undefined) {
         res.status(400).send("Request not have require field")
         return;
     }
@@ -81,29 +99,29 @@ app.post("/getchannel", (req, res) => {
 
     let channel_id = 'driverchat_0b706870-324a-4f25-aad8-7edf9d2580db'
     let channel_type = "driverchat"
-    let created_by_id= "hemantsingh123"
+    let created_by_id = "hemantsingh123"
 
     let { STREAM_api_key } = req.body;
- 
-    if(STREAM_api_key==undefined){
+
+    if (STREAM_api_key == undefined) {
         res.status(400).send("Request not have require field")
         return;
     }
-   else if (STREAM_api_key == "z69d4mqmt5k9") {
-          res.json({
-             channel_id: channel_id,
-             channel_type: channel_type,
-             created_by_id:created_by_id
-          })
-            return;
+    else if (STREAM_api_key == "z69d4mqmt5k9") {
+        res.json({
+            channel_id: channel_id,
+            channel_type: channel_type,
+            created_by_id: created_by_id
+        })
+        return;
     } else {
         res.status(401).send("Wrong Key");
         return;
     }
 })
 
-app.post('/signup',async (req,res)=>{
-    
+app.post('/signup', async (req, res) => {
+
     try {
         const { fullName, username, password, phoneNumber } = req.body;
 
@@ -121,7 +139,7 @@ app.post('/signup',async (req,res)=>{
 
         res.status(500).json({ message: error });
     }
-    
+
 })
 
 app.get('/currentload', (req, res) => {
@@ -132,7 +150,7 @@ app.get('/currentload', (req, res) => {
         'pickup': 'appt',
     })
 
-   // working on load assignment
+    // working on load assignment
 
 })
 
@@ -153,22 +171,74 @@ app.post("/postreq", (req, res) => {
     }
 })
 
-app.post("/getassignchannel",async(req,res)=>{
+app.post("/getassignchannel", async (req, res) => {
 
 
 
 })
 
-app.get("/getimg",async (req,res)=>{
-    let url="https://ohio.stream-io-cdn.com/1206058/images/cbdae81d-d31f-4a3a-8204-61e9426e869e.download%20%282%29.jpeg?Key-Pair-Id=APKAIHG36VEWPDULE23Q&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9vaGlvLnN0cmVhbS1pby1jZG4uY29tLzEyMDYwNTgvaW1hZ2VzL2NiZGFlODFkLWQzMWYtNGEzYS04MjA0LTYxZTk0MjZlODY5ZS5kb3dubG9hZCUyMCUyODIlMjkuanBlZz8qb2g9MjU5Km93PTE5NCoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE2NjQ5MTY1OTN9fX1dfQ__&Signature=BkYHuwrcdrt4hgcOUfFx6Y7cY7mC~SeuE44ql8UhhRZc8pSqV90ruvVCdfFyRoM9GB6VTqzKZhY08phPRppPgC-uuh0jh7tDL7u79i95B784l4WuG~zP~VayDvO5GDCow~TVjckhykXKdXPAkCnpRbkrZ2fchWUemArFFVoWy-zYSGGJnE-Q2NbILe71Xf1fN~gAxfABLaAiSlp2PIcloZ-kMXRhPHRahlV8kevexBBwqeB1vXXl8Diw6pEZ7-PxZSLaBkDNDJSrADeY~9YxIpbCDkKMpmSH9ywOO0X-Mxsc1LY2ACWsZ2EQHlGSWdX~Pf0ZC7ZkiCJYcqJNhNvWRg__&oh=259&ow=194"
+app.put("/API/V1/load", async (req, res) => {
+    
+    let load = req.body;
+   
+    // let headers=
+
+    res.setHeader('Content-Type', 'application/json',)
+
+    res.set({
+        'Content-Length': '12332',
+        'ETag': '123453'
+    })
+
+    try{
+        let obj = Object.keys(load);
+        if (obj.length == 0) {
+            res.status(403).send("no data available");
+        } else {
+            try{
+               await fs.appendFile(__dirname + '/DB/load.json',JSON.stringify(load)+",", function (err) {
+                    if (err) {
+                        res.status(500).send("Data not added try again");
+                        return;
+                    }
+                    else
+                    {
+                        res.status(200).send("Added");
+                        return;
+                    }
+                });   
+            }catch{
+                res.status(500).send("Not Added Try again");
+            }  
+        }
+    }catch{
+       res.status(400).send("Bad Request")
+       return;
+    }
+})
+
+async function readdata(){
+    let rawdata = fs.readFileSync(__dirname+'/DB/load.json');
+    // let student = JSON.parse(rawdata);
+    var array = rawdata.toString().split(",");
+
+    console.log(array);
+    for(let i=0;i<2;i++){
+        console.log(JSON.parse(array[i]));
+    }
+}
+
+
+app.get("/getimg", async (req, res) => {
+    let url = "https://ohio.stream-io-cdn.com/1206058/images/cbdae81d-d31f-4a3a-8204-61e9426e869e.download%20%282%29.jpeg?Key-Pair-Id=APKAIHG36VEWPDULE23Q&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9vaGlvLnN0cmVhbS1pby1jZG4uY29tLzEyMDYwNTgvaW1hZ2VzL2NiZGFlODFkLWQzMWYtNGEzYS04MjA0LTYxZTk0MjZlODY5ZS5kb3dubG9hZCUyMCUyODIlMjkuanBlZz8qb2g9MjU5Km93PTE5NCoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE2NjQ5MTY1OTN9fX1dfQ__&Signature=BkYHuwrcdrt4hgcOUfFx6Y7cY7mC~SeuE44ql8UhhRZc8pSqV90ruvVCdfFyRoM9GB6VTqzKZhY08phPRppPgC-uuh0jh7tDL7u79i95B784l4WuG~zP~VayDvO5GDCow~TVjckhykXKdXPAkCnpRbkrZ2fchWUemArFFVoWy-zYSGGJnE-Q2NbILe71Xf1fN~gAxfABLaAiSlp2PIcloZ-kMXRhPHRahlV8kevexBBwqeB1vXXl8Diw6pEZ7-PxZSLaBkDNDJSrADeY~9YxIpbCDkKMpmSH9ywOO0X-Mxsc1LY2ACWsZ2EQHlGSWdX~Pf0ZC7ZkiCJYcqJNhNvWRg__&oh=259&ow=194"
 
     res.send(url);
 
 })
 
-app.post('/getload',async (req,res)=>{
-    let {load}=req.body;
- 
+app.post('/getload', async (req, res) => {
+    let { load } = req.body;
+
 })
 
 function getTime() {
@@ -199,4 +269,5 @@ function getname(self) {
 
 app.listen(Port, () => {
     console.log("server is running", Port);
+
 })
