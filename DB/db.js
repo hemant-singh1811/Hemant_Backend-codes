@@ -12,5 +12,10 @@ console.log(collection);
 
 const db=admin.firestore();
 
+module.exports={
+  db,
+  doc
+}
+
 
 

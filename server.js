@@ -7,14 +7,13 @@ const socket = require('socket.io')
 const io = socket(server);
 var bodyParser = require('body-parser');
 const fs = require('fs');
-
+const { setLoadConfirmationDoc } = require('./DB/load')
 
 // const { connect } = require('getstream');
 // import {getRC} from './db4'
 // const bcrypt = require('bcrypt');
 // const StreamChat = require('stream-chat').StreamChat;
-// const crypto = require('crypto');
-
+// const crypto = require('crypto'); 
 const cors = require('cors');
 const { rmSync } = require("fs");
 // const { json } = require("express");
@@ -31,14 +30,23 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json('application/json'));
 
 // app.use((req,res,next)=>{
-    // let headers={
-    //     'Content-Type': 'application/json',
-    //     'Content-Length': '12332',
-    //     'ETag': '123453'
-    //   }
-    // res.set(headers)
+// let headers={
+//     'Content-Type': 'application/json',
+//     'Content-Length': '12332',
+//     'ETag': '123453'
+//   }
+// res.set(headers)
 //       next()
 // })
+// let data1={
+//     'name':'hemant',
+//     'load':31232
+// }
+//   setLoadConfirmationDoc(data1).then((d)=>{
+//     console.log(d);
+//   }).catch((err)=>{
+//     console.log(err);
+//   })
 
 app.get("/", (req, res) => {
     res.send("i can hear you")
@@ -178,52 +186,34 @@ app.post("/getassignchannel", async (req, res) => {
 })
 
 app.put("/API/V1/load", async (req, res) => {
-    
-    let load = req.body;
-   
-    // let headers=
 
-    res.setHeader('Content-Type', 'application/json',)
+    let load = req.body; 
 
-    res.set({
-        'Content-Length': '12332',
-        'ETag': '123453'
-    })
+    try {
+        await setLoadConfirmationDoc(load).then((d) => {
+            console.log(d);
+            res.status(200).send("Added");
+            return;
+        }).catch((err) => {
+            res.status(500).send("Data not added try again");
+            return;
+        })
 
-    try{
-        let obj = Object.keys(load);
-        if (obj.length == 0) {
-            res.status(403).send("no data available");
-        } else {
-            try{
-               await fs.appendFile(__dirname + '/DB/load.json',JSON.stringify(load)+",", function (err) {
-                    if (err) {
-                        res.status(500).send("Data not added try again");
-                        return;
-                    }
-                    else
-                    {
-                        res.status(200).send("Added");
-                        return;
-                    }
-                });   
-            }catch{
-                res.status(500).send("Not Added Try again");
-            }  
-        }
-    }catch{
-       res.status(400).send("Bad Request")
-       return;
+    } catch {
+        res.status(500).send("Not Added Try again");
+        return;
     }
 })
 
-async function readdata(){
-    let rawdata = fs.readFileSync(__dirname+'/DB/load.json');
+
+
+async function readdata() {
+    let rawdata = fs.readFileSync(__dirname + '/DB/load.json');
     // let student = JSON.parse(rawdata);
     var array = rawdata.toString().split(",");
 
     console.log(array);
-    for(let i=0;i<2;i++){
+    for (let i = 0; i < 2; i++) {
         console.log(JSON.parse(array[i]));
     }
 }
@@ -236,10 +226,6 @@ app.get("/getimg", async (req, res) => {
 
 })
 
-app.post('/getload', async (req, res) => {
-    let { load } = req.body;
-
-})
 
 function getTime() {
     var today = new Date();
