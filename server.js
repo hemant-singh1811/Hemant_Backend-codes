@@ -16,6 +16,7 @@ const { setLoadConfirmationDoc } = require('./DB/load')
 // const crypto = require('crypto'); 
 const cors = require('cors');
 const { rmSync } = require("fs");
+const { database } = require("firebase-admin");
 // const { json } = require("express");
 
 let idname = new Map();
@@ -178,7 +179,7 @@ app.post("/postreq", (req, res) => {
         return;
     }
 })
- 
+
 app.put("/API/V1/load", async (req, res) => {
 
     let load = req.body;
@@ -202,20 +203,27 @@ app.post("/API/V2/driverLog", async (req, res) => {
 
     let DuserId = '98765';
     let Dpassword = '12345';
-    
+
     try {
         let { userId, password } = req.body;
- 
+
         if (userId && password) {
-            if(userId==DuserId && Dpassword==password) res.status(200).send("LoggedIn");
-            else{
+            if (userId == DuserId && Dpassword == password) {
+                let data = {
+                    stream_user_id: 'vinay',
+                    stream_user_token:
+                        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidmluYXkifQ.hFlU_0C9GEGI8p5YED363oYHtxg1q2SfsOpO8z71FQY'
+                }
+                res.status(200).send(data);
+            }
+            else {
                 res.status(401).send("Incorrect");
             }
-           
+
         }
         else {
             res.status(404).send("Not Found")
-            
+
         }
     } catch {
         res.status(404).send("Not Found")
