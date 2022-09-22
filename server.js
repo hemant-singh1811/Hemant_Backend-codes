@@ -188,7 +188,7 @@ app.post("/getassignchannel", async (req, res) => {
 app.put("/API/V1/load", async (req, res) => {
 
     let load = req.body; 
-
+    
     try {
         await setLoadConfirmationDoc(load).then((d) => {
             console.log(d);
@@ -198,7 +198,6 @@ app.put("/API/V1/load", async (req, res) => {
             res.status(500).send("Data not added try again");
             return;
         })
-
     } catch {
         res.status(500).send("Not Added Try again");
         return;

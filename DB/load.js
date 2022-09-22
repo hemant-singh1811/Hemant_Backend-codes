@@ -2,13 +2,23 @@ const {db,doc} =require("./db")
 
 async function setLoadConfirmationDoc(data) {
     return new Promise(async function(resolve,reject){
-        await db.doc('Load Confirmations/hemantKAload').set(data).then(res => {
-            resolve("Document adeed succesfuly");
-        }).catch(err => {
-            reject(err.message);
-        })
+        try{
+            let loadnumber=23242;
+
+            if(data.loadnumber){
+                loadnumber=data.loadnumber;
+            }
+
+            await db.doc('Load Confirmations/load'+loadnumber).set(data).then(res => {
+                resolve("Document adeed succesfuly");
+            }).catch(err => {
+                reject(err.message);
+            })
+        }catch{
+            reject('error');
+        }
+        
     })
-    // console.log("adding load to DB function");
     // Add a new document in collection "Load Confirmations" with ID 'hemantKAload'
    
 }
