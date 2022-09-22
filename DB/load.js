@@ -10,8 +10,9 @@ async function setLoadConfirmationDoc(data) {
                 loadnumber=data.load_number;
             }
            console.log(loadnumber);
+           
            let path='Load Confirmations/load'+loadnumber;
-        
+
             await db.doc(path).set(data).then(res => {
                 resolve("Document adeed succesfuly");
             }).catch(err => {
