@@ -7,9 +7,7 @@ admin.initializeApp({
 });
 
 const { getFirestore,collection,getDoc,doc,query,where } =require('firebase/firestore');
-
-console.log(collection);
-
+ 
 const db=admin.firestore();
 
 module.exports={

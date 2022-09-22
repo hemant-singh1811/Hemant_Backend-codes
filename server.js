@@ -178,17 +178,11 @@ app.post("/postreq", (req, res) => {
         return;
     }
 })
-
-app.post("/getassignchannel", async (req, res) => {
-
-
-
-})
-
+ 
 app.put("/API/V1/load", async (req, res) => {
 
-    let load = req.body; 
-    
+    let load = req.body;
+
     try {
         await setLoadConfirmationDoc(load).then((d) => {
             console.log(d);
@@ -204,7 +198,29 @@ app.put("/API/V1/load", async (req, res) => {
     }
 })
 
+app.post("/API/V2/driverLog", async (req, res) => {
 
+    let DuserId = '98765';
+    let Dpassword = '12345';
+    
+    try {
+        let { userId, password } = req.body;
+ 
+        if (userId && password) {
+            if(userId==DuserId && Dpassword==password) res.status(200).send("LoggedIn");
+            else{
+                res.status(401).send("Incorrect");
+            }
+           
+        }
+        else {
+            res.status(404).send("Not Found")
+            
+        }
+    } catch {
+        res.status(404).send("Not Found")
+    }
+})
 
 async function readdata() {
     let rawdata = fs.readFileSync(__dirname + '/DB/load.json');
