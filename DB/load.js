@@ -5,10 +5,12 @@ async function setLoadConfirmationDoc(data) {
         try{
             let loadnumber=23242;
 
-            if(data.loadnumber){
-                loadnumber=data.loadnumber;
+            console.log('load : ',data.load_number);
+            if(data.load_number){
+                loadnumber=data.load_number;
             }
-
+           console.log(loadnumber);
+           
             await db.doc('Load Confirmations/load'+loadnumber).set(data).then(res => {
                 resolve("Document adeed succesfuly");
             }).catch(err => {
