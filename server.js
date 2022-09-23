@@ -317,7 +317,7 @@ io.on("connection", async (socket) => {
     console.log(socket.id);
 
     socket.emit("newconnect", {
-        from: 'hemant'
+       id:socket.id
     })
 
 })
