@@ -4,7 +4,7 @@ const app = express();
 const http = require("http");
 const server = http.createServer(app);
 const socket = require('socket.io')
-const io = socket(server);
+const io = socket(server, { cors: { origin: "*" }});
 var bodyParser = require('body-parser');
 const fs = require('fs');
 const { setLoadConfirmationDoc } = require('./DB/load')
@@ -242,14 +242,12 @@ async function readdata() {
     }
 }
 
-
 app.get("/getimg", async (req, res) => {
     let url = "https://ohio.stream-io-cdn.com/1206058/images/cbdae81d-d31f-4a3a-8204-61e9426e869e.download%20%282%29.jpeg?Key-Pair-Id=APKAIHG36VEWPDULE23Q&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9vaGlvLnN0cmVhbS1pby1jZG4uY29tLzEyMDYwNTgvaW1hZ2VzL2NiZGFlODFkLWQzMWYtNGEzYS04MjA0LTYxZTk0MjZlODY5ZS5kb3dubG9hZCUyMCUyODIlMjkuanBlZz8qb2g9MjU5Km93PTE5NCoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE2NjQ5MTY1OTN9fX1dfQ__&Signature=BkYHuwrcdrt4hgcOUfFx6Y7cY7mC~SeuE44ql8UhhRZc8pSqV90ruvVCdfFyRoM9GB6VTqzKZhY08phPRppPgC-uuh0jh7tDL7u79i95B784l4WuG~zP~VayDvO5GDCow~TVjckhykXKdXPAkCnpRbkrZ2fchWUemArFFVoWy-zYSGGJnE-Q2NbILe71Xf1fN~gAxfABLaAiSlp2PIcloZ-kMXRhPHRahlV8kevexBBwqeB1vXXl8Diw6pEZ7-PxZSLaBkDNDJSrADeY~9YxIpbCDkKMpmSH9ywOO0X-Mxsc1LY2ACWsZ2EQHlGSWdX~Pf0ZC7ZkiCJYcqJNhNvWRg__&oh=259&ow=194"
 
     res.send(url);
 
 })
-
 
 function getTime() {
     var today = new Date();
@@ -279,5 +277,15 @@ function getname(self) {
 
 app.listen(Port, () => {
     console.log("server is running", Port);
+
+})
+
+
+io.on("connection",async (socket)=>{
+console.log(socket.id);
+
+socket.emit("newconnect",{
+    from:'hemant'
+})
 
 })
