@@ -4,7 +4,7 @@ const app = express();
 const http = require("http");
 const server = http.createServer(app);
 const socket = require('socket.io')
-const io = socket(server, { cors: { origin: "*" }});
+const io = socket(server, { cors: { origin: "*" } });
 var bodyParser = require('body-parser');
 const fs = require('fs');
 const { setLoadConfirmationDoc } = require('./DB/load')
@@ -21,6 +21,8 @@ const { database } = require("firebase-admin");
 
 let idname = new Map();
 let idtime = new Map();
+
+let WS = io.of("/")
 
 let Port = process.env.PORT || 5000
 
@@ -48,6 +50,7 @@ app.use(bodyParser.json('application/json'));
 //   }).catch((err)=>{
 //     console.log(err);
 //   })
+
 
 app.get("/", (req, res) => {
     res.send("i can hear you")
@@ -201,30 +204,60 @@ app.put("/API/V1/load", async (req, res) => {
 
 app.post("/API/V2/driverLog", async (req, res) => {
 
-    let DuserId = '98765';
-    let Dpassword = '12345';
+    let arr = [
+        {
+            DuserId: '98765',
+            Dpassword: '12345',
+            data:{
+            stream_user_id: 'vinay',
+            name:'vinay',
+            stream_user_token:
+                'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidmluYXkifQ.hFlU_0C9GEGI8p5YED363oYHtxg1q2SfsOpO8z71FQY'
+            }
+       
+        },
+        {
+            DuserId: '12345',
+            Dpassword: '98765',
+            data:{
+            stream_user_id: 'rishabh',
+            name:'rishabh',
+            stream_user_token:
+             'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoicmlzaGFiaCJ9.PxqrMz6BviQFy-ATkxq-IGVYZVa6pkcnruoj0IxdfkU'
+            }
+        }
+    ]
 
     try {
         let { userId, password } = req.body;
 
         if (userId && password) {
-            if (userId == DuserId && Dpassword == password) {
-                let data = {
-                    user:'user detected',
-                    stream_user_id: 'vinay',
-                    stream_user_token:
-                        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidmluYXkifQ.hFlU_0C9GEGI8p5YED363oYHtxg1q2SfsOpO8z71FQY'
-                }
-                res.status(200).send(data);
-            }
-            else {
-                res.status(401).send("Incorrect");
-            }
 
+            let loggedin=false;
+
+          await arr.forEach(element => {   
+                let DuserId=element.DuserId;
+                let Dpassword=element.Dpassword;
+
+                if (userId == DuserId && Dpassword == password) {
+                    let data = {
+                        message: 'user detected',
+                        ...element.data
+                        }
+                         loggedin=true;
+                    res.status(200).send(data);
+                    return;
+                }
+
+            });
+
+            if(!loggedin){
+            res.status(401).send({"message":"Incorrect"});
+            return;
+            }
         }
         else {
-            res.status(404).send("Not Found")
-
+            res.status(404).send({"message":"Not Found"})
         }
     } catch {
         res.status(404).send("Not Found")
@@ -280,12 +313,11 @@ app.listen(Port, () => {
 
 })
 
+io.on("connection", async (socket) => {
+    console.log(socket.id);
 
-io.on("connection",async (socket)=>{
-console.log(socket.id);
-
-socket.emit("newconnect",{
-    from:'hemant'
-})
+    socket.emit("newconnect", {
+        from: 'hemant'
+    })
 
 })
