@@ -210,6 +210,7 @@ app.post("/API/V2/driverLog", async (req, res) => {
         if (userId && password) {
             if (userId == DuserId && Dpassword == password) {
                 let data = {
+                    user:'user detected',
                     stream_user_id: 'vinay',
                     stream_user_token:
                         'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidmluYXkifQ.hFlU_0C9GEGI8p5YED363oYHtxg1q2SfsOpO8z71FQY'
