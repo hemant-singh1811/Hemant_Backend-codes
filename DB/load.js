@@ -62,13 +62,39 @@ async function read(){
     const snapshot = await citiesRef.get();
     
     snapshot.forEach(doc => {
-      console.log(doc.id, '=>', doc.id);
+    //   console.log(doc.id, '=>', doc.data());
+      console.log('load_number : ',doc.data().load_number);
     }); 
 
 }
 
 // read()
 
+
+async function getload(load_number){
+    return new Promise(async function(resolve,reject){
+        const citiesRef =await db.collection('Load Confirmations');
+    
+        const snapshot = await citiesRef.get();
+        
+         await snapshot.forEach(doc => { 
+          let LoadNumber=doc.data().load_number; 
+          if(LoadNumber==load_number){
+            //   console.log(doc.data());
+              resolve(doc.data()); 
+          }
+
+        })
+        reject("load not Found") 
+    })
+       
+}
+
+getload(43322).then((data)=>{
+    console.log(data);
+}).catch((err)=>{
+    console.log(err);
+})
 
 async function listCollections(){
     db.listCollections()
@@ -84,5 +110,6 @@ async function listCollections(){
 
 
 module.exports={
-    setLoadConfirmationDoc
+    setLoadConfirmationDoc,
+    getload
 }
