@@ -24,7 +24,7 @@ let idtime = new Map();
 
 let WS = io.of("/")
 
-let Port = process.env.PORT || 5000
+let Port = process.env.PORT || 9900
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json())
@@ -212,7 +212,10 @@ app.post("/API/V2/driverLog", async (req, res) => {
             stream_user_id: 'vinay',
             name:'vinay',
             stream_user_token:
-                'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidmluYXkifQ.hFlU_0C9GEGI8p5YED363oYHtxg1q2SfsOpO8z71FQY'
+                'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidmluYXkifQ.hFlU_0C9GEGI8p5YED363oYHtxg1q2SfsOpO8z71FQY',
+            channel_id:'Load3123',
+            channel_type:'messaging',
+            chatinit:'true'
             }
        
         },
@@ -224,6 +227,10 @@ app.post("/API/V2/driverLog", async (req, res) => {
             name:'rishabh',
             stream_user_token:
              'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoicmlzaGFiaCJ9.PxqrMz6BviQFy-ATkxq-IGVYZVa6pkcnruoj0IxdfkU'
+            ,
+            channel_id:'',
+            channel_type:'',
+            chatinit:'false'
             }
         }
     ]
@@ -323,11 +330,17 @@ io.on("connection", async (socket) => {
     socket.on("joinroom",(data)=>{
         try{
             socket.join(data.stream_user_id);
+            socket.emit("channel joined","joined")
             console.log(data.stream_user_id,' join in channel');
         }catch{
             
         }
     });
+
+    socket.on("disconnected",async(socket)=>{
+        console.log('disconnected : ',socket.id);
+    })
+
 })
 
 let driver_user_id=[
@@ -345,11 +358,11 @@ let driver_user_id=[
     }
 ]
 
-
 app.post("/sendload",async (req,res)=>{
 
  let driverid=req.body.driverid;
  let loadnumber=req.body.loadnumber;
+ 
 
  try{
     let found=false;
@@ -360,17 +373,17 @@ app.post("/sendload",async (req,res)=>{
                 found=true;
                 console.log(element.stream_user_id);
             await io.to(element.stream_user_id).emit("assignload",load)
-             res.send("load sended to assign driver")
+            return res.send("load sended to assign driver")
             }
         
          });
     }).catch((err)=>{
-    res.status(404).send("load number not found");
+  return  res.status(404).send("load number not found");
     return;
     })
     if(!found)
     {
-        res.status(404).send("driver id not found");
+      return  res.status(404).send("driver id not found");
     }
  }catch{
    res.status(403).send("try again");
