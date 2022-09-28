@@ -10,8 +10,8 @@ const fs = require('fs');
 const path = require('path');
 path.basename(__dirname);
 // console.log(__dirname);
-const webroutes=require(__dirname+'/API/webroute');
-const approutes=require(__dirname+'/API/approute');
+const webroutes=require('./API/webroute');
+const approutes=require('./API/approute');
 
 // console.log(process.env.STREAM_API_KEY);
 
