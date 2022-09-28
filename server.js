@@ -242,28 +242,28 @@ server.listen(Port, () => {
 
 })
 
-io.on("connection", async (socket) => {
-    // console.log(socket.id);
+// io.on("connection", async (socket) => {
+//     // console.log(socket.id);
 
-    socket.emit("newconnect", {
-       id:socket.id
-    })
+//     socket.emit("newconnect", {
+//        id:socket.id
+//     })
 
-    socket.on("joinroom",(data)=>{
-        try{
-            socket.join(data.stream_user_id);
-            socket.emit("channel joined","joined")
-            console.log(data.stream_user_id,' join in channel');
-        }catch{
+//     socket.on("joinroom",(data)=>{
+//         try{
+//             socket.join(data.stream_user_id);
+//             socket.emit("channel joined","joined")
+//             console.log(data.stream_user_id,' join in channel');
+//         }catch{
             
-        }
-    });
+//         }
+//     });
 
-    socket.on("disconnected",async(socket)=>{
-        console.log('disconnected : ',socket.id);
-    })
+//     socket.on("disconnected",async(socket)=>{
+//         console.log('disconnected : ',socket.id);
+//     })
 
-})
+// })
 
 let driver_user_id=[
     {
