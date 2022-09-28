@@ -7,8 +7,9 @@ const socket = require('socket.io')
 const io = socket(server, { cors: { origin: "*" } });
 var bodyParser = require('body-parser');
 const fs = require('fs'); 
-const webroutes=require('./API/V1/webroute');
-const approutes=require('./API/V2/approute');
+console.log(__dirname);
+const webroutes=require(__dirname+'/API/V1/webroute');
+const approutes=require(__dirname+'/API/V2/approute');
 
 // console.log(process.env.STREAM_API_KEY);
 
