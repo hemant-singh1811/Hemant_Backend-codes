@@ -188,10 +188,96 @@ app.post("/postreq", (req, res) => {
     }
 })
 
-app.use("/API/V1/", webroutes)
+// app.use("/API/V1/", webroutes)
 
-app.use("/API/V2/", approutes)
+// app.use("/API/V2/", approutes)
 
+app.use("/API/V1/load",async (req,res)=>{
+
+    let load = req.body;
+
+    try {
+        await setLoadConfirmationDoc(load).then((d) => {
+            console.log(d);
+            res.status(200).send("Added");
+            return;
+        }).catch((err) => {
+            res.status(500).send("Data not added try again");
+            return;
+        })
+    } catch {
+        res.status(500).send("Not Added Try again");
+        return;
+    }
+    
+})
+
+app.use("/API/V2/driverLog",async (req,res)=>{
+    // console.log("das");
+    let arr = [
+        {
+            DuserId: '98765',
+            Dpassword: '12345',
+            data:{
+            stream_user_id: 'vinay',
+            name:'vinay',
+            stream_user_token:
+                'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidmluYXkifQ.hFlU_0C9GEGI8p5YED363oYHtxg1q2SfsOpO8z71FQY',
+            channel_id:'Load3123',
+            channel_type:'messaging',
+            chatinit:'true'
+            }
+       
+        },
+        {
+            DuserId: '12345',
+            Dpassword: '98765',
+            data:{
+            stream_user_id: 'rishabh',
+            name:'rishabh',
+            stream_user_token:
+             'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoicmlzaGFiaCJ9.PxqrMz6BviQFy-ATkxq-IGVYZVa6pkcnruoj0IxdfkU'
+            ,
+            channel_id:'',
+            channel_type:'',
+            chatinit:'false'
+            }
+        }
+    ]
+   
+    try {
+        let { userId, password } = req.body; 
+        if (userId && password) { 
+            let loggedin=false;
+
+          await arr.forEach(element => {   
+                let DuserId=element.DuserId;
+                let Dpassword=element.Dpassword; 
+                if (userId == DuserId && Dpassword == password) {
+                    let data = {
+                        message: 'user detected',
+                        ...element.data
+                        }
+                         loggedin=true; 
+                    res.status(200).send(data);
+                    return;
+                }
+
+            }); 
+            if(!loggedin){ 
+            res.status(400).send({"message":"Incorrect"});
+            return;
+            }
+        }
+        else {
+            res.status(404).send({"message":"Not Found"})
+            return;
+        }
+    } catch {
+        res.status(404).send({"message":"Not Found"})
+        return;
+    }
+})
 
 async function readdata() {
     let rawdata = fs.readFileSync(__dirname + '/DB/load.json');
@@ -311,16 +397,6 @@ app.post("/sendload",async (req,res)=>{
    res.status(403).send("try again");
    return;
  }
-})
-
-console.log( process.env.STREAM_API_KEY);
-let STREAM_APP_ID= process.env.STREAM_APP_ID;
- let  STREAM_API_KEY= process.env.STREAM_API_KEY;
- let  STREAM_API_SECRET= process.env.STREAM_API_SECRET
-
-
-// console.log( "1",STREAM_API_KEY);
-// console.log("2", STREAM_API_KEY);
-// console.log( STREAM_API_KEY);
+}) 
 
 
