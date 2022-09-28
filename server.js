@@ -10,7 +10,7 @@ const fs = require('fs');
 const webroutes=require('./API/V1/webroute');
 const approutes=require('./API/V2/approute');
 
-console.log(process.env.STREAM_API_KEY);
+// console.log(process.env.STREAM_API_KEY);
 
 
 // const { connect } = require('getstream');
@@ -242,7 +242,7 @@ server.listen(Port, () => {
 })
 
 io.on("connection", async (socket) => {
-    console.log(socket.id);
+    // console.log(socket.id);
 
     socket.emit("newconnect", {
        id:socket.id
