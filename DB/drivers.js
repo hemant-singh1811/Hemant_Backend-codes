@@ -25,7 +25,7 @@ name.forEach(async element => {
     let token = await client.createToken(element);
   
     // console.log(userId," pwd : ",token);
-
+    
     let data={
         user_id:userId,
         user_password:'1seattle',

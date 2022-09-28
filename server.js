@@ -7,9 +7,11 @@ const socket = require('socket.io')
 const io = socket(server, { cors: { origin: "*" } });
 var bodyParser = require('body-parser');
 const fs = require('fs'); 
-console.log(__dirname);
-// const webroutes=require(__dirname+'/API/V1/webroute');
-// const approutes=require(__dirname+'/API/V2/approute');
+const path = require('path');
+path.basename(__dirname);
+// console.log(__dirname);
+const webroutes=require(__dirname+'/API/webroute');
+const approutes=require(__dirname+'/API/approute');
 
 // console.log(process.env.STREAM_API_KEY);
 
@@ -28,7 +30,7 @@ let idname = new Map();
 let idtime = new Map();
 
 let WS = io.of("/")
-
+let ro1=require("./API/webroute")
 let Port = process.env.PORT || 9900
 
 app.use(express.urlencoded({ extended: true }));
@@ -37,6 +39,8 @@ app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json('application/json'));
 
+
+app.use('/wew',ro1)
 // app.use((req,res,next)=>{
 // let headers={
 //     'Content-Type': 'application/json',
@@ -192,92 +196,96 @@ app.post("/postreq", (req, res) => {
 
 // app.use("/API/V2/", approutes)
 
-app.use("/API/V1/load",async (req,res)=>{
+app.use("/API/V1/",webroutes);
 
-    let load = req.body;
+app.use("/API/V2/",approutes)
 
-    try {
-        await setLoadConfirmationDoc(load).then((d) => {
-            console.log(d);
-            res.status(200).send("Added");
-            return;
-        }).catch((err) => {
-            res.status(500).send("Data not added try again");
-            return;
-        })
-    } catch {
-        res.status(500).send("Not Added Try again");
-        return;
-    }
+// app.put("/API/V1/load",async (req,res)=>{
+
+//     let load = req.body;
+
+//     try {
+//         await setLoadConfirmationDoc(load).then((d) => {
+//             console.log(d);
+//             res.status(200).send("Added");
+//             return;
+//         }).catch((err) => {
+//             res.status(500).send("Data not added try again");
+//             return;
+//         })
+//     } catch {
+//         res.status(500).send("Not Added Try again");
+//         return;
+//     }
     
-})
+// })
 
-app.use("/API/V2/driverLog",async (req,res)=>{
-    // console.log("das");
-    let arr = [
-        {
-            DuserId: '98765',
-            Dpassword: '12345',
-            data:{
-            stream_user_id: 'vinay',
-            name:'vinay',
-            stream_user_token:
-                'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidmluYXkifQ.hFlU_0C9GEGI8p5YED363oYHtxg1q2SfsOpO8z71FQY',
-            channel_id:'Load3123',
-            channel_type:'messaging',
-            chatinit:'true'
-            }
+// app.post("/API/V2/driverLog",async (req,res)=>{
+//     // console.log("das");
+//     let arr = [
+//         {
+//             DuserId: '98765',
+//             Dpassword: '12345',
+//             data:{
+//             stream_user_id: 'vinay',
+//             name:'vinay',
+//             stream_user_token:
+//                 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidmluYXkifQ.hFlU_0C9GEGI8p5YED363oYHtxg1q2SfsOpO8z71FQY',
+//             channel_id:'Load3123',
+//             channel_type:'messaging',
+//             chatinit:'true'
+//             }
        
-        },
-        {
-            DuserId: '12345',
-            Dpassword: '98765',
-            data:{
-            stream_user_id: 'rishabh',
-            name:'rishabh',
-            stream_user_token:
-             'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoicmlzaGFiaCJ9.PxqrMz6BviQFy-ATkxq-IGVYZVa6pkcnruoj0IxdfkU'
-            ,
-            channel_id:'',
-            channel_type:'',
-            chatinit:'false'
-            }
-        }
-    ]
+//         },
+//         {
+//             DuserId: '12345',
+//             Dpassword: '98765',
+//             data:{
+//             stream_user_id: 'rishabh',
+//             name:'rishabh',
+//             stream_user_token:
+//              'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoicmlzaGFiaCJ9.PxqrMz6BviQFy-ATkxq-IGVYZVa6pkcnruoj0IxdfkU'
+//             ,
+//             channel_id:'',
+//             channel_type:'',
+//             chatinit:'false'
+//             }
+//         }
+//     ]
    
-    try {
-        let { userId, password } = req.body; 
-        if (userId && password) { 
-            let loggedin=false;
+//     try {
+//         let { userId, password } = req.body; 
+//         if (userId && password) { 
+//             let loggedin=false;
 
-          await arr.forEach(element => {   
-                let DuserId=element.DuserId;
-                let Dpassword=element.Dpassword; 
-                if (userId == DuserId && Dpassword == password) {
-                    let data = {
-                        message: 'user detected',
-                        ...element.data
-                        }
-                         loggedin=true; 
-                    res.status(200).send(data);
-                    return;
-                }
+//           await arr.forEach(element => {   
+//                 let DuserId=element.DuserId;
+//                 let Dpassword=element.Dpassword; 
+//                 if (userId == DuserId && Dpassword == password) {
+//                     let data = {
+//                         message: 'user detected',
+//                         ...element.data
+//                         }
+//                          loggedin=true; 
+//                     res.status(200).send(data);
+//                     return;
+//                 }
 
-            }); 
-            if(!loggedin){ 
-            res.status(400).send({"message":"Incorrect"});
-            return;
-            }
-        }
-        else {
-            res.status(404).send({"message":"Not Found"})
-            return;
-        }
-    } catch {
-        res.status(404).send({"message":"Not Found"})
-        return;
-    }
-})
+//             }); 
+//             if(!loggedin){ 
+//             res.status(400).send({"message":"Incorrect"});
+//             return;
+//             }
+//         }
+//         else {
+//             res.status(404).send({"message":"Not Found"})
+//             return;
+//         }
+//     } catch {
+//         res.status(404).send({"message":"Not Found"})
+//         return;
+//     }
+// })
 
 async function readdata() {
     let rawdata = fs.readFileSync(__dirname + '/DB/load.json');
