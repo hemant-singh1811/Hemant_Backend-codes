@@ -6,10 +6,7 @@ const server = http.createServer(app);
 const socket = require('socket.io')
 const io = socket(server, { cors: { origin: "*" } });
 var bodyParser = require('body-parser');
-const fs = require('fs'); 
-const path = require('path');
-path.basename(__dirname);
-// console.log(__dirname);
+const fs = require('fs');  
 const webroutes=require('./API/webroute');
 const approutes=require('./API/approute');
 
