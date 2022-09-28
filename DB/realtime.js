@@ -1,9 +1,7 @@
 //server side realtime data reads
-
 const {db}=require('./db')
 
 const doc1 = db.collection('Load Confirmations')
-
 
 const observer = doc1.onSnapshot(querySnapshot => {
 
