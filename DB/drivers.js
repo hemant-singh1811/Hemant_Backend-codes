@@ -6,6 +6,7 @@ const crypto=require("crypto")
 let name=['rishabh','vinay','sumit','hemant','gurbani','manish','jay','gurpreet']
 let All=[];
 
+async function createstreamid(){
 
 const driverlogin= db.collection("Stream-users").doc('23').get();
 
@@ -29,10 +30,13 @@ name.forEach(async element => {
     let data={
         user_id:userId,
         user_password:'1seattle',
-        Stream_id:userId,
+       
+        data:{ Stream_id:userId,
         name:element,
         Stream_token:token,
-        created: new Date().toISOString(),
+       },
+
+       created: new Date().toISOString(),
         updated: new Date().toISOString()
     }
 
@@ -45,5 +49,5 @@ name.forEach(async element => {
 
 });
 }
-
+}
 

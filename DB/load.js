@@ -90,11 +90,11 @@ async function getload(load_number){
        
 }
 
-getload(43322).then((data)=>{
-    console.log(data);
-}).catch((err)=>{
-    console.log(err);
-})
+// getload(43322).then((data)=>{
+//     console.log(data);
+// }).catch((err)=>{
+//     console.log(err);
+// })
 
 async function listCollections(){
     db.listCollections()

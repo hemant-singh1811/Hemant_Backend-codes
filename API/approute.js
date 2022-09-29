@@ -67,4 +67,39 @@ router.post("/driverLog",async (req,res)=>{
     }
 })
 
+router.post("/getassignchannel",async (req,res)=>{
+
+    try {
+        let { userId } = req.body; 
+        if (userId) { 
+            let loggedin=false;
+
+          await arr.forEach(element => {   
+                let DuserId=element.DuserId; 
+                if (userId == DuserId  ) {
+                    let data = {
+                        message: 'user detected',
+                        channel_id: element.data.channel_id,
+                        channel_type: element.data.channel_type,
+                        } 
+                    loggedin=true;  
+                    res.status(200).send(data);
+                    return;
+                }
+            }); 
+            if(!loggedin){ 
+              res.status(400).send({"message":"Incorrect"});
+            return;
+            }
+        }
+        else {
+            res.status(404).send({"message":"Not Found"})
+            return;
+        }
+    } catch {
+        res.status(404).send({"message":"Not Found"})
+        return;
+    }
+})
+
 module.exports=router;

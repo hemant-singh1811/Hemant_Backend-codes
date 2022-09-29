@@ -9,6 +9,8 @@ var bodyParser = require('body-parser');
 const fs = require('fs');  
 const webroutes=require('./API/webroute');
 const approutes=require('./API/approute');
+const sendload=require('./API/sendload');
+const {getTime}=require("./helpers/serverhelper")
 
 // console.log(process.env.STREAM_API_KEY);
 
@@ -26,8 +28,6 @@ const { database } = require("firebase-admin");
 let idname = new Map();
 let idtime = new Map();
 
-let WS = io.of("/")
-let ro1=require("./API/webroute")
 let Port = process.env.PORT || 9900
 
 app.use(express.urlencoded({ extended: true }));
@@ -36,8 +36,6 @@ app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json('application/json'));
 
-
-app.use('/wew',ro1)
 // app.use((req,res,next)=>{
 // let headers={
 //     'Content-Type': 'application/json',
@@ -57,6 +55,11 @@ app.use('/wew',ro1)
 //     console.log(err);
 //   })
 
+app.use("/API/V1/",webroutes);
+
+app.use("/API/V2/",approutes);
+
+app.use("API/V2/",approutes)
 
 app.get("/", (req, res) => {
     res.send("i can hear you")
@@ -189,127 +192,6 @@ app.post("/postreq", (req, res) => {
     }
 })
 
-// app.use("/API/V1/", webroutes)
-
-// app.use("/API/V2/", approutes)
-
-app.use("/API/V1/",webroutes);
-
-app.use("/API/V2/",approutes)
-
-// app.put("/API/V1/load",async (req,res)=>{
-
-//     let load = req.body;
-
-//     try {
-//         await setLoadConfirmationDoc(load).then((d) => {
-//             console.log(d);
-//             res.status(200).send("Added");
-//             return;
-//         }).catch((err) => {
-//             res.status(500).send("Data not added try again");
-//             return;
-//         })
-//     } catch {
-//         res.status(500).send("Not Added Try again");
-//         return;
-//     }
-    
-// })
-
-// app.post("/API/V2/driverLog",async (req,res)=>{
-//     // console.log("das");
-//     let arr = [
-//         {
-//             DuserId: '98765',
-//             Dpassword: '12345',
-//             data:{
-//             stream_user_id: 'vinay',
-//             name:'vinay',
-//             stream_user_token:
-//                 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidmluYXkifQ.hFlU_0C9GEGI8p5YED363oYHtxg1q2SfsOpO8z71FQY',
-//             channel_id:'Load3123',
-//             channel_type:'messaging',
-//             chatinit:'true'
-//             }
-       
-//         },
-//         {
-//             DuserId: '12345',
-//             Dpassword: '98765',
-//             data:{
-//             stream_user_id: 'rishabh',
-//             name:'rishabh',
-//             stream_user_token:
-//              'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoicmlzaGFiaCJ9.PxqrMz6BviQFy-ATkxq-IGVYZVa6pkcnruoj0IxdfkU'
-//             ,
-//             channel_id:'',
-//             channel_type:'',
-//             chatinit:'false'
-//             }
-//         }
-//     ]
-   
-//     try {
-//         let { userId, password } = req.body; 
-//         if (userId && password) { 
-//             let loggedin=false;
-
-//           await arr.forEach(element => {   
-//                 let DuserId=element.DuserId;
-//                 let Dpassword=element.Dpassword; 
-//                 if (userId == DuserId && Dpassword == password) {
-//                     let data = {
-//                         message: 'user detected',
-//                         ...element.data
-//                         }
-//                          loggedin=true; 
-//                     res.status(200).send(data);
-//                     return;
-//                 }
-
-//             }); 
-//             if(!loggedin){ 
-//             res.status(400).send({"message":"Incorrect"});
-//             return;
-//             }
-//         }
-//         else {
-//             res.status(404).send({"message":"Not Found"})
-//             return;
-//         }
-//     } catch {
-//         res.status(404).send({"message":"Not Found"})
-//         return;
-//     }
-// })
-
-async function readdata() {
-    let rawdata = fs.readFileSync(__dirname + '/DB/load.json');
-    // let student = JSON.parse(rawdata);
-    var array = rawdata.toString().split(",");
-
-    console.log(array);
-    for (let i = 0; i < 2; i++) {
-        console.log(JSON.parse(array[i]));
-    }
-}
-
-app.get("/getimg", async (req, res) => {
-    let url = "https://ohio.stream-io-cdn.com/1206058/images/cbdae81d-d31f-4a3a-8204-61e9426e869e.download%20%282%29.jpeg?Key-Pair-Id=APKAIHG36VEWPDULE23Q&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9vaGlvLnN0cmVhbS1pby1jZG4uY29tLzEyMDYwNTgvaW1hZ2VzL2NiZGFlODFkLWQzMWYtNGEzYS04MjA0LTYxZTk0MjZlODY5ZS5kb3dubG9hZCUyMCUyODIlMjkuanBlZz8qb2g9MjU5Km93PTE5NCoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE2NjQ5MTY1OTN9fX1dfQ__&Signature=BkYHuwrcdrt4hgcOUfFx6Y7cY7mC~SeuE44ql8UhhRZc8pSqV90ruvVCdfFyRoM9GB6VTqzKZhY08phPRppPgC-uuh0jh7tDL7u79i95B784l4WuG~zP~VayDvO5GDCow~TVjckhykXKdXPAkCnpRbkrZ2fchWUemArFFVoWy-zYSGGJnE-Q2NbILe71Xf1fN~gAxfABLaAiSlp2PIcloZ-kMXRhPHRahlV8kevexBBwqeB1vXXl8Diw6pEZ7-PxZSLaBkDNDJSrADeY~9YxIpbCDkKMpmSH9ywOO0X-Mxsc1LY2ACWsZ2EQHlGSWdX~Pf0ZC7ZkiCJYcqJNhNvWRg__&oh=259&ow=194"
-
-    res.send(url);
-
-})
-
-function getTime() {
-    var today = new Date();
-
-    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-
-    console.log('Now : ', time);
-    return time;
-}
 
 function getname(self) {
 
@@ -328,33 +210,28 @@ function getname(self) {
     return value;
 }
 
-server.listen(Port, () => {
-    console.log("server is running", Port);
+io.on("connection", async (socket) => {
+    // console.log(socket.id);
+
+    socket.emit("newconnect", {
+       id:socket.id
+    })
+
+    socket.on("joinroom",(data)=>{
+        try{
+            socket.join(data.stream_user_id);
+            socket.emit("channel joined","joined")
+            console.log(data.stream_user_id,' join in channel');
+        }catch{
+            
+        }
+    });
+
+    socket.on("disconnected",async(socket)=>{
+        console.log('disconnected : ',socket.id);
+    })
 
 })
-
-// io.on("connection", async (socket) => {
-//     // console.log(socket.id);
-
-//     socket.emit("newconnect", {
-//        id:socket.id
-//     })
-
-//     socket.on("joinroom",(data)=>{
-//         try{
-//             socket.join(data.stream_user_id);
-//             socket.emit("channel joined","joined")
-//             console.log(data.stream_user_id,' join in channel');
-//         }catch{
-            
-//         }
-//     });
-
-//     socket.on("disconnected",async(socket)=>{
-//         console.log('disconnected : ',socket.id);
-//     })
-
-// })
 
 let driver_user_id=[
     {
@@ -376,7 +253,6 @@ app.post("/sendload",async (req,res)=>{
  let driverid=req.body.driverid;
  let loadnumber=req.body.loadnumber;
  
-
  try{
     let found=false;
     await getload(loadnumber).then(async (load)=>{
@@ -405,3 +281,8 @@ app.post("/sendload",async (req,res)=>{
 }) 
 
 
+server.listen(Port, () => {
+    console.log("server is running", Port);
+
+})
+ 
