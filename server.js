@@ -227,7 +227,7 @@ io.on("connection", async (socket) => {
         }
     });
 
-    socket.on("disconnected",async(socket)=>{
+    socket.on("disconnect", async() =>{
         console.log('disconnected : ',socket.id);
     })
 
