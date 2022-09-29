@@ -211,7 +211,7 @@ function getname(self) {
 }
 
 io.on("connection", async (socket) => {
-    // console.log(socket.id);
+    console.log("socket id : ",socket.id);
 
     socket.emit("newconnect", {
        id:socket.id
