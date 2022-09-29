@@ -231,6 +231,10 @@ io.on("connection", async (socket) => {
         console.log('disconnected : ',socket.id);
     })
 
+    socket.on("reconnect", () => {
+        console.log('reconnect : ',socket.id);
+      });
+
 })
 
 let driver_user_id=[
