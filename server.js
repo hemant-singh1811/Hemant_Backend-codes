@@ -11,7 +11,7 @@ const webroutes=require('./API/webroute');
 const approutes=require('./API/approute');
 const sendload=require('./API/sendload');
 const {getTime}=require("./helpers/serverhelper")
-
+const {getload} = require('./DB/load')
 // console.log(process.env.STREAM_API_KEY);
 
 
@@ -255,18 +255,14 @@ let driver_user_id=[
 app.post("/sendload",async (req,res)=>{
 
  let driverid=req.body.driverid;
- let loadnumber=req.body.loadnumber;
- console.log("here1");
- await io.to('vinay').emit("assignload","test")
+ let loadnumber=req.body.loadnumber; 
  try{
     let found=false;
     await getload(loadnumber).then(async (load)=>{
-        await driver_user_id.forEach(async (element) => {
-            console.log("here2");
+        await driver_user_id.forEach(async (element) => { 
             if(element.driverid==driverid){
-                found=true;
-                console.log("here3");
-                console.log(element.stream_user_id);
+                found=true; 
+                console.log('load assign to : ',element.stream_user_id);
             await io.to(element.stream_user_id).emit("assignload",load)
             return res.send("load sended to assign driver")
             }
