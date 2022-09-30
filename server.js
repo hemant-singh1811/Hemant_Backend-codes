@@ -256,7 +256,7 @@ app.post("/sendload",async (req,res)=>{
 
  let driverid=req.body.driverid;
  let loadnumber=req.body.loadnumber;
- 
+ await io.to(element.stream_user_id).emit("assignload","test")
  try{
     let found=false;
     await getload(loadnumber).then(async (load)=>{
