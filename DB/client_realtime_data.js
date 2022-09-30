@@ -20,18 +20,18 @@ const db = getFirestore(app);
 
 const doc1 = collection(db,'Load Confirmations')
 
-const unsubscribe = onSnapshot(doc1, (snapshot) => {
-    console.log("hi");
+const unsubscribe = onSnapshot(doc1, (snapshot) => { 
 
     snapshot.docChanges().forEach((change) => {
+
       if (change.type === "added") {
-          console.log("New city: ", change.doc.data());
+          console.log("New : ", change.doc.id);
       }
       if (change.type === "modified") {
-          console.log("Modified city: ", change.doc.data());
+          console.log("Modified : ", change.doc.id);
       }
       if (change.type === "removed") {
-          console.log("Removed city: ", change.doc.data());
+          console.log("Removed : ", change.doc.id);
       }
     });
 

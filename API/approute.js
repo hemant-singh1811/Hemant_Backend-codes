@@ -29,7 +29,21 @@ let arr = [
         channel_type:'',
         chatinit:'false'
         }
-    }
+    },
+    {
+        DuserId: '56789',
+        Dpassword: '54321',
+        data:{
+        stream_user_id: 'hemant',
+        name:'hemant',
+        stream_user_token:
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiaGVtYW50In0.jRr6eK6u2--pwvEUEzdTjmrZhsFJBqWXfws914TTBNw',
+             channel_id:'Sample',
+        channel_type:'messaging',
+        chatinit:'true'
+        }
+   
+    },
 ]
 
 router.post("/driverLog",async (req,res)=>{
