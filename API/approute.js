@@ -44,6 +44,33 @@ let arr = [
         }
    
     },
+    {
+        
+        DuserId: '12121',
+        Dpassword: '54566',
+        data:{
+        stream_user_id: 'gurbani',
+        name:'gurbani',
+        stream_user_token:
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZ3VyYmFuaSJ9.9NglJFAapynWDuQCOWMrZrEfWA7N5CQ7E_Z2VWIGgB4',
+            channel_id:'Sample',
+        channel_type:'messaging',
+        chatinit:'true'
+        }
+    },
+    {
+        DuserId: '908987',
+        Dpassword: '765788',
+        data:{
+        stream_user_id: 'Manish',
+        name:'Manish',
+        stream_user_token:
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiTWFuaXNoIn0.frtlSB6GZOl_Iyt87i1kVC7seGcAAnBCWzqq_PVL6hE',
+            channel_id:'Sample2',
+        channel_type:'messaging',
+        chatinit:'true'
+        }
+    }
 ]
 
 router.post("/driverLog",async (req,res)=>{
