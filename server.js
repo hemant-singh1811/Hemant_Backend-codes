@@ -256,14 +256,16 @@ app.post("/sendload",async (req,res)=>{
 
  let driverid=req.body.driverid;
  let loadnumber=req.body.loadnumber;
- await io.to(element.stream_user_id).emit("assignload","test")
+ console.log("here1");
+ await io.to('vinay').emit("assignload","test")
  try{
     let found=false;
     await getload(loadnumber).then(async (load)=>{
         await driver_user_id.forEach(async (element) => {
-    
+            console.log("here2");
             if(element.driverid==driverid){
                 found=true;
+                console.log("here3");
                 console.log(element.stream_user_id);
             await io.to(element.stream_user_id).emit("assignload",load)
             return res.send("load sended to assign driver")
