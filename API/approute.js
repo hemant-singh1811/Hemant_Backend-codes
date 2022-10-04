@@ -70,6 +70,19 @@ let arr = [
         channel_type:'messaging',
         chatinit:'true'
         }
+    },
+    {
+        DuserId: '432413',
+        Dpassword: '767654',
+        data:{
+        stream_user_id: 'Abhay',
+        name:'Abhay',
+        stream_user_token:
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiQWJoYXkifQ.3ZsREynI8_nXaf4qjqB2pcG8_jBrHqCqjbsHRnbnPTQ',
+            channel_id:'Sample2',
+        channel_type:'messaging',
+        chatinit:'true'
+        }
     }
 ]
 
