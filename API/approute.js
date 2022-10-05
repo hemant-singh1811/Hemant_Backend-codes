@@ -79,8 +79,8 @@ let arr = [
         name:'Abhay',
         stream_user_token:
             'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiQWJoYXkifQ.3ZsREynI8_nXaf4qjqB2pcG8_jBrHqCqjbsHRnbnPTQ',
-            channel_id:'',
-        channel_type:'',
+            channel_id:'Sample2',
+        channel_type:'messaging',
         chatinit:'true'
         }
     }
