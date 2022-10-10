@@ -6,11 +6,10 @@ let arr = [
         DuserId: '98765',
         Dpassword: '12345',
         data:{
-        stream_user_id: 'vinay',
-        name:'vinay',
-        stream_user_token:
-            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidmluYXkifQ.hFlU_0C9GEGI8p5YED363oYHtxg1q2SfsOpO8z71FQY',
-        channel_id:'Load3123',
+        stream_user_id: 'Vinay',
+        name:'Vinay',
+        stream_user_token:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiVmluYXkifQ.M3HOWUKZz0BQxuPzTOI_qC0uBnkndwIyU4i-G3eZs5E',
+        channel_id:'Load1097121',
         channel_type:'messaging',
         chatinit:'true'
         }
@@ -20,43 +19,27 @@ let arr = [
         DuserId: '12345',
         Dpassword: '98765',
         data:{
-        stream_user_id: 'rishabh',
-        name:'rishabh',
-        stream_user_token:
-         'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoicmlzaGFiaCJ9.PxqrMz6BviQFy-ATkxq-IGVYZVa6pkcnruoj0IxdfkU'
-        ,
-        channel_id:'',
-        channel_type:'',
-        chatinit:'false'
+        stream_user_id: 'Rishabh',
+        name:'Rishabh',
+        stream_user_token:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiUmlzaGFiaCJ9.qoMEHcAVso3QO7jCuXRRWReuay_qHJae_QUsQ_ktY3g',
+          channel_id:'Load9798144',
+        channel_type:'messaging',
+        chatinit:'true'
         }
     },
     {
         DuserId: '56789',
         Dpassword: '54321',
         data:{
-        stream_user_id: 'hemant',
-        name:'hemant',
+        stream_user_id: 'Gurbani',
+        name:'Gurbani',
         stream_user_token:
-            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiaGVtYW50In0.jRr6eK6u2--pwvEUEzdTjmrZhsFJBqWXfws914TTBNw',
-             channel_id:'Sample',
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiR3VyYmFuaSJ9.7sYMG23JQ7BopTZY7IssA2PV_1lrIjVNnPs8RCuyASQ',
+            channel_id:'Load7110144',
         channel_type:'messaging',
         chatinit:'true'
         }
    
-    },
-    {
-        
-        DuserId: '12121',
-        Dpassword: '54566',
-        data:{
-        stream_user_id: 'gurbani',
-        name:'gurbani',
-        stream_user_token:
-            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZ3VyYmFuaSJ9.9NglJFAapynWDuQCOWMrZrEfWA7N5CQ7E_Z2VWIGgB4',
-            channel_id:'Sample',
-        channel_type:'messaging',
-        chatinit:'true'
-        }
     },
     {
         DuserId: '908987',
@@ -65,25 +48,13 @@ let arr = [
         stream_user_id: 'Manish',
         name:'Manish',
         stream_user_token:
-            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiTWFuaXNoIn0.frtlSB6GZOl_Iyt87i1kVC7seGcAAnBCWzqq_PVL6hE',
-            channel_id:'Sample2',
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiTWFuaXNoIn0.bzkXpCdV7VBWAaHG7ZiLdiOYjw0APsykQmWwYFmLtgI',
+            channel_id:'Load5115104',
         channel_type:'messaging',
         chatinit:'true'
         }
     },
-    {
-        DuserId: '432413',
-        Dpassword: '76765',
-        data:{
-        stream_user_id: 'Abhay',
-        name:'Abhay',
-        stream_user_token:
-            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiQWJoYXkifQ.3ZsREynI8_nXaf4qjqB2pcG8_jBrHqCqjbsHRnbnPTQ',
-            channel_id:'Sample2',
-        channel_type:'messaging',
-        chatinit:'true'
-        }
-    }
+    
 ]
 
 router.post("/driverLog",async (req,res)=>{
