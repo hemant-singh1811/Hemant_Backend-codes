@@ -217,9 +217,19 @@ io.on("connection", async (socket) => {
        id:socket.id
     })
 
+    socket.on("msg",(data)=>{
+        console.log(data);
+    })
+
+
     socket.on("joinroom",(data)=>{
+        console.log(data);
         try{
+            if(data.stream_user_id!=undefined){
             socket.join(data.stream_user_id);
+            }else{
+                socket.join(data);
+            }
             socket.emit("channel joined","joined")
             console.log(data.stream_user_id,' join in channel');
         }catch{
@@ -237,6 +247,7 @@ io.on("connection", async (socket) => {
 
 })
 
+
 let driver_user_id=[
     {
         driverid:'vinay',
@@ -249,6 +260,11 @@ let driver_user_id=[
     {
         driverid:'sumit',
         stream_user_id:'sumit'
+    },
+    
+    {
+        driverid:'AlphaLionLogistics',
+        stream_user_id:'AlphaLionLogistics'
     }
 ]
 
