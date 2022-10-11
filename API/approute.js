@@ -1,14 +1,17 @@
 let express=require("express")
 let router =express.Router();
 
+
+
+
 let arr = [
     {
         DuserId: '98765',
         Dpassword: '12345',
         data:{
-        stream_user_id: 'Vinay',
-        name:'Vinay',
-        stream_user_token:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiVmluYXkifQ.M3HOWUKZz0BQxuPzTOI_qC0uBnkndwIyU4i-G3eZs5E',
+        stream_user_id: 'Raghav',
+        name:'Raghav',
+        stream_user_token:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiR3VycHJlZXQifQ.7CzZDv0SDrdAoVBrb7G_0S7qbGpZMBPoE31kxDOakyo',
         channel_id:'Load1097121',
         channel_type:'messaging',
         chatinit:'true'
@@ -19,9 +22,9 @@ let arr = [
         DuserId: '12345',
         Dpassword: '98765',
         data:{
-        stream_user_id: 'Rishabh',
-        name:'Rishabh',
-        stream_user_token:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiUmlzaGFiaCJ9.qoMEHcAVso3QO7jCuXRRWReuay_qHJae_QUsQ_ktY3g',
+        stream_user_id: 'Aman',
+        name:'Aman',
+        stream_user_token:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiR3VycHJlZXQifQ.7CzZDv0SDrdAoVBrb7G_0S7qbGpZMBPoE31kxDOakyo',
           channel_id:'Load9798144',
         channel_type:'messaging',
         chatinit:'true'
@@ -31,10 +34,10 @@ let arr = [
         DuserId: '56789',
         Dpassword: '54321',
         data:{
-        stream_user_id: 'Gurbani',
-        name:'Gurbani',
+        stream_user_id: 'Mahesh',
+        name:'Mahesh',
         stream_user_token:
-            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiR3VyYmFuaSJ9.7sYMG23JQ7BopTZY7IssA2PV_1lrIjVNnPs8RCuyASQ',
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiR3VycHJlZXQifQ.7CzZDv0SDrdAoVBrb7G_0S7qbGpZMBPoE31kxDOakyo',
             channel_id:'Load7110144',
         channel_type:'messaging',
         chatinit:'true'
@@ -128,5 +131,6 @@ router.post("/getassignchannel",async (req,res)=>{
         return;
     }
 })
+
 
 module.exports=router;
