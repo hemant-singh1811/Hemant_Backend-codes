@@ -2,8 +2,6 @@ let express=require("express")
 let router =express.Router();
 
 
-
-
 let arr = [
     {
         DuserId: '98765',
@@ -11,7 +9,7 @@ let arr = [
         data:{
         stream_user_id: 'Raghav',
         name:'Raghav',
-        stream_user_token:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiR3VycHJlZXQifQ.7CzZDv0SDrdAoVBrb7G_0S7qbGpZMBPoE31kxDOakyo',
+        stream_user_token:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiUmFnaGF2In0.04qxeIH08cAaKZLNZWP3tVHCXFISjwRheHIa90Y5QQY',
         channel_id:'Load1097121',
         channel_type:'messaging',
         chatinit:'true'
@@ -24,7 +22,7 @@ let arr = [
         data:{
         stream_user_id: 'Aman',
         name:'Aman',
-        stream_user_token:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiR3VycHJlZXQifQ.7CzZDv0SDrdAoVBrb7G_0S7qbGpZMBPoE31kxDOakyo',
+        stream_user_token:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiQW1hbiJ9.qZnvnAVQNWRCoSn4N2KcsihgpRuETTSHT1P7VfSE-Gg',
           channel_id:'Load9798144',
         channel_type:'messaging',
         chatinit:'true'
@@ -37,7 +35,7 @@ let arr = [
         stream_user_id: 'Mahesh',
         name:'Mahesh',
         stream_user_token:
-            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiR3VycHJlZXQifQ.7CzZDv0SDrdAoVBrb7G_0S7qbGpZMBPoE31kxDOakyo',
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiTWFoZXNoIn0._zDNmVrWgjiWYAlgPdB28hFnSKBc67mFH-c84NGNMMw',
             channel_id:'Load7110144',
         channel_type:'messaging',
         chatinit:'true'
