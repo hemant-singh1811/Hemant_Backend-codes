@@ -302,7 +302,7 @@ app.post("/sendload",async (req,res)=>{
 }) 
 
 
-app.get("getfile",async(req,res)=>{
+app.get("/getfile",async(req,res)=>{
 
     let data=req.body;
 
