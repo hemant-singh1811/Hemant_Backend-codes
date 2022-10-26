@@ -12,6 +12,9 @@ const approutes=require('./API/approute');
 const sendload=require('./API/sendload');
 const {getTime}=require("./helpers/serverhelper")
 const {getload} = require('./DB/load')
+const {storage}=require("./DB/file")
+const {ref,uploadBytes,listAll,getDownloadURL} =require("firebase/storage")
+
 // console.log(process.env.STREAM_API_KEY);
 
 
@@ -304,9 +307,16 @@ app.post("/sendload",async (req,res)=>{
 
 app.get("/getfile",async(req,res)=>{
 
-    let data=req.body;
+    let data=req.query;
 
-    console.log(data);
+    console.log("query : ",data);
+
+    const imageref=ref(storage,'images/'+'pdf.name')
+
+    // uploadBytes(imageref,data.file).then((data)=>{
+    //   setalert("img uploaded");
+    // }) 
+    console.log("clicked");
 
     res.send("data received")
 
