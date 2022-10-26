@@ -192,7 +192,6 @@ app.post("/postreq", (req, res) => {
     }
 })
 
-
 function getname(self) {
 
     let value = [];
@@ -243,7 +242,11 @@ io.on("connection", async (socket) => {
 
     socket.on("reconnect", () => {
         console.log('reconnect : ',socket.id);
-      });
+    });
+
+      socket.on("gotload",(data)=>{
+        console.log("Received");
+    })
 
 })
 
@@ -297,6 +300,17 @@ app.post("/sendload",async (req,res)=>{
    return;
  }
 }) 
+
+
+app.get("getfile",async(req,res)=>{
+
+    let data=req.body;
+
+    console.log(data);
+
+    res.send("data received")
+
+})
 
 
 server.listen(Port, () => {
