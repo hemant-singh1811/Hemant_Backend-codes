@@ -1,19 +1,66 @@
 const express = require("express")
-require("dotenv").config()
+require("dotenv").config() 
 const app = express();
 const http = require("http");
 const server = http.createServer(app);
 const socket = require('socket.io')
 const io = socket(server, { cors: { origin: "*" } });
 var bodyParser = require('body-parser');
-const fs = require('fs');  
-const webroutes=require('./API/webroute');
-const approutes=require('./API/approute');
-const sendload=require('./API/sendload');
-const {getTime}=require("./helpers/serverhelper")
-const {getload} = require('./DB/load')
-const {storage}=require("./DB/file")
-const {ref,uploadBytes,listAll,getDownloadURL} =require("firebase/storage")
+const fs = require('fs');
+const webroutes = require('./API/webroute');
+const approutes = require('./API/approute');
+const sendload = require('./API/sendload');
+const { getTime } = require("./helpers/serverhelper")
+const { getload } = require('./DB/load')
+// const { storage } = require("./DB/file")
+const { doc1 ,db} = require("./DB/realtime")
+const SCHIO = io.of("/SCH");
+
+SCHIO.on("connection", (socket) => {
+    console.log("sch new connect : ",socket.id);
+    socket.on("joinclient",(Data)=>{
+        //check it exits or not 
+        let found=false;
+        if(Data.id=='hemant')
+        found=true;
+        console.log("found : ",found);
+        if(found)
+        {
+            socket.join("Schedule");
+            socket.emit("joined",{data:true,id:"someid"});
+
+        }
+    })
+
+    socket.on("getdata",async (data)=>{
+       let id=data.id;
+       //if id exits
+      let data1=await GetData();
+       socket.emit("setdata",data1);
+    })
+
+  });
+
+async function GetData(){
+    console.log("1");
+    // const citiesRef = db.collection('LoadEntries');
+
+    // const snapshot = await citiesRef.get();
+    let data1=[];
+    //  await snapshot.forEach(doc => {
+// console.log("doc : ",doc.id);
+    //    data1.push({
+        // id:doc.id,
+        // data:doc.data()
+    //    }) 
+    //   console.log('load_number : ',doc.data().load_number);
+    // }); 
+    return data1;
+ } 
+
+// let {ref,uploadBytes,listAll,getDownloadURL} =require("firebase/storage")
+
+// let {getFirestore,collection,onSnapshot}=require('firebase/firestore')
 
 // console.log(process.env.STREAM_API_KEY);
 
@@ -26,6 +73,8 @@ const {ref,uploadBytes,listAll,getDownloadURL} =require("firebase/storage")
 const cors = require('cors');
 const { rmSync } = require("fs");
 const { database } = require("firebase-admin");
+const { async } = require("@firebase/util");
+const { log } = require("console");
 // const { json } = require("express");
 
 let idname = new Map();
@@ -58,11 +107,29 @@ app.use(bodyParser.json('application/json'));
 //     console.log(err);
 //   })
 
-app.use("/API/V1/",webroutes);
+app.post("/getdata",async (req,res)=>{
 
-app.use("/API/V2/",approutes);
+    let data=[];
+    const citiesRef = db.collection('LoadEntries');
 
-app.use("API/V2/",approutes)
+    const snapshot = await citiesRef.get();
+    let data1=[];
+     await snapshot.forEach(doc => {
+        console.log("doc : ",doc.id);
+       data1.push({
+        id:doc.id,
+        data:doc.data()
+       }) 
+      console.log('load_number : ',doc.data().load_number);
+    }); 
+    return data1;
+})
+
+app.use("/API/V1/", webroutes);
+
+app.use("/API/V2/", approutes);
+
+app.use("API/V2/", approutes)
 
 app.get("/", (req, res) => {
     res.send("i can hear you")
@@ -213,105 +280,103 @@ function getname(self) {
 }
 
 io.on("connection", async (socket) => {
-    console.log("socket id : ",socket.id);
+    console.log("socket id : ", socket.id);
 
     socket.emit("newconnect", {
-       id:socket.id
+        id: socket.id
     })
 
-    socket.on("msg",(data)=>{
+    socket.on("msg", (data) => {
         console.log(data);
     })
 
 
-    socket.on("joinroom",(data)=>{
+    socket.on("joinroom", (data) => {
         console.log(data);
-        try{
-            if(data.stream_user_id!=undefined){
-            socket.join(data.stream_user_id);
-            }else{
+        try {
+            if (data.stream_user_id != undefined) {
+                socket.join(data.stream_user_id);
+            } else {
                 socket.join(data);
             }
-            socket.emit("channel joined","joined")
-            console.log(data.stream_user_id,' join in channel');
-        }catch{
-            
+            socket.emit("channel joined", "joined")
+            console.log(data.stream_user_id, ' join in channel');
+        } catch {
+
         }
     });
 
-    socket.on("disconnect", async() =>{
-        console.log('disconnected : ',socket.id);
+    socket.on("disconnect", async () => {
+        console.log('disconnected : ', socket.id);
     })
 
     socket.on("reconnect", () => {
-        console.log('reconnect : ',socket.id);
+        console.log('reconnect : ', socket.id);
     });
 
-      socket.on("gotload",(data)=>{
+    socket.on("gotload", (data) => {
         console.log("Received");
     })
 
 })
 
+let driver_user_id = [
+    {
+        driverid: 'vinay',
+        stream_user_id: 'vinay'
+    },
+    {
+        driverid: 'rishabh',
+        stream_user_id: 'rishabh'
+    },
+    {
+        driverid: 'sumit',
+        stream_user_id: 'sumit'
+    },
 
-let driver_user_id=[
     {
-        driverid:'vinay',
-        stream_user_id:'vinay'
-    },
-    {
-        driverid:'rishabh',
-        stream_user_id:'rishabh'
-    },
-    {
-        driverid:'sumit',
-        stream_user_id:'sumit'
-    },
-    
-    {
-        driverid:'AlphaLionLogistics',
-        stream_user_id:'AlphaLionLogistics'
+        driverid: 'AlphaLionLogistics',
+        stream_user_id: 'AlphaLionLogistics'
     }
 ]
 
-app.post("/sendload",async (req,res)=>{
+app.post("/sendload", async (req, res) => {
 
- let driverid=req.body.driverid;
- let loadnumber=req.body.loadnumber; 
- try{
-    let found=false;
-    await getload(loadnumber).then(async (load)=>{
-        await driver_user_id.forEach(async (element) => { 
-            if(element.driverid==driverid){
-                found=true; 
-                console.log('load assign to : ',element.stream_user_id);
-            await io.to(element.stream_user_id).emit("assignload",load)
-            return res.send("load sended to assign driver")
-            }
-        
-         });
-    }).catch((err)=>{
-  return  res.status(404).send("load number not found");
-    return;
-    })
-    if(!found)
-    {
-      return  res.status(404).send("driver id not found");
+    let driverid = req.body.driverid;
+    let loadnumber = req.body.loadnumber;
+    try {
+        let found = false;
+        await getload(loadnumber).then(async (load) => {
+            await driver_user_id.forEach(async (element) => {
+                if (element.driverid == driverid) {
+                    found = true;
+                    console.log('load assign to : ', element.stream_user_id);
+                    await io.to(element.stream_user_id).emit("assignload", load)
+                    return res.send("load sended to assign driver")
+                }
+
+            });
+        }).catch((err) => {
+            return res.status(404).send("load number not found");
+            return;
+        })
+        if (!found) {
+            return res.status(404).send("driver id not found");
+        }
+    } catch {
+        res.status(403).send("try again");
+        return;
     }
- }catch{
-   res.status(403).send("try again");
-   return;
- }
-}) 
+})
 
 
-app.get("/getfile",async(req,res)=>{
+app.get("/getfile", async (req, res) => {
 
-    let data=req.query;
+    let data = req.query;
 
-    console.log("query : ",data);
+    console.log("query : ", data);
 
-    const imageref=ref(storage,'images/'+'pdf.name')
+    const imageref = ref(storage, 'images/' + 'pdf.name')
 
     // uploadBytes(imageref,data.file).then((data)=>{
     //   setalert("img uploaded");
@@ -323,8 +388,43 @@ app.get("/getfile",async(req,res)=>{
 })
 
 
+function firebaseData() {
+    const observer = doc1.onSnapshot( async querySnapshot => {
+        let data=[];
+       await querySnapshot.docChanges().forEach(change => {
+            //triggered when new data added
+            if (change.type === 'added') {
+                let arr=change.doc.data();
+                data.push({
+                    id:change.doc.id,
+                    data:Object.keys(arr)
+                })
+                // console.log('New id : ', change.doc.id);
+                // console.log('New city: ', arr,"size : "+Object.keys(arr).length);
+            }
+            //triggered when any data updates
+            if (change.type === 'modified') {
+                console.log('Modified doc. : ', change.doc.id);
+                // console.log('Modified city: ', change.doc.data());
+            }
+            //triggered when any data have been removed
+            if (change.type === 'removed') {
+                console.log('Removed : ', change.doc.id);
+                // console.log('Removed city: ', change.doc.data());
+            }
+        });
+
+        //emit to all socket
+        // SCHIO.to("Schedule").emit("SCHDATA",data);
+        console.log("all commited");
+    }, err => {
+        console.log(`Encountered error: ${err}`);
+    });
+}
+
+firebaseData()
+
 server.listen(Port, () => {
     console.log("server is running", Port);
 
 })
- 

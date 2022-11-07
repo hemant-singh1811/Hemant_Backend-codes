@@ -1,4 +1,4 @@
-const {db,doc} =require("./db")
+const {db,doc} =require("./db1")
 
 async function setLoadConfirmationDoc(data) {
     return new Promise(async function(resolve,reject){
