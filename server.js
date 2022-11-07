@@ -118,13 +118,18 @@ app.post("/getdata",async (req,res)=>{
     let data1=[];
      await snapshot.forEach(doc => {
         // console.log("doc : ",doc.id);
-       data1.push({
-        id:doc.id,
-        data:doc.data()
-       }) 
+        let obj={
+            id:doc.id,
+            data:doc.data()
+           }
+       data1.push(obj) 
     //   console.log('load_number : ',doc.data().load_number);
     }); 
+
+     console.log("data1 :",data1);
+
     res.send(data1);
+    
 })
 
 app.use("/API/V1/", webroutes);
