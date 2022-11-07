@@ -73,7 +73,7 @@ router.post("/driverLog",async (req,res)=>{
                         message: 'user detected',
                         ...element.data
                         }
-                        console.log("logged as : ",element.name);
+                        console.log("logged as : ",element.data.name);
                          loggedin=true; 
                     res.status(200).send(data);
                     return;
