@@ -1,7 +1,7 @@
 //server side realtime data reads
 const {db}=require('./db1')
 
-const doc1 = db.collection('LoadEntries')
+const doc1 = db.collection('LoadEntry')
 
 // const observer = doc1.onSnapshot(querySnapshot => {
 // querySnapshot.docChanges().forEach(change => {
