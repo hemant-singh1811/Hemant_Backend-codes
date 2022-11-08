@@ -2,6 +2,7 @@
 const {db}=require('./db1')
 
 const doc1 = db.collection('LoadEntry')
+const truckdb=db.collection('Trucks');
 
 // const observer = doc1.onSnapshot(querySnapshot => {
 // querySnapshot.docChanges().forEach(change => {
@@ -30,5 +31,6 @@ const doc1 = db.collection('LoadEntry')
 
 module.exports={
   doc1,
+  truckdb,
 db
 }

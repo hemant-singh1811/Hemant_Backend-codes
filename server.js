@@ -13,7 +13,7 @@ const sendload = require('./API/sendload');
 const { getTime } = require("./helpers/serverhelper")
 const { getload } = require('./DB/load')
 // const { storage } = require("./DB/file")
-const { doc1 ,db} = require("./DB/realtime")
+const { doc1 ,db,TruckData} = require("./DB/realtime")
 const SCHIO = io.of("/SCH");
 
 SCHIO.on("connection", (socket) => {
@@ -32,11 +32,11 @@ SCHIO.on("connection", (socket) => {
         }
     })
 
-    socket.on("getdata",async (data)=>{
+    socket.on("getdataloads",async (data)=>{
        let id=data.id;
        //if id exits
       let data1=await GetData();
-       socket.emit("setdata",data1);
+       socket.emit("setdataloads",data1);
     })
 
   });
@@ -107,7 +107,7 @@ app.use(bodyParser.json('application/json'));
 //     console.log(err);
 //   })
 
-app.post("/getdata",async (req,res)=>{
+app.post("/getloadsdata",async (req,res)=>{
 
     // console.log("req comes");
 
@@ -395,7 +395,7 @@ app.get("/getfile", async (req, res) => {
 })
 
 
-function firebaseData() {
+function LOADDATA() {
     const observer = doc1.onSnapshot( async querySnapshot => {
         let data=[];
        await querySnapshot.docChanges().forEach(change => {
@@ -429,7 +429,39 @@ function firebaseData() {
     });
 }
 
-firebaseData()
+LOADDATA()
+
+function TruckData(){
+    const observer = TruckData.onSnapshot( async querySnapshot => {
+        let data=[];
+       await querySnapshot.docChanges().forEach(change => {
+            //triggered when new data added
+            if (change.type === 'added') {
+                let arr=change.doc.data();
+                data.push({
+                    id:change.doc.id,
+                    data:Object.keys(arr)
+                })
+              }
+             if (change.type === 'modified') {
+                console.log('Modified doc. : ', change.doc.id);
+                // console.log('Modified city: ', change.doc.data());
+            }
+            //triggered when any data have been removed
+            if (change.type === 'removed') {
+                console.log('Removed : ', change.doc.id);
+                // console.log('Removed city: ', change.doc.data());
+            }
+        });
+
+        //emit to all socket
+        SCHIO.to("Schedule").emit("SCHTRUCKDATA",data);
+        console.log("all commited");
+    }, err => {
+        console.log(`Encountered error: ${err}`);
+    });
+
+}
 
 server.listen(Port, () => {
     console.log("server is running", Port);
