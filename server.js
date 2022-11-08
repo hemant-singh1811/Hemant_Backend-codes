@@ -13,7 +13,7 @@ const sendload = require('./API/sendload');
 const { getTime } = require("./helpers/serverhelper")
 const { getload } = require('./DB/load')
 // const { storage } = require("./DB/file")
-const { doc1 ,db,TruckData} = require("./DB/realtime")
+const { doc1 ,db,truckdb} = require("./DB/realtime")
 const SCHIO = io.of("/SCH");
 
 SCHIO.on("connection", (socket) => {
@@ -112,6 +112,7 @@ app.post("/getloadsdata",async (req,res)=>{
     // console.log("req comes");
 
     let data=[];
+
     const citiesRef = db.collection('LoadEntry');
 
     const snapshot = await citiesRef.get();
