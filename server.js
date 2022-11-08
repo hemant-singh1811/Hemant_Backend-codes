@@ -109,7 +109,7 @@ app.use(bodyParser.json('application/json'));
 
 app.post("/getdata",async (req,res)=>{
 
-    console.log("req comes");
+    // console.log("req comes");
 
     let data=[];
     const citiesRef = db.collection('LoadEntry');
@@ -126,10 +126,10 @@ app.post("/getdata",async (req,res)=>{
     //   console.log('load_number : ',doc.data().load_number);
     }); 
 
-     console.log("data1 :",data1);
+    //  console.log("data1 :",data1);
 
     res.send(data1);
-    
+
 })
 
 app.use("/API/V1/", webroutes);
@@ -422,7 +422,7 @@ function firebaseData() {
         });
 
         //emit to all socket
-        // SCHIO.to("Schedule").emit("SCHDATA",data);
+        SCHIO.to("Schedule").emit("SCHDATA",data);
         console.log("all commited");
     }, err => {
         console.log(`Encountered error: ${err}`);
