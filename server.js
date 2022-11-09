@@ -28,7 +28,6 @@ SCHIO.on("connection", (socket) => {
         {
             socket.join("Schedule");
             socket.emit("joined",{data:true,id:"someid"});
-
         }
     })
 
@@ -107,14 +106,12 @@ app.use(bodyParser.json('application/json'));
 //     console.log(err);
 //   })
 
-app.post("/getloadsdata",async (req,res)=>{
-
-    // console.log("req comes");
-
+app.post("/getloadsdata",async (req,res)=>{ 
     let data=[];
 
     const citiesRef = db.collection('LoadEntry');
 
+    console.log("getting load data");
     const snapshot = await citiesRef.get();
     let data1=[];
      await snapshot.forEach(doc => {
@@ -123,15 +120,35 @@ app.post("/getloadsdata",async (req,res)=>{
             id:doc.id,
             data:doc.data()
            }
-       data1.push(obj) 
-    //   console.log('load_number : ',doc.data().load_number);
-    }); 
 
-    //  console.log("data1 :",data1);
+       data1.push(obj)  
+    });  
 
-    res.send(data1);
-
+    res.status(200).send(data1);
 })
+
+app.post("/gettrucksdata",async(req,res)=>{
+    let data=[];
+console.log("getting truck data");
+    const citiesRef = db.collection('Trucks');
+
+    const snapshot = await citiesRef.get();
+    let data1=[];
+    let i=1;
+     await snapshot.forEach(doc => {
+        // console.log("doc : ",i," ",doc.id);
+        i++;
+        let obj={
+            id:doc.id,
+            data:doc.data()
+           }
+
+       data1.push(obj)  
+    });  
+
+    res.status(200).send(data1);
+})
+
 
 app.use("/API/V1/", webroutes);
 
@@ -423,8 +440,11 @@ function LOADDATA() {
         });
 
         //emit to all socket
+
         SCHIO.to("Schedule").emit("SCHDATA",data);
+        
         console.log("all commited");
+
     }, err => {
         console.log(`Encountered error: ${err}`);
     });
