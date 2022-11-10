@@ -15,6 +15,7 @@ const { getload } = require('./DB/load')
 // const { storage } = require("./DB/file")
 const { doc1 ,db,truckdb} = require("./DB/realtime")
 const SCHIO = io.of("/SCH");
+const {Comparator,sorted}=require("./helpers/sorting")
 
 SCHIO.on("connection", (socket) => {
     console.log("sch new connect : ",socket.id);
@@ -106,25 +107,48 @@ app.use(bodyParser.json('application/json'));
 //     console.log(err);
 //   })
 
+
+
 app.post("/getloadsdata",async (req,res)=>{ 
     let data=[];
 
     const citiesRef = db.collection('LoadEntry');
+    
+    let dat=new Date();
+
 
     console.log("getting load data");
     const snapshot = await citiesRef.get();
+
     let data1=[];
+
      await snapshot.forEach(doc => {
         // console.log("doc : ",doc.id);
-        let obj={
+        
+        let today=dat.toISOString();
+        // console.log("date : ",today);
+        // console.log("pu : ",doc.data().PU_date);
+        if(doc.data().PU_date>=today)
+        {
+            console.log("true");
+        
+            let obj={
             id:doc.id,
+            PU_date:doc.data().PU_date,
             data:doc.data()
            }
 
-       data1.push(obj)  
-    });  
+           data1.push(obj)  
+        }
 
-    res.status(200).send(data1);
+    });  
+  
+    await sorted(data1).then(async (sorteddata) => {
+        res.status(200).send(sorteddata);
+    }).catch((err)=>{
+        res.status().send({});
+    })
+   
 })
 
 app.post("/gettrucksdata",async(req,res)=>{
@@ -428,7 +452,7 @@ function LOADDATA() {
             // console.log(change.id);
             data.push({
                 id:change.id,
-                data:Object.keys(arr)
+                data:arr
             })
 
             if (change.type === 'added') {
@@ -448,11 +472,15 @@ function LOADDATA() {
             }
         });
 
-        //emit to all socket
-
-        SCHIO.to("Schedule").emit("SCHDATA",data);
-        
         console.log("all commited");
+
+        //emit to all socket
+        await sorted(data).then(async (sorteddata) => {
+            SCHIO.to("Schedule").emit("SCHDATA",sorteddata);
+            // res.status(200).send(sorteddata);
+        }).catch((err)=>{
+            // res.status().send({});
+        })
 
     }, err => {
         console.log(`Encountered error: ${err}`);
