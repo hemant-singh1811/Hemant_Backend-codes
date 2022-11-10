@@ -416,14 +416,21 @@ app.get("/getfile", async (req, res) => {
 function LOADDATA() {
     const observer = doc1.onSnapshot( async querySnapshot => {
         let data=[];
-       await querySnapshot.docChanges().forEach(change => {
+
+        //only for changes
+        // querySnapshot.docChanges.forEach(change => {
+
+        //for all data
+       await querySnapshot.docs.forEach(change => {
             //triggered when new data added
-            let arr=change.doc.data();
+            let arr=change.data();
+            
+            // console.log(change.id);
             data.push({
-                id:change.doc.id,
+                id:change.id,
                 data:Object.keys(arr)
             })
-            
+
             if (change.type === 'added') {
                
                 // console.log('New id : ', change.doc.id);
