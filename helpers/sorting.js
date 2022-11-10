@@ -1,7 +1,14 @@
 function Comparator(a, b) { 
     if(a.data.PU_date == undefined) return -1;
 
-    if(a.data.PU_date>= b.data.PU_date) return 1;
+    if(a.data.PU_date==b.data.PU_date)
+    {
+        if(a.data.PU_time >=b.data.PU_time){
+            return 1;
+        }else return -1;
+    }
+
+    if(a.data.PU_date>b.data.PU_date) return 1;
     else return -1;
 
 }

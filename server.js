@@ -116,7 +116,6 @@ app.post("/getloadsdata",async (req,res)=>{
     
     let dat=new Date();
 
-
     console.log("getting load data");
     const snapshot = await citiesRef.get();
 
@@ -135,6 +134,7 @@ app.post("/getloadsdata",async (req,res)=>{
             let obj={
             id:doc.id,
             PU_date:doc.data().PU_date,
+            PU_time:doc.data().PU_time,
             data:doc.data()
            }
 
@@ -441,6 +441,8 @@ function LOADDATA() {
     const observer = doc1.onSnapshot( async querySnapshot => {
         let data=[];
 
+        let dat=new Date();
+
         //only for changes
         // querySnapshot.docChanges.forEach(change => {
 
@@ -450,10 +452,16 @@ function LOADDATA() {
             let arr=change.data();
             
             // console.log(change.id);
-            data.push({
+            let today=dat.toISOString();
+        // console.log("date : ",today);
+        // console.log("pu : ",doc.data().PU_date);
+              if(arr.PU_date>=today)
+            {
+                data.push({
                 id:change.id,
                 data:arr
-            })
+                })
+             }
 
             if (change.type === 'added') {
                
