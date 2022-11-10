@@ -418,12 +418,14 @@ function LOADDATA() {
         let data=[];
        await querySnapshot.docChanges().forEach(change => {
             //triggered when new data added
+            let arr=change.doc.data();
+            data.push({
+                id:change.doc.id,
+                data:Object.keys(arr)
+            })
+            
             if (change.type === 'added') {
-                let arr=change.doc.data();
-                data.push({
-                    id:change.doc.id,
-                    data:Object.keys(arr)
-                })
+               
                 // console.log('New id : ', change.doc.id);
                 // console.log('New city: ', arr,"size : "+Object.keys(arr).length);
             }
