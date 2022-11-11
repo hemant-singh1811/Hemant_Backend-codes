@@ -75,6 +75,7 @@ const { rmSync } = require("fs");
 const { database } = require("firebase-admin");
 const { async } = require("@firebase/util");
 const { log } = require("console");
+const { application } = require("express");
 // const { json } = require("express");
 
 let idname = new Map();
@@ -107,11 +108,8 @@ app.use(bodyParser.json('application/json'));
 //     console.log(err);
 //   })
 
-
-
-app.post("/getloadsdata",async (req,res)=>{ 
-    let data=[];
-
+async function loaddata(){
+    
     const citiesRef = db.collection('LoadEntry');
     
     let dat=new Date();
@@ -129,8 +127,6 @@ app.post("/getloadsdata",async (req,res)=>{
         // console.log("pu : ",doc.data().PU_date);
         if(doc.data().PU_date>=today)
         {
-            console.log("true");
-        
             let obj={
             id:doc.id,
             PU_date:doc.data().PU_date,
@@ -142,35 +138,58 @@ app.post("/getloadsdata",async (req,res)=>{
         }
 
     });  
+
+    let data=[];
   
-    await sorted(data1).then(async (sorteddata) => {
-        res.status(200).send(sorteddata);
-    }).catch((err)=>{
-        res.status().send({});
+    await sorted(data1).then(async (sorteddata) => { 
+        data=sorteddata; 
+    }).catch((err)=>{ 
+        data=[];
     })
-   
+
+    return data;
+}
+
+app.post("/getloadsdata",async (req,res)=>{ 
+    let data=await loaddata();
+    res.send(data);   
 })
 
-app.post("/gettrucksdata",async(req,res)=>{
-    let data=[];
+async function truckdata(){
+    
     console.log("getting truck data");
     const citiesRef = db.collection('Trucks');
 
     const snapshot = await citiesRef.get();
-    let data1=[];
-    let i=1;
+    let data1=[]; 
      await snapshot.forEach(doc => {
-        // console.log("doc : ",i," ",doc.id);
-        i++;
         let obj={
             id:doc.id,
             data:doc.data()
            }
 
        data1.push(obj)  
-    });  
+    });   
+    return data1;
+}
 
-    res.status(200).send(data1);
+app.post("/gettrucksdata",async (req,res)=>{
+    let data=await truckdata();
+    res.status(200).send(data);
+})
+
+
+app.post("/getSCHdata",async(req,res)=>{
+
+    let trucks=await truckdata();
+    let loads=await loaddata();
+    
+    let resdata={
+        loads:loads,
+        trucks:trucks
+    }
+
+    res.status(200).send(resdata);
 })
 
 app.use("/API/V1/", webroutes);
