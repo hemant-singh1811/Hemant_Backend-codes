@@ -169,7 +169,7 @@ async function truckdata(){
             data:doc.data()
            }
 
-       data1.push(obj)  
+           data1.push(obj)  
         }
 
     });   
