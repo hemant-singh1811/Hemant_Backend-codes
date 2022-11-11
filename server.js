@@ -162,13 +162,16 @@ async function truckdata(){
 
     const snapshot = await citiesRef.get();
     let data1=[]; 
-     await snapshot.forEach(doc => {
+     await snapshot.forEach(doc => { 
+        if(doc.data().Status=="Active"){ 
         let obj={
             id:doc.id,
             data:doc.data()
            }
 
        data1.push(obj)  
+        }
+
     });   
     return data1;
 }
@@ -183,7 +186,7 @@ app.post("/getSCHdata",async(req,res)=>{
 
     let trucks=await truckdata();
     let loads=await loaddata();
-    
+
     let resdata={
         loads:loads,
         trucks:trucks
