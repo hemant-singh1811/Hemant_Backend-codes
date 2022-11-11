@@ -153,7 +153,7 @@ app.post("/getloadsdata",async (req,res)=>{
 
 app.post("/gettrucksdata",async(req,res)=>{
     let data=[];
-console.log("getting truck data");
+    console.log("getting truck data");
     const citiesRef = db.collection('Trucks');
 
     const snapshot = await citiesRef.get();
@@ -172,7 +172,6 @@ console.log("getting truck data");
 
     res.status(200).send(data1);
 })
-
 
 app.use("/API/V1/", webroutes);
 
@@ -457,10 +456,11 @@ function LOADDATA() {
         // console.log("pu : ",doc.data().PU_date);
               if(arr.PU_date>=today)
             {
-                data.push({
-                id:change.id,
-                data:arr
-                })
+                let obj={
+                    id:change.id,
+                    data:arr
+                }
+                data.push(obj)
              }
 
             if (change.type === 'added') {
@@ -528,6 +528,8 @@ function TruckData(){
     });
 
 }
+
+
 
 server.listen(Port, () => {
     console.log("server is running", Port);
