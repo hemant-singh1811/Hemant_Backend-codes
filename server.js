@@ -189,7 +189,7 @@ app.post("/ackload",async(req,res)=>{
 
     console.log("req ",req.body);
 
-    res.send("sucess");
+    res.send({response: "sucess"});
 
 })
 
