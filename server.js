@@ -19,6 +19,7 @@ const {Comparator,sorted}=require("./helpers/sorting")
 
 SCHIO.on("connection", (socket) => {
     console.log("sch new connect : ",socket.id);
+
     socket.on("joinclient",(Data)=>{
         //check it exits or not 
         let found=false;
@@ -415,9 +416,10 @@ let driver_user_id = [
 app.post("/sendload", async (req, res) => {
 
     let driverid = req.body.driverid;
-    let loadnumber = req.body.loadnumber;
+    let loadnumber = req.body.loadnumber; 
+
     try {
-        let found = false;
+        let found = false; 
         await getload(loadnumber).then(async (load) => {
             await driver_user_id.forEach(async (element) => {
                 if (element.driverid == driverid) {
@@ -429,8 +431,7 @@ app.post("/sendload", async (req, res) => {
 
             });
         }).catch((err) => {
-            return res.status(404).send("load number not found");
-            return;
+            return res.status(404).send("load number not found"); 
         })
         if (!found) {
             return res.status(404).send("driver id not found");

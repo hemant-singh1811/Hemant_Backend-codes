@@ -72,15 +72,15 @@ async function read(){
 
 
 async function getload(load_number){
+    console.log("load : ",load_number);
     return new Promise(async function(resolve,reject){
-        const citiesRef =await db.collection('Load Confirmations');
+        const citiesRef =await db.collection('LoadEntry');
     
         const snapshot = await citiesRef.get();
         
          await snapshot.forEach(doc => { 
-          let LoadNumber=doc.data().load_number; 
-          if(LoadNumber==load_number){
-            //   console.log(doc.data());
+          let LoadNumber=doc.data().load_number;  
+          if(LoadNumber==load_number){ 
               resolve(doc.data()); 
           }
 

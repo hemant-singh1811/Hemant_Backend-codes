@@ -11,7 +11,6 @@ const { getFirestore,collection,getDoc,doc,query,where } =require('firebase/fire
  
 const db=admin.firestore();
 
-
 module.exports={
   db,
   doc
