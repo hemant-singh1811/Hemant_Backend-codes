@@ -395,6 +395,62 @@ io.on("connection", async (socket) => {
 
 let driver_user_id = [
     {
+        DuserId: '98765',
+        Dpassword: '12345',
+        data:{
+        stream_user_id: 'Raghav',
+        name:'Raghav',
+        stream_user_token:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiUmFnaGF2In0.04qxeIH08cAaKZLNZWP3tVHCXFISjwRheHIa90Y5QQY',
+        channel_id:'Load1097121',
+        channel_type:'messaging',
+        chatinit:'true'
+        }
+   
+    },
+    {
+        DuserId: '12345',
+        Dpassword: '98765',
+        data:{
+        stream_user_id: 'Aman',
+        name:'Aman',
+        stream_user_token:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiQW1hbiJ9.qZnvnAVQNWRCoSn4N2KcsihgpRuETTSHT1P7VfSE-Gg',
+          channel_id:'Load9798144',
+        channel_type:'messaging',
+        chatinit:'true'
+        }
+    },
+    {
+        DuserId: '56789',
+        Dpassword: '54321',
+        data:{
+        stream_user_id: 'Mahesh',
+        name:'Mahesh',
+        stream_user_token:
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiTWFoZXNoIn0._zDNmVrWgjiWYAlgPdB28hFnSKBc67mFH-c84NGNMMw',
+            channel_id:'Load7110144',
+        channel_type:'messaging',
+        chatinit:'true'
+        }
+   
+    },
+    {
+        DuserId: '908987',
+        Dpassword: '765788',
+        data:{
+        stream_user_id: 'Manish',
+        name:'Manish',
+        stream_user_token:
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiTWFuaXNoIn0.bzkXpCdV7VBWAaHG7ZiLdiOYjw0APsykQmWwYFmLtgI',
+            channel_id:'Load5115104',
+        channel_type:'messaging',
+        chatinit:'true'
+        }
+    },
+    
+]
+
+let driver_user_id1 = [
+    {
         driverid: 'vinay',
         stream_user_id: 'vinay'
     },
@@ -422,10 +478,10 @@ app.post("/sendload", async (req, res) => {
         let found = false; 
         await getload(loadnumber).then(async (load) => {
             await driver_user_id.forEach(async (element) => {
-                if (element.driverid == driverid) {
+                if (element.data.stream_user_id == driverid) {
                     found = true;
-                    console.log('load assign to : ', element.stream_user_id);
-                    await io.to(element.stream_user_id).emit("assignload", load)
+                    console.log('load assign to : ', element.data.stream_user_token);
+                    await io.to(element.data.stream_user_token).emit("assignload", load)
                     return res.send("load sended to assign driver")
                 }
 
