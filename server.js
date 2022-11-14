@@ -15,7 +15,7 @@ const { getload } = require('./DB/load')
 // const { storage } = require("./DB/file")
 const { doc1 ,db,truckdb} = require("./DB/realtime")
 const SCHIO = io.of("/SCH");
-const {Comparator,sorted}=require("./helpers/sorting")
+const {Comparator,sorted,trucksort}=require("./helpers/sorting")
 
 SCHIO.on("connection", (socket) => {
     console.log("sch new connect : ",socket.id);
@@ -151,6 +151,7 @@ async function loaddata(){
     return data;
 }
 
+
 app.post("/getloadsdata",async (req,res)=>{ 
     let data=await loaddata();
     res.send(data);   
@@ -165,7 +166,7 @@ async function truckdata(){
     let data1=[]; 
      await snapshot.forEach(doc => { 
         // if(doc.data().Status=="Active"){ 
-            console.log("doc :",doc);
+            // console.log("doc :",doc);
         let obj={
             id:doc.id,
             data:doc.data()
@@ -175,7 +176,18 @@ async function truckdata(){
         // }
 
     });   
+
+    await trucksort(data1).then(async (sorteddata)=>{
+        // console.log("retijr");
+        // console.log("data : ",sorteddata);
+        data1=sorteddata;
+        // return sorteddata;
+    }).catch((err)=>{
+        data1=[];
+    })
+
     return data1;
+
 }
 
 app.post("/gettrucksdata",async (req,res)=>{
@@ -196,7 +208,10 @@ app.post("/ackload",async(req,res)=>{
 app.post("/getSCHdata",async(req,res)=>{
 
     let trucks=await truckdata();
+
     let loads=await loaddata();
+
+    // console.log("trucks  :",trucks);
 
     let resdata={
         loads:loads,
