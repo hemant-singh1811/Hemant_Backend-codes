@@ -183,6 +183,15 @@ app.post("/gettrucksdata",async (req,res)=>{
     res.status(200).send(data);
 })
 
+app.post("/ackload",async(req,res)=>{
+
+    let {load_no,driver_token,accept}=req.body;
+
+    console.log("req ",req.body);
+
+    res.send("sucess");
+
+})
 
 app.post("/getSCHdata",async(req,res)=>{
 
