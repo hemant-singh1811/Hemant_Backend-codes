@@ -189,7 +189,7 @@ app.post("/getSCHdata",async(req,res)=>{
 
     let resdata={
         loads:loads,
-        trucks:truckswh
+        trucks:trucks
     }
 
     console.log("getting truck data");
