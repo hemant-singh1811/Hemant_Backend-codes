@@ -159,19 +159,20 @@ app.post("/getloadsdata",async (req,res)=>{
 async function truckdata(){
     
     console.log("getting truck data");
-    const citiesRef = db.collection('Trucks');
+    const citiesRef = db.collection('MasterTrucks');
 
     const snapshot = await citiesRef.get();
     let data1=[]; 
      await snapshot.forEach(doc => { 
-        if(doc.data().Status=="Active"){ 
+        // if(doc.data().Status=="Active"){ 
+            console.log("doc :",doc);
         let obj={
             id:doc.id,
             data:doc.data()
            }
 
            data1.push(obj)  
-        }
+        // }
 
     });   
     return data1;
