@@ -482,7 +482,7 @@ app.post("/sendload", async (req, res) => {
                     found = true;
                     console.log('load assign to : ', element.data.stream_user_token);
                     await io.to(element.data.stream_user_token).emit("assignload", load)
-                    console.log("load data : ",load);
+                    // console.log("load data : ",load);
                     return res.send("load sended to assign driver")
                 }
 
