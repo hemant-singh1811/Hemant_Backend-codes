@@ -11,7 +11,7 @@ async function setLoadConfirmationDoc(data) {
             }
            console.log(loadnumber);
 
-           let path='Load Confirmations/load'+loadnumber;
+           let path='LoadEntry/'+loadnumber;
 
             await db.doc(path).set(data).then(res => {
                 resolve("Document adeed succesfuly");

@@ -6,6 +6,8 @@ const { setLoadConfirmationDoc ,getload} = require('./../DB/load')
 
 router.post("/load",async (req,res)=>{
 
+    console.log("new load comes");
+
     let load = req.body;
 
     try {
