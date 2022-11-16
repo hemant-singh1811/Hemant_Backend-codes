@@ -544,6 +544,7 @@ app.get("/getfile", async (req, res) => {
 
 
 function LOADDATA() {
+    try{
     const observer = doc1.onSnapshot( async querySnapshot => {
         let data=[];
 
@@ -600,11 +601,16 @@ function LOADDATA() {
     }, err => {
         console.log(`Encountered error: ${err}`);
     });
+    }catch(e){
+
+    }
 }
+
 
 LOADDATA()
 
 function TruckData(){
+    try{
     const observer = TruckData.onSnapshot( async querySnapshot => {
         let data=[];
        await querySnapshot.docChanges().forEach(change => {
@@ -633,6 +639,9 @@ function TruckData(){
     }, err => {
         console.log(`Encountered error: ${err}`);
     });
+    }catch(e){
+        
+    }
 
 }
 
