@@ -184,6 +184,8 @@ async function truckdata(){
             data:doc.data()
            }
 
+           console.log("doc : ",doc);
+
            data1.push(obj)  
         // }
 
@@ -221,6 +223,7 @@ app.post("/getSCHdata",async(req,res)=>{
 
     let trucks=await truckdata();
 
+
     let loads=await loaddata();
 
     // console.log("trucks  :",trucks);
@@ -230,7 +233,7 @@ app.post("/getSCHdata",async(req,res)=>{
         trucks:trucks
     }
 
-    console.log("getting truck data");
+    console.log("getting sch data");
 
     res.status(200).send(resdata);
 })
