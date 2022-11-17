@@ -16,6 +16,10 @@ const { getload } = require('./DB/load')
 const { doc1 ,db,truckdb} = require("./DB/realtime")
 const SCHIO = io.of("/SCH");
 const {Comparator,sorted,trucksort}=require("./helpers/sorting")
+const load =require("./load_ddlj.json")
+const truck=require("./ddlj.json")
+
+
 
 SCHIO.on("connection", (socket) => {
     console.log("sch new connect : ",socket.id);
@@ -110,7 +114,11 @@ app.use(bodyParser.json('application/json'));
 //   })
 
 async function loaddata(){
+
+    // let data1=load;
     
+    // console.log("load : ",load);
+
     const citiesRef = db.collection('LoadEntry');
     
     let dat=new Date();
@@ -140,7 +148,7 @@ async function loaddata(){
 
     });  
 
-    let data=[];
+    // let data=[];
   
     await sorted(data1).then(async (sorteddata) => { 
         data=sorteddata; 
@@ -158,7 +166,11 @@ app.post("/getloadsdata",async (req,res)=>{
 })
 
 async function truckdata(){
-    
+
+    // let data1=truck;
+
+    // console.log("truck : ",truck);
+
     console.log("getting truck data");
     const citiesRef = db.collection('MasterTrucks');
 
@@ -640,7 +652,7 @@ function TruckData(){
         console.log(`Encountered error: ${err}`);
     });
     }catch(e){
-        
+
     }
 
 }

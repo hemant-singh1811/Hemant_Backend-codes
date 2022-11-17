@@ -35,12 +35,12 @@ function truckComparator(a,b){
 
     if(b.data.truckCurrentState.DEL_date == undefined) return -1;
 
+    if(a.data.truckCurrentState.DEL_date==b.data.truckCurrentState.DEL_date)
+    {
 
-    if(a.data.truckCurrentState.DEL_date==b.data.truckCurrentState.DEL_date){
+    if(a.data.truckCurrentState.ETA == undefined) return 1;
 
-         if(a.data.truckCurrentState.ETA == undefined) return 1;
-
-         if(b.data.truckCurrentState.ETA == undefined) return -1;
+    if(b.data.truckCurrentState.ETA == undefined) return -1;
 
         if(a.data.truckCurrentState.ETA >=b.data.truckCurrentState.ETA){
             return -1;

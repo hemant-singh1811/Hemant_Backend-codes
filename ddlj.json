@@ -1,0 +1,2556 @@
+[
+  {
+    "truckBasicDetails": {
+      "Truck_name": "i - 935 (Company)",
+      "Truck_reference": [
+        "recIqjeT84VAurB0d"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "NEED TO CHANGE CARRIER NAME ON BOL / TURBO LP FOR T?\n",
+      "update": [
+        "Need BOL",
+        "Local Pickup",
+        "PU Late",
+        "Dispatch Pending",
+        "Driver INFO Not Sent"
+      ],
+      "tracking_link": [
+        "https://cloud.samsara.com/o/37291/fleet/viewer/ysA2xm9QOlFeVFNoOvrr"
+      ],
+      "Lane": "CA > WA",
+      "receiver_state": [
+        "WA"
+      ],
+      "shipper_address": "Nissin  Foods - Gardena\n2001 W Rosecrans Ave\nGardena, CA 90249",
+      "receiver_address": "Costco 171  - Sumner\n4000B 142nd Ave E\nSumner, WA 98390 ",
+      "receiver_city": [
+        "Sumner"
+      ],
+      "shipper_city": [
+        "Gardena"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/LXBOEDufzotFDPfYCK99Tc"
+      ],
+      "PU_date": "2022-11-16",
+      "DEL_date": "2022-11-18",
+      "shipper_zip": [
+        "90249"
+      ],
+      "receiver_zip": [
+        "98390 "
+      ],
+      "current_dispatch": 27397
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "B - 1313 - Five Rivers",
+      "Truck_reference": [
+        "recnNlOmJtUtlODjV"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "ETA NEED TO CONFIRM /// Driver Sahil \nTruck 2222 \nTrailer 990051\n253 258 4367\n",
+      "update": [
+        "Outsourced",
+        "Good For DEL"
+      ],
+      "ETA": "2022-11-18T06:30:00.000Z",
+      "Lane": "CA > WA",
+      "receiver_state": [
+        "WA"
+      ],
+      "shipper_address": "Sunny Delight -  Anaheim\n1230 N Tustin Ave\nAnaheim, CA  92807",
+      "receiver_address": "Costco 171  - Sumner\n4000B 142nd Ave E\nSumner, WA 98390 ",
+      "receiver_city": [
+        "Sumner"
+      ],
+      "shipper_city": [
+        "Anaheim"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/Bfv9aFo1e7KL7fsCQWtNuD"
+      ],
+      "PU_date": "2022-11-15",
+      "DEL_date": "2022-11-18",
+      "shipper_zip": [
+        " 92807"
+      ],
+      "receiver_zip": [
+        "98390 "
+      ],
+      "current_dispatch": 27421
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "B - 020 - GRD",
+      "Truck_reference": [
+        "receFH8iKaArncFTE"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "ETA TO DEL?//\n",
+      "update": [
+        "Good PU"
+      ],
+      "tracking_link": [
+        "https://elog365.ezeldsolutions.com/"
+      ],
+      "Lane": "WA > CA",
+      "receiver_state": [
+        "CA"
+      ],
+      "shipper_address": "Continental Mills - Tukwila\n6155 Segale Park Drive C\nTukwila, WA 98188",
+      "receiver_address": "Costco - Mira Loma\n11600  Riverside Drive \nMira Loma, CA 91752",
+      "receiver_city": [
+        "Mira Loma"
+      ],
+      "shipper_city": [
+        "Tukwila"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/ELmGcw2O0343jizKPyEt1x"
+      ],
+      "PU_date": "2022-11-16",
+      "DEL_date": "2022-11-18",
+      "shipper_zip": [
+        "98188"
+      ],
+      "receiver_zip": [
+        "91752"
+      ],
+      "current_dispatch": 27586
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "B - 505 - GSM",
+      "Truck_reference": [
+        "recuclEWmuLvAZvou"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "T135 GURWINDER PU FOR T//LP NEEDED \n",
+      "update": [
+        "Checked In Shipper",
+        "Dispatch Pending",
+        "Driver INFO Not Sent",
+        "Create LP Record",
+        "OTR LP Rate Deduction"
+      ],
+      "Lane": "WA > AZ",
+      "receiver_state": [
+        "AZ"
+      ],
+      "shipper_address": "Ace Hardware - Spanaway\n2917 200th St. East\nSpanaway, WA 98387",
+      "receiver_address": "Ace Hardware - Prescott Valley\n9801  E. Valley Rd\nPrescott Valley, AZ 86314",
+      "receiver_city": [
+        "Prescott Valley"
+      ],
+      "shipper_city": [
+        "Spanaway"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/CInWDlN2Li997E7nG7HWUJ"
+      ],
+      "PU_date": "2022-11-15",
+      "DEL_date": "2022-11-18",
+      "shipper_zip": [
+        "98387"
+      ],
+      "receiver_zip": [
+        "86314"
+      ],
+      "current_dispatch": 27596
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "B - 105 - Turna",
+      "Truck_reference": [
+        "recGtwszUZ6vIT8Hd"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "NEED PAGE 1// T646 HARVINDER LP FOR T?\n",
+      "update": [
+        "Checked In Shipper",
+        "Local Pickup",
+        "Dispatch Pending",
+        "Driver INFO Not Sent"
+      ],
+      "tracking_link": [
+        "https://cloud.samsara.com/o/7000418/fleet/viewer/NScbHZOIPewGfAFyqcCw"
+      ],
+      "Lane": "WA > CA",
+      "receiver_state": [
+        "CA"
+      ],
+      "shipper_address": "Oberto  Sausage - Kent\n22513  54Th Ave S\nKent, WA 98032",
+      "receiver_address": "Costco - Mira Loma\n11600  Riverside Drive \nMira Loma, CA 91752",
+      "receiver_city": [
+        "Mira Loma"
+      ],
+      "shipper_city": [
+        "Kent"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/GfS4KIiki8mESrRXUS9cql"
+      ],
+      "PU_date": "2022-11-16",
+      "DEL_date": "2022-11-18",
+      "shipper_zip": [
+        "98032"
+      ],
+      "receiver_zip": [
+        "91752"
+      ],
+      "current_dispatch": 27656
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "B - 1313 -  Multani Carrier",
+      "Truck_reference": [
+        "recpUZWyIyBXnvv2I"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "ETA AS PER DRIVER// driver location requested \t\n",
+      "update": [
+        "Good PU",
+        "Good For DEL"
+      ],
+      "ETA": "2022-11-16T16:00:00.000Z",
+      "Lane": "PA > CA",
+      "receiver_state": [
+        "CA"
+      ],
+      "shipper_address": "East Penn Mfg - Topton\n50 w jeffreson st \nTopson, PA 19562",
+      "receiver_address": "Ikea - Lebec\n4104 Industrial pkwy dr \nLebec, CA  93243",
+      "receiver_city": [
+        "Lebec"
+      ],
+      "shipper_city": [
+        "Topson"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/JQcJMMRSZAPHawAfwRP29o"
+      ],
+      "PU_date": "2022-11-14",
+      "DEL_date": "2022-11-18",
+      "shipper_zip": [
+        "19562"
+      ],
+      "receiver_zip": [
+        " 93243"
+      ],
+      "current_dispatch": 27764
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "B - 118 - Cali4nia",
+      "Truck_reference": [
+        "recBKkC2kRr6f4cwv"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "ETA TO DEL\n\n",
+      "update": [
+        "Good PU"
+      ],
+      "Lane": "OR > CA",
+      "receiver_state": [
+        "CA"
+      ],
+      "shipper_address": "Igps Managed Blvd - Portland\n8929 N RAMSEY BLVD,STE E\nPortland, OR 97203",
+      "receiver_address": "IGPS MANAGED DEPOT - Moreno Valley\n17825 INDIAN ST, \nMoreno Valley, CA 92551",
+      "receiver_city": [
+        "Moreno Valley"
+      ],
+      "shipper_city": [
+        "Portland"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/EMxvtid53LL8gzSQDzRymH"
+      ],
+      "PU_date": "2022-11-16",
+      "DEL_date": "2022-11-18",
+      "shipper_zip": [
+        "97203"
+      ],
+      "receiver_zip": [
+        "92551"
+      ],
+      "current_dispatch": 27881
+    }
+  },
+  {
+    "truckBasicDetails": {},
+    "truckCurrentState": {
+      "Notes": "T280 HARNEK LP FOR T? driver who will be assigned on this load needs to be on tracking whether it will be local or OTR\n",
+      "update": [
+        "Need Local Driver",
+        "Checked In Shipper"
+      ],
+      "Lane": "WA > CA",
+      "receiver_state": [
+        "CA"
+      ],
+      "shipper_address": "Northwest - Renton\n600 SW 7TH ST\nRenton, WA  98057",
+      "receiver_address": "Soto Provision - Hacienda\n488 PARRIOTT PL\nHacienda, CA 91745",
+      "receiver_city": [
+        "Hacienda"
+      ],
+      "shipper_city": [
+        "Renton"
+      ],
+      "Driver_whatsapp": [],
+      "PU_date": "2022-11-16",
+      "DEL_date": "2022-11-18",
+      "shipper_zip": [
+        " 98057"
+      ],
+      "receiver_zip": [
+        "91745"
+      ],
+      "current_dispatch": 28031
+    }
+  },
+  {
+    "truckBasicDetails": {},
+    "truckCurrentState": {
+      "Notes": "CHECKED IN// T630 HARVINDER LP FOR T?\n",
+      "update": [
+        "Checked In Shipper",
+        "Truck Assignment Needed"
+      ],
+      "Lane": "WA > CA",
+      "receiver_state": [
+        "CA"
+      ],
+      "shipper_address": "Metropolitan Hardwood Floors - Kent\n8106 S 216Th St\nKent, WA 98032",
+      "receiver_address": "Imperial Shade - Los Angeles\n909 E 59th St\nLos Angeles, CA 90001",
+      "receiver_city": [
+        "Los Angeles"
+      ],
+      "shipper_city": [
+        "Kent"
+      ],
+      "Driver_whatsapp": [],
+      "PU_date": "2022-11-16",
+      "DEL_date": "2022-11-18",
+      "shipper_zip": [
+        "98032"
+      ],
+      "receiver_zip": [
+        "90001"
+      ],
+      "current_dispatch": 28044
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "B - 106 - Turna",
+      "Truck_reference": [
+        "rec7isd9cVDVKPGdJ"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "ETA TO DEL?? NEED TO CONFIRM// ETA 0330 11/17\n\n",
+      "update": [
+        "Good For DEL",
+        "Delivery Appt Missed"
+      ],
+      "ETA": "2022-11-17T02:00:00.000Z",
+      "Lane": "CA > WA",
+      "receiver_state": [
+        "WA"
+      ],
+      "shipper_address": "RoadRunner - Commerce\n4501 E Washington Blvd \nCommerce, CA 90040",
+      "receiver_address": "RoadRunner - Sumner\n3520 142Nd Ave E\nSumner, WA 98390 ",
+      "receiver_city": [
+        "Sumner"
+      ],
+      "shipper_city": [
+        "Commerce"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/Dpt2jrCIj78LbR6g8oAr8F"
+      ],
+      "PU_date": "2022-11-16",
+      "DEL_date": "2022-11-17",
+      "shipper_zip": [
+        "90040"
+      ],
+      "receiver_zip": [
+        "98390 "
+      ],
+      "current_dispatch": 24238
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "B - Gold Coast Trucking",
+      "Truck_reference": [
+        "recUmhN2H9HyKNMP9"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "NEED PAGE 2// Truck 950 Trailer W92892 driver azhar phone +1 (206) 778-2664 // Good for on time delivery as per Gold coast update at 0631. \n",
+      "update": [
+        "Outsourced",
+        "Need BOL"
+      ],
+      "ETA": "2022-11-17T05:00:00.000Z",
+      "Lane": "CA > WA",
+      "receiver_state": [
+        "WA"
+      ],
+      "shipper_address": "West rock - LA Marida \n15221 CANARY AVE \nLa Mirada, CA 90638",
+      "receiver_address": "Dominos Pizza - Kent\n8005 SOUTH 266 ST STE101\nKent, WA 98032",
+      "receiver_city": [
+        "Kent"
+      ],
+      "shipper_city": [
+        "La Mirada"
+      ],
+      "Driver_whatsapp": [],
+      "PU_date": "2022-11-15",
+      "DEL_date": "2022-11-17",
+      "shipper_zip": [
+        "90638"
+      ],
+      "receiver_zip": [
+        "98032"
+      ],
+      "current_dispatch": 26597
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "B - 27 - JS",
+      "Truck_reference": [
+        "rechyVQ66TfSNy6Se"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "ETA NEED TO CONFIRM // \n",
+      "update": [
+        "Good PU",
+        "Good For DEL"
+      ],
+      "ETA": "2022-11-17T05:30:00.000Z",
+      "tracking_link": [
+        "https://cloud.samsara.com/o/37299/fleet/viewer/QEGspTpZqc56RC53WBen"
+      ],
+      "Lane": "CA > WA",
+      "receiver_state": [
+        "WA"
+      ],
+      "shipper_address": "Nissin  Foods - Gardena\n2001 W Rosecrans Ave\nGardena, CA 90249",
+      "receiver_address": "Costco 171  - Sumner\n4000B 142nd Ave E\nSumner, WA 98390 ",
+      "receiver_city": [
+        "Sumner"
+      ],
+      "shipper_city": [
+        "Gardena"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/BfXu7DNwCQFKNgIWfrZRok"
+      ],
+      "PU_date": "2022-11-15",
+      "DEL_date": "2022-11-17",
+      "shipper_zip": [
+        "90249"
+      ],
+      "receiver_zip": [
+        "98390 "
+      ],
+      "current_dispatch": 26913
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "B - 106 - Turna",
+      "Truck_reference": [
+        "rec7isd9cVDVKPGdJ"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "**ETA NEED TO CONFIRM // SHOWN BREAKDOWN** // T345 PU FOR T//LP NEEDED //\n**DEDUCTED $150 FOR LP**\n",
+      "update": [
+        "NEED NEW APPOINMENT",
+        "Delivery Appt Missed"
+      ],
+      "Lane": "WA > CA",
+      "receiver_state": [
+        "CA"
+      ],
+      "shipper_address": "Continental Mills - Tukwila\n6155 Segale Park Drive C\nTukwila, WA 98188",
+      "receiver_address": "Casestack/Kane Logistics - Bloomington\n2304 S Lilac Avenue\nBloomington, CA 92316",
+      "receiver_city": [
+        "Bloomington"
+      ],
+      "shipper_city": [
+        "Tukwila"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/Dpt2jrCIj78LbR6g8oAr8F"
+      ],
+      "PU_date": "2022-11-11",
+      "DEL_date": "2022-11-17",
+      "shipper_zip": [
+        "98188"
+      ],
+      "receiver_zip": [
+        "92316"
+      ],
+      "current_dispatch": 27128
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "B - 062 - Resham",
+      "Truck_reference": [
+        "recXA4APfDveqEhTN"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "ETA NEED TO CONFIRM // \n",
+      "update": [
+        "Good PU",
+        "Good For DEL"
+      ],
+      "ETA": "2022-11-17T07:00:00.000Z",
+      "Lane": "WA > CA",
+      "receiver_state": [
+        "CA"
+      ],
+      "shipper_address": "Continental Mills - Tukwila\n6155 Segale Park Drive C\nTukwila, WA 98188",
+      "receiver_address": "Sysco - Fremont\n5900 stewart ave \nFremont, CA 94536",
+      "receiver_city": [
+        "Fremont"
+      ],
+      "shipper_city": [
+        "Tukwila"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/EwKryS8VsmFJDD6Rrr136P"
+      ],
+      "PU_date": "2022-11-15",
+      "DEL_date": "2022-11-17",
+      "shipper_zip": [
+        "98188"
+      ],
+      "receiver_zip": [
+        "94536"
+      ],
+      "current_dispatch": 27429
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "i - 380 (Company)",
+      "Truck_reference": [
+        "recE6Jr6IiswJw0sO"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "CHECKED IN FOR PU// T135 GURWINDER PU FOR T//LP NEEDED \n",
+      "update": [
+        "Dispatch Pending",
+        "Driver INFO Not Sent"
+      ],
+      "tracking_link": [
+        "https://cloud.samsara.com/o/37291/fleet/viewer/9iw5aVQ0B4fq56kFGBsN"
+      ],
+      "Lane": "WA > CA",
+      "receiver_state": [
+        "CA"
+      ],
+      "shipper_address": "Dawn  Food Products - Seattle\n6901  Fox Avenue South\nSeattle, WA 98108",
+      "receiver_address": "Dawn Foods - Ontario\n3790 Jurupa St\nOntario, CA 91761",
+      "receiver_city": [
+        "Ontario"
+      ],
+      "shipper_city": [
+        "Seattle"
+      ],
+      "Driver_whatsapp": [],
+      "PU_date": "2022-11-15",
+      "DEL_date": "2022-11-17",
+      "shipper_zip": [
+        "98108"
+      ],
+      "receiver_zip": [
+        "91761"
+      ],
+      "current_dispatch": 27471
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "B - 104 - Turna",
+      "Truck_reference": [
+        "recNAq5r97rUlY1Oe"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "T135 OPINDER LD FOR T? // DRIVER LEFT THE FACILITY HE WAITED 3 HOURS BUT DIDN'T RECEIVE DOCK SO HE DROP LOADED TRAILER IN YARD \n",
+      "update": [
+        "NEED NEW APPOINMENT",
+        "PU Late",
+        "Delivery late",
+        "Delivery Appt Missed"
+      ],
+      "tracking_link": [
+        "https://cloud.samsara.com/o/7000418/fleet/viewer/xJIkFzYuDpinJZcNrx9U"
+      ],
+      "Lane": "CA > WA",
+      "receiver_state": [
+        "WA"
+      ],
+      "shipper_address": "Synnex - Chino\n15065 FLIGHT AVE\nChino, CA ",
+      "receiver_address": "Fred Meyers - Chehalis\n226 Maurin Rd\nChehalis, WA 98532",
+      "receiver_city": [
+        "Chehalis"
+      ],
+      "shipper_city": [
+        "Chino"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/G7s5wPEBxqU6zVWZAK9zjd"
+      ],
+      "PU_date": "2022-11-10",
+      "DEL_date": "2022-11-17",
+      "receiver_zip": [
+        "98532"
+      ],
+      "current_dispatch": 27479
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "B - 003 - Uday",
+      "Truck_reference": [
+        "recfNCtxCxDZLBrWn"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "ETA TO DEL\n",
+      "update": [
+        "Good PU"
+      ],
+      "tracking_link": [
+        "https://cloud.samsara.com/o/63479/fleet/viewer/LGQw2RGrsij1XnF2jA1F"
+      ],
+      "Lane": "CA > OR",
+      "receiver_state": [
+        "OR"
+      ],
+      "shipper_address": "Costco Depot Ecom - Mira Loma\n11280 RIVERSIDE DR STE A\nMira Loma, CA 91752",
+      "receiver_address": "UPS Terminal - Portland\n5550  North Basin Avenue\nPortland, OR 97217",
+      "receiver_city": [
+        "Portland"
+      ],
+      "shipper_city": [
+        "Mira Loma"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/JAc7M7tYKhq3kOY2nlwpAM"
+      ],
+      "PU_date": "2022-11-16",
+      "DEL_date": "2022-11-17",
+      "shipper_zip": [
+        "91752"
+      ],
+      "receiver_zip": [
+        "97217"
+      ],
+      "current_dispatch": 27527
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "B - 304 - Jammu",
+      "Truck_reference": [
+        "recj1FaW9adHjLxCq"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "ETA TO DEL?//\t\n",
+      "update": [
+        "Good PU"
+      ],
+      "Lane": "CA > OR",
+      "receiver_state": [
+        "OR"
+      ],
+      "shipper_address": "Costco Depot Ecom - Mira Loma\n11280 RIVERSIDE DR STE A\nMira Loma, CA 91752",
+      "receiver_address": "UPS Terminal - Portland\n5550  North Basin Avenue\nPortland, OR 97217",
+      "receiver_city": [
+        "Portland"
+      ],
+      "shipper_city": [
+        "Mira Loma"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/IXGEFBKt24NGq5Bz6Oy9Qi"
+      ],
+      "PU_date": "2022-11-16",
+      "DEL_date": "2022-11-17",
+      "shipper_zip": [
+        "91752"
+      ],
+      "receiver_zip": [
+        "97217"
+      ],
+      "current_dispatch": 27536
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "AT - 231",
+      "Truck_reference": [
+        "recTum6lsOFJRMUqf"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "T280 HARVINDER PU FOR T\n",
+      "update": [
+        "Dispatch Pending",
+        "Driver INFO Not Sent"
+      ],
+      "tracking_link": [
+        "https://cloud.samsara.com/o/25949/fleet/viewer/hZqJnoSxagD9Wd7jwpWD"
+      ],
+      "Lane": "WA > CA",
+      "receiver_state": [
+        "CA"
+      ],
+      "shipper_address": "Continental Mills - Tukwila\n6155 Segale Park Drive C\nTukwila, WA 98188",
+      "receiver_address": "Costco - Mira Loma\n11600  Riverside Drive \nMira Loma, CA 91752",
+      "receiver_city": [
+        "Mira Loma"
+      ],
+      "shipper_city": [
+        "Tukwila"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/DRxLaogft5xLLYwm6V0Yh3"
+      ],
+      "PU_date": "2022-11-15",
+      "DEL_date": "2022-11-17",
+      "shipper_zip": [
+        "98188"
+      ],
+      "receiver_zip": [
+        "91752"
+      ],
+      "current_dispatch": 27580
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "B - 090 - JSW",
+      "Truck_reference": [
+        "recB28EPClKsKCcb6"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "NEED LOCAL DRIVER \n",
+      "update": [
+        "Good PU",
+        "Good For DEL",
+        "Delivery Appt Missed"
+      ],
+      "Lane": "WA > CA",
+      "receiver_state": [
+        "CA"
+      ],
+      "shipper_address": "American Paper Converting -  Woodland\n1845 Howard Way \nWoodland, WA 98674",
+      "receiver_address": "Waxie Sanitary Supply  - Ontario\n905 N. Wineville Ave\nOntario, CA  91764",
+      "receiver_city": [
+        "Ontario"
+      ],
+      "shipper_city": [
+        "Woodland"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/Ldlc1iPrA6sAbb98YHcYFm"
+      ],
+      "PU_date": "2022-11-14",
+      "DEL_date": "2022-11-17",
+      "shipper_zip": [
+        "98674"
+      ],
+      "receiver_zip": [
+        " 91764"
+      ],
+      "current_dispatch": 27650
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "B - 112 - Nj",
+      "Truck_reference": [
+        "recXPj9RUasMsNYBS"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "CHECKED IN FOR PU?// T430LP FOR T- ?///\n",
+      "update": [
+        "Dispatch Pending",
+        "Driver INFO Not Sent"
+      ],
+      "Lane": "CA > WA",
+      "receiver_state": [
+        "WA"
+      ],
+      "shipper_address": "San Bernardino - Yard\n19366 Kendall Dr\nSan Bernardino, CA 92407",
+      "receiver_address": "Fred Meyers - Chehalis\n226 Maurin Rd\nChehalis, WA 98532",
+      "receiver_city": [
+        "Chehalis"
+      ],
+      "shipper_city": [
+        "San Bernardino"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/EaeOeQ2GzaKEsZUSsbBZKm"
+      ],
+      "PU_date": "2022-11-15",
+      "DEL_date": "2022-11-17",
+      "shipper_zip": [
+        "92407"
+      ],
+      "receiver_zip": [
+        "98532"
+      ],
+      "current_dispatch": 27652
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "B - 212 - Highway",
+      "Truck_reference": [
+        "rec1XhxGcYcoFDmia"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "DROPPING TRAILER IN YARD\n",
+      "update": [
+        "Good For DEL"
+      ],
+      "Lane": "CA > WA",
+      "receiver_state": [
+        "WA"
+      ],
+      "shipper_address": "Performance Team - Santa Fe Springs\n12816  S Shoemaker Ave\nSanta Fe Springs, CA 90670",
+      "receiver_address": "SEA/XSEA/POX/XPOX - Kent \n22027 68Th Ave S\nKent, WA 98032",
+      "receiver_city": [
+        "Kent"
+      ],
+      "shipper_city": [
+        "Santa Fe Springs"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/Bt8gMH3h8i7Bz3dQJxyDe1"
+      ],
+      "PU_date": "2022-11-15",
+      "DEL_date": "2022-11-17",
+      "shipper_zip": [
+        "90670"
+      ],
+      "receiver_zip": [
+        "98032"
+      ],
+      "current_dispatch": 27668
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "i - 397 (Company)",
+      "Truck_reference": [
+        "recaEBCVojBzmNrxQ"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "ETA AS PER LOCATION // \n",
+      "update": [
+        "PU Late",
+        "Good For DEL"
+      ],
+      "ETA": "2022-11-16T14:30:00.000Z",
+      "tracking_link": [
+        "https://cloud.samsara.com/o/37291/fleet/viewer/sv1voqlbYTjGl0CS61xX"
+      ],
+      "Lane": "WA > CA",
+      "receiver_state": [
+        "CA"
+      ],
+      "shipper_address": "DHL - Tacoma\n2340  Taylor Way\nTacoma, WA 98401",
+      "receiver_address": "Neovia  Logistics - Ontario\n5750  E Francis St\nOntario, CA 91761",
+      "receiver_city": [
+        "Ontario"
+      ],
+      "shipper_city": [
+        "Tacoma"
+      ],
+      "Driver_whatsapp": [],
+      "PU_date": "2022-11-15",
+      "DEL_date": "2022-11-17",
+      "shipper_zip": [
+        "98401"
+      ],
+      "receiver_zip": [
+        "91761"
+      ],
+      "current_dispatch": 27690
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "B - 313 - Malwa",
+      "Truck_reference": [
+        "recn8bNChmXMnQU0D"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "ETA AS PER DRIVER  //. Need Thursday delivery//\n",
+      "update": [
+        "Good PU",
+        "Good For DEL",
+        "Delivery Appt Missed"
+      ],
+      "ETA": "2022-11-17T07:00:00.000Z",
+      "Lane": "WA > CA",
+      "receiver_state": [
+        "CA"
+      ],
+      "shipper_address": "Rainier Veneer - Spanaway\n8220 Eustis-Hunt Road\nSpanaway, WA 98387",
+      "receiver_address": "Total Site supply - Riverside\n1731 MASSACHUSETTS AVENUE \nRiverside, CA 92507",
+      "receiver_city": [
+        "Riverside"
+      ],
+      "shipper_city": [
+        "Spanaway"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/HSASjajkhut9fWjw7YccJz"
+      ],
+      "PU_date": "2022-11-14",
+      "DEL_date": "2022-11-17",
+      "shipper_zip": [
+        "98387"
+      ],
+      "receiver_zip": [
+        "92507"
+      ],
+      "current_dispatch": 27721
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "B - Freight Movers",
+      "Truck_reference": [
+        "recx3S024qWvYffhB"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "ETA NEED TO CONFIRM // NEED TRACKING AND BOL// Amit - +1 (206) 660-9656\nTruck - 477\nTrailer - 53P1543\n",
+      "update": [
+        "Outsourced"
+      ],
+      "ETA": "2022-11-17T07:00:00.000Z",
+      "Lane": "CA > WA",
+      "receiver_state": [
+        "WA"
+      ],
+      "shipper_address": "Hills  Petcare - Ontario\n5725  Jurupa St\nOntario, CA 91761",
+      "receiver_address": "Amazon BFI3 - Dupont\n2700  Center Drive\nDuPont, WA 98372",
+      "receiver_city": [
+        "DuPont"
+      ],
+      "shipper_city": [
+        "Ontario"
+      ],
+      "Driver_whatsapp": [],
+      "PU_date": "2022-11-15",
+      "DEL_date": "2022-11-17",
+      "shipper_zip": [
+        "91761"
+      ],
+      "receiver_zip": [
+        "98372"
+      ],
+      "current_dispatch": 27722
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "B - 124 - Chatrath",
+      "Truck_reference": [
+        "recdJETFB8lXBTUYa"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "ETA AS PER DRIVER/// \n",
+      "update": [
+        "Good PU",
+        "Good For DEL"
+      ],
+      "ETA": "2022-11-17T07:00:00.000Z",
+      "tracking_link": [
+        "https://cloud.samsara.com/o/72226/fleet/viewer/nYJUaNtq5dErCi5rekr2"
+      ],
+      "Lane": "WA > MN",
+      "receiver_state": [
+        "MN"
+      ],
+      "shipper_address": "Alg - Tacoma\n1525 East D Street\nTacoma, WA 98421",
+      "receiver_address": "Creative Memories - Sauk rapids\n1100 Stearns Drive\nSauk Rapids, MN 56379",
+      "receiver_city": [
+        "Sauk Rapids"
+      ],
+      "shipper_city": [
+        "Tacoma"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/EPfuwH5mnU59i2ZalewRtL"
+      ],
+      "PU_date": "2022-11-14",
+      "DEL_date": "2022-11-17",
+      "shipper_zip": [
+        "98421"
+      ],
+      "receiver_zip": [
+        "56379"
+      ],
+      "current_dispatch": 27732
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "AT - 8055",
+      "Truck_reference": [
+        "recdGQA4PxJE9Y5W3"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "ETAAS PER DRIVER // \n",
+      "update": [
+        "Good PU",
+        "Good For DEL"
+      ],
+      "ETA": "2022-11-17T19:00:00.000Z",
+      "tracking_link": [
+        "https://cloud.samsara.com/o/25949/fleet/viewer/6xLa64ardx9g77ilVtEh"
+      ],
+      "Lane": "MN > WA",
+      "receiver_state": [
+        "WA"
+      ],
+      "shipper_address": "Bay Island - Hopkins\n11311 K-Tel Driver\nHopkins, MN 55343",
+      "receiver_address": "Mclane - Tacoma\n9611 45TH AVE SW BLDG 4\nTacoma, WA 98499",
+      "receiver_city": [
+        "Tacoma"
+      ],
+      "shipper_city": [
+        "Hopkins"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/JlF9Byy5HQZGtLjaVVTi92"
+      ],
+      "PU_date": "2022-11-14",
+      "DEL_date": "2022-11-17",
+      "shipper_zip": [
+        "55343"
+      ],
+      "receiver_zip": [
+        "98499"
+      ],
+      "current_dispatch": 27803
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "i - 3033 (Company)",
+      "Truck_reference": [
+        "rec9Ytm4G1yskQPzL"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "ETA TO DEL  // DROP TRAILER AT ROADRUNNER AND GO BOBTAIL TO SHIPPER\n",
+      "update": [
+        "Good PU"
+      ],
+      "tracking_link": [
+        "https://cloud.samsara.com/o/37291/fleet/viewer/WBuEGGhVU3gn0GM12JB4"
+      ],
+      "Lane": "CA > WA",
+      "receiver_state": [
+        "WA"
+      ],
+      "shipper_address": "Performance Team - Santa Fe Springs\n12816  S Shoemaker Ave\nSanta Fe Springs, CA 90670",
+      "receiver_address": "SEA/XSEA/POX/XPOX - Kent \n22027 68Th Ave S\nKent, WA 98032",
+      "receiver_city": [
+        "Kent"
+      ],
+      "shipper_city": [
+        "Santa Fe Springs"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/DlKhIeN4MVv3d4rTUXjvRZ"
+      ],
+      "PU_date": "2022-11-16",
+      "DEL_date": "2022-11-17",
+      "shipper_zip": [
+        "90670"
+      ],
+      "receiver_zip": [
+        "98032"
+      ],
+      "current_dispatch": 27808
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "B - 090 - JSW",
+      "Truck_reference": [
+        "recB28EPClKsKCcb6"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "TRAILER TYRE FLAT//\nETA TO DEL?? NEED TO CONFIRM// \n",
+      "update": [
+        "Good For DEL"
+      ],
+      "ETA": "2022-11-17T04:00:00.000Z",
+      "Lane": "CA > WA",
+      "receiver_state": [
+        "WA"
+      ],
+      "shipper_address": "Fedex Freight - Whittier\n3200  Workman Mill Rd\nWhittier, CA 90601",
+      "receiver_address": "Fedex - Fife\n3216 70TH AVE E\nFife, WA 98424",
+      "receiver_city": [
+        "Fife"
+      ],
+      "shipper_city": [
+        "Whittier"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/Ldlc1iPrA6sAbb98YHcYFm"
+      ],
+      "PU_date": "2022-11-16",
+      "DEL_date": "2022-11-17",
+      "shipper_zip": [
+        "90601"
+      ],
+      "receiver_zip": [
+        "98424"
+      ],
+      "current_dispatch": 27809
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "i - 880",
+      "Truck_reference": [
+        "rec7cCQgG8kU4EbcE"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "ETA NEED TO CONFIRM // CHECKED IN FOR PU/ T646 APOLLO PU FOR T//LP NEEDED\n",
+      "update": [
+        "Good For DEL"
+      ],
+      "ETA": "2022-11-17T08:00:00.000Z",
+      "tracking_link": [
+        "https://cloud.samsara.com/o/37291/fleet/viewer/ywai6d0TP9IAIiBo50oZ"
+      ],
+      "Lane": "WA > CA",
+      "receiver_state": [
+        "CA"
+      ],
+      "shipper_address": "Apex Cold Storage - Fife\n3400  Industry Dr E Ste A\nFife, WA 98424",
+      "receiver_address": "Ntc Marketing - Commerce\n5835 S Malt Ave\nCommerce, CA 90040",
+      "receiver_city": [
+        "Commerce"
+      ],
+      "shipper_city": [
+        "Fife"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/FgA03Ni9XJF4h34m427Wdu"
+      ],
+      "PU_date": "2022-11-15",
+      "DEL_date": "2022-11-17",
+      "shipper_zip": [
+        "98424"
+      ],
+      "receiver_zip": [
+        "90040"
+      ],
+      "current_dispatch": 27818
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "AT - 3131",
+      "Truck_reference": [
+        "recOJmM0e6bfCqYZe"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "ETA TO SPOKANE AS PER LOCATION //\n",
+      "update": [
+        "Good PU",
+        "Good For DEL"
+      ],
+      "ETA": "2022-11-17T06:00:00.000Z",
+      "tracking_link": [
+        "https://cloud.samsara.com/o/25949/fleet/viewer/BaJm9JROKKdY2wqm6Ps8"
+      ],
+      "Lane": "IN > WA",
+      "receiver_state": [
+        "WA"
+      ],
+      "shipper_address": "Indianapolis STC- Plainfield\n701 COLUMBIA RD, BLDG 6\nPlainfield, IN 46168",
+      "receiver_address": "NDC - Seattle\n34301 9th Ave S\nSeattle, WA 98003",
+      "receiver_city": [
+        "Seattle"
+      ],
+      "shipper_city": [
+        "Plainfield"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/KXFpl3IcTEx6RrRPDppYgZ"
+      ],
+      "PU_date": "2022-11-15",
+      "DEL_date": "2022-11-17",
+      "shipper_zip": [
+        "46168"
+      ],
+      "receiver_zip": [
+        "98003"
+      ],
+      "current_dispatch": 27824
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "B - 003 - Uday",
+      "Truck_reference": [
+        "recfNCtxCxDZLBrWn"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "T-806 LP FOR T??\n",
+      "update": [
+        "Checked In Shipper",
+        "Dispatch Pending",
+        "Driver INFO Not Sent"
+      ],
+      "tracking_link": [
+        "https://cloud.samsara.com/o/63479/fleet/viewer/LGQw2RGrsij1XnF2jA1F"
+      ],
+      "Lane": "OR > CA",
+      "receiver_state": [
+        "CA"
+      ],
+      "shipper_address": "Cascades Tissue Group- Helens\n1300, KASTER ROAD ST.\nHELENS, OR 97051",
+      "receiver_address": "Paper  Source Converting - Vernon\n4800  S Santa Fe Ave\nVernon, CA 90058",
+      "receiver_city": [
+        "Vernon"
+      ],
+      "shipper_city": [
+        "HELENS"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/JAc7M7tYKhq3kOY2nlwpAM"
+      ],
+      "PU_date": "2022-11-16",
+      "DEL_date": "2022-11-17",
+      "shipper_zip": [
+        "97051"
+      ],
+      "receiver_zip": [
+        "90058"
+      ],
+      "current_dispatch": 27905
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "i - 3027(Company) ",
+      "Truck_reference": [
+        "recLduznpZZO1DUzR"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "ETA TO DEL\n",
+      "update": [
+        "Good PU"
+      ],
+      "tracking_link": [
+        "https://cloud.samsara.com/o/945/fleet/viewer/7DfFm1Y6TluHc4zh9pGJ"
+      ],
+      "Lane": "WA > CA",
+      "receiver_state": [
+        "CA"
+      ],
+      "shipper_address": "DHL - Sumner\n3901 150th Ave Court E STE 100\nSumner, WA 98390 ",
+      "receiver_address": "DHL - Whittier\n3963 Workman Mill Rd\nWhittier, CA 90601",
+      "receiver_city": [
+        "Whittier"
+      ],
+      "shipper_city": [
+        "Sumner"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/K0rRD1kE6VyJUCynGVfTYZ"
+      ],
+      "PU_date": "2022-11-16",
+      "DEL_date": "2022-11-17",
+      "shipper_zip": [
+        "98390 "
+      ],
+      "receiver_zip": [
+        "90601"
+      ],
+      "current_dispatch": 27981
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "A - 7277",
+      "Truck_reference": [
+        "recuOH37bZgmKqPL7"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "DROP IN YARD // HE WILL START DRVING FROM PORTLAND AT 0800 HRS// \nETA AS PER DRIVER.  // \n",
+      "update": [
+        "Good PU",
+        "Good For DEL"
+      ],
+      "ETA": "2022-11-16T20:00:00.000Z",
+      "tracking_link": [
+        "https://cloud.samsara.com/o/945/fleet/viewer/lOPcLz94MZk7bo3SqBz3"
+      ],
+      "Lane": "CA > WA",
+      "receiver_state": [
+        "WA"
+      ],
+      "shipper_address": "Sunny Delight -  Anaheim\n1230 N Tustin Ave\nAnaheim, CA  92807",
+      "receiver_address": "Safeway  - Auburn\n3520  Pacific Ave S Pacific\nAuburn, WA 98047",
+      "receiver_city": [
+        "Auburn"
+      ],
+      "shipper_city": [
+        "Anaheim"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/BNZDbC3pjCXDgEX1SEKXHc"
+      ],
+      "PU_date": "2022-11-14",
+      "DEL_date": "2022-11-16",
+      "shipper_zip": [
+        " 92807"
+      ],
+      "receiver_zip": [
+        "98047"
+      ],
+      "current_dispatch": 25814
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "B - 104 - Turna",
+      "Truck_reference": [
+        "recNAq5r97rUlY1Oe"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "**DELIVERED** // T280 HARVINDER LD FOR T?\n",
+      "update": [
+        "Checked in Receiver",
+        "PU Late",
+        "Good For DEL"
+      ],
+      "tracking_link": [
+        "https://cloud.samsara.com/o/7000418/fleet/viewer/xJIkFzYuDpinJZcNrx9U"
+      ],
+      "Lane": "CA > WA",
+      "receiver_state": [
+        "WA"
+      ],
+      "shipper_address": "Flexport - Los Angeles\n1420 N Mckinley Ave\nLos Angeles, CA  90059",
+      "receiver_address": "Lululemon Athletica - Sumner\n2201 140th Avenue East Unit 700\nSumner, WA 98390",
+      "receiver_city": [
+        "Sumner"
+      ],
+      "shipper_city": [
+        "Los Angeles"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/G7s5wPEBxqU6zVWZAK9zjd"
+      ],
+      "PU_date": "2022-11-14",
+      "DEL_date": "2022-11-16",
+      "shipper_zip": [
+        " 90059"
+      ],
+      "receiver_zip": [
+        "98390"
+      ],
+      "current_dispatch": 25872
+    }
+  },
+  {
+    "truckBasicDetails": {},
+    "truckCurrentState": {
+      "Notes": "**T135 OPINDER TO UNLOAD AT SHIPPER// STILL OVERWEIGHT - NEED TO UNLOAD BACK AT THE SHIPPER // NEED TO SEND AT THE SHIPPER // LOADED TRAILER IS KENT YARD // **\n",
+      "update": [
+        "Dispatch Pending",
+        "Driver INFO Not Sent"
+      ],
+      "Lane": "WA > CA",
+      "receiver_state": [
+        "CA"
+      ],
+      "shipper_address": "Americold Logistics - Tacoma\n1301 26th Ave E\nTacoma, WA 98424",
+      "receiver_address": "RSR Corporation - City of Industry\n720  South 7th Avenue\nCity of Industry, CA 91746",
+      "receiver_city": [
+        "City of Industry"
+      ],
+      "shipper_city": [
+        "Tacoma"
+      ],
+      "Driver_whatsapp": [],
+      "PU_date": "2022-11-14",
+      "DEL_date": "2022-11-16",
+      "shipper_zip": [
+        "98424"
+      ],
+      "receiver_zip": [
+        "91746"
+      ],
+      "current_dispatch": 26266
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "B - 104 - Turna",
+      "Truck_reference": [
+        "recNAq5r97rUlY1Oe"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "**TURBO LD  FOR T104** /LD NEEDED \nBROKER DEDUCTED $300 FOR LATE DELIVERY \n",
+      "update": [
+        "Need Local Driver",
+        "Good For DEL",
+        "Create LD Record",
+        "OTR LD Rate Deduction",
+        "Delivery Appt Missed"
+      ],
+      "ETA": "2022-11-16T06:00:00.000Z",
+      "tracking_link": [
+        "https://cloud.samsara.com/o/7000418/fleet/viewer/xJIkFzYuDpinJZcNrx9U"
+      ],
+      "Lane": "WA > CA",
+      "receiver_state": [
+        "CA"
+      ],
+      "shipper_address": "Target Salvage Warehouse -  Kent\n7011 S 188th St\nKent, WA 98032",
+      "receiver_address": "Circle City Liquidators - Orange\n 1430  W Katella Ave\nOrange, CA 92867",
+      "receiver_city": [
+        "Orange"
+      ],
+      "shipper_city": [
+        "Kent"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/G7s5wPEBxqU6zVWZAK9zjd"
+      ],
+      "PU_date": "2022-11-10",
+      "DEL_date": "2022-11-16",
+      "shipper_zip": [
+        "98032"
+      ],
+      "receiver_zip": [
+        "92867"
+      ],
+      "current_dispatch": 26551
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "B - 024 - MJT",
+      "Truck_reference": [
+        "recwILHF3BPkyhOFM"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "ETA AS PER LOCATION / / TRUCK WILL GO BOBTAIL \n\n",
+      "update": [
+        "Good PU",
+        "Good For DEL"
+      ],
+      "ETA": "2022-11-16T14:00:00.000Z",
+      "tracking_link": [
+        "https://cloud.samsara.com/o/76265/fleet/viewer/X8zh04eWu0BTQKYCYyNA"
+      ],
+      "Lane": "WA > CA",
+      "receiver_state": [
+        "CA"
+      ],
+      "shipper_address": "Amazon BFI3 - Dupont\n2700  Center Drive\nDuPont, WA 98372",
+      "receiver_address": "UPS - Lathrop\n11800 S HARLAN RD\nLathrop, CA 95330",
+      "receiver_city": [
+        "Lathrop"
+      ],
+      "shipper_city": [
+        "DuPont"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/KCInS6blsMRAXMDSPQcPl1"
+      ],
+      "PU_date": "2022-11-15",
+      "DEL_date": "2022-11-16",
+      "shipper_zip": [
+        "98372"
+      ],
+      "receiver_zip": [
+        "95330"
+      ],
+      "current_dispatch": 26592
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "B - 104 - Turna",
+      "Truck_reference": [
+        "recNAq5r97rUlY1Oe"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "ETA TO DEL?? NEED TO CONFIRM// Driver location requested \n",
+      "update": [
+        "Good For DEL",
+        "Eye on Truck"
+      ],
+      "ETA": "2022-11-16T22:30:00.000Z",
+      "tracking_link": [
+        "https://cloud.samsara.com/o/7000418/fleet/viewer/xJIkFzYuDpinJZcNrx9U"
+      ],
+      "Lane": "OR > CA",
+      "receiver_state": [
+        "CA"
+      ],
+      "shipper_address": "Amazon PDX6 - Portland\n15000  N Lombard St\nPortland, OR 97203",
+      "receiver_address": "Amazon HLA9 - Perris\n4375 N Perris Blvd\nPerris, CA 92571",
+      "receiver_city": [
+        "Perris"
+      ],
+      "shipper_city": [
+        "Portland"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/G7s5wPEBxqU6zVWZAK9zjd"
+      ],
+      "PU_date": "2022-11-16",
+      "DEL_date": "2022-11-16",
+      "shipper_zip": [
+        "97203"
+      ],
+      "receiver_zip": [
+        "92571"
+      ],
+      "current_dispatch": 26895
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "AT - 230",
+      "Truck_reference": [
+        "rec7a0dF9p5sO15pg"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "ETA AS PER DRIVER// \n",
+      "update": [
+        "Good PU",
+        "Good For DEL"
+      ],
+      "ETA": "2022-11-16T20:30:00.000Z",
+      "tracking_link": [
+        "https://cloud.samsara.com/o/25949/fleet/viewer/mfhSswKriwyauz9d2i9c"
+      ],
+      "Lane": "CA > WA",
+      "receiver_state": [
+        "WA"
+      ],
+      "shipper_address": "Mitsubishi Electric - Mira Loma\n11500 Philadelphia Ave\nMira Loma, CA  91752",
+      "receiver_address": "Gensco Inc - Fife\n4502 20th St E\nFife, WA 98424",
+      "receiver_city": [
+        "Fife"
+      ],
+      "shipper_city": [
+        "Mira Loma"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/FsIsvT2lUkz0zIxI8FZmS4"
+      ],
+      "PU_date": "2022-11-14",
+      "DEL_date": "2022-11-16",
+      "shipper_zip": [
+        " 91752"
+      ],
+      "receiver_zip": [
+        "98424"
+      ],
+      "current_dispatch": 27513
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "i - 744",
+      "Truck_reference": [
+        "recYglggXvTbEvKFv"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "**NEED NEW APPT WITH REDELIVERY CHARGES** // T-280 GURVINDER LD FOR T-744 //DROP IN YARD //\n\n",
+      "update": [
+        "Good PU",
+        "Good For DEL",
+        "Need Local Driver"
+      ],
+      "tracking_link": [
+        "https://cloud.samsara.com/o/37291/fleet/viewer/HyLizwB4lWZ25CI0YHN3"
+      ],
+      "Lane": "CA > WA",
+      "receiver_state": [
+        "WA"
+      ],
+      "shipper_address": "Sunny Delight -  Anaheim\n1230 N Tustin Ave\nAnaheim, CA  92807",
+      "receiver_address": "Costco 171  - Sumner\n4000B 142nd Ave E\nSumner, WA 98390 ",
+      "receiver_city": [
+        "Sumner"
+      ],
+      "shipper_city": [
+        "Anaheim"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/LvvAu0kiWFXCI2T26F8rCR"
+      ],
+      "PU_date": "2022-11-14",
+      "DEL_date": "2022-11-16",
+      "shipper_zip": [
+        " 92807"
+      ],
+      "receiver_zip": [
+        "98390 "
+      ],
+      "current_dispatch": 27578
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "B - 605",
+      "Truck_reference": [
+        "recQse8aVzyzhgvXz"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "DROPPING TRAILER IN YARD//\nETA AS PER DRIVER /// NEED TO REQUEST THAT WE CAN DELIVER THIS LOAD AT 0800 HRS \n",
+      "update": [
+        "Good PU",
+        "Need Local Driver",
+        "Good For DEL"
+      ],
+      "ETA": "2022-11-16T16:30:00.000Z",
+      "tracking_link": [
+        "https://web.truckx.com/#/log-book/location/loads/abe438c0-35ca-11ed-8ef9-719cce7d6bc1"
+      ],
+      "Lane": "WA > CA",
+      "receiver_state": [
+        "CA"
+      ],
+      "shipper_address": "Continental Mills - Tukwila\n6155 Segale Park Drive C\nTukwila, WA 98188",
+      "receiver_address": "Albertsons Distribution Center - Irvine\n9300 Toledo Way\nIrvine, CA 92618",
+      "receiver_city": [
+        "Irvine"
+      ],
+      "shipper_city": [
+        "Tukwila"
+      ],
+      "Driver_whatsapp": [],
+      "PU_date": "2022-11-14",
+      "DEL_date": "2022-11-16",
+      "shipper_zip": [
+        "98188"
+      ],
+      "receiver_zip": [
+        "92618"
+      ],
+      "current_dispatch": 27579
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "B - 1000 - All Over Transit",
+      "Truck_reference": [
+        "recpqOHuKtNy6r2tG"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "ETA AS PER DRIVER\n",
+      "update": [
+        "Checked in Receiver"
+      ],
+      "tracking_link": [
+        "https://web.truckx.com/#/log-book/location/loads/dd659ab0-2ec2-11ed-8297-a9bc6808e7c1"
+      ],
+      "Lane": "WA > CA",
+      "receiver_state": [
+        "CA"
+      ],
+      "shipper_address": "AMAZON HBF9 - Sumner\n2201 140th Ave E\nSumner, WA 98390 ",
+      "receiver_address": "Amazon HSM1 - Sacramento\n3640  Ramos Dr\nSacramento, CA 95691",
+      "receiver_city": [
+        "Sacramento"
+      ],
+      "shipper_city": [
+        "Sumner"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/K57h8IsgC5J2fWfMxZj3fN"
+      ],
+      "PU_date": "2022-11-15",
+      "DEL_date": "2022-11-16",
+      "shipper_zip": [
+        "98390 "
+      ],
+      "receiver_zip": [
+        "95691"
+      ],
+      "current_dispatch": 27604
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "A - 012 ",
+      "Truck_reference": [
+        "rec2UkU0r2Xj1lJe3"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "DELIVERING HIMSELF AS PER DRIVER // \n",
+      "update": [
+        "Good For DEL",
+        "NEED DETENTION"
+      ],
+      "ETA": "2022-11-16T13:30:00.000Z",
+      "tracking_link": [
+        "https://cloud.samsara.com/o/945/fleet/viewer/btss5J5wzy9dwGmKavmg"
+      ],
+      "Lane": "CA > WA",
+      "receiver_state": [
+        "WA"
+      ],
+      "shipper_address": "PLC - Pico Rivera\n7255 Rosemead BLVD\nPico Rivera, CA 90660",
+      "receiver_address": "Seattle Air Cargo - Seattle\n19111 Des Moines Memorial Way South \nSeattle, WA  98148",
+      "receiver_city": [
+        "Seattle"
+      ],
+      "shipper_city": [
+        "Pico Rivera"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/FQszFnlMIvrG9fi1nIXWnP"
+      ],
+      "PU_date": "2022-11-14",
+      "DEL_date": "2022-11-16",
+      "shipper_zip": [
+        "90660"
+      ],
+      "receiver_zip": [
+        " 98148"
+      ],
+      "current_dispatch": 27821
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "B - 3650 - Tiger",
+      "Truck_reference": [
+        "rec464bGnqkGtLl4d"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "T280 GURVINDER LD FOR T3650// DROP IN HIS OWN YARD \nETA AS PER LOCATION // \n",
+      "update": [
+        "Good PU",
+        "Need BOL",
+        "Good For DEL"
+      ],
+      "tracking_link": [
+        "https://cloud.samsara.com/o/72491/fleet/viewer/5Fq5Tn3nxXx0aUcdHPge"
+      ],
+      "Lane": "CA > WA",
+      "receiver_state": [
+        "WA"
+      ],
+      "shipper_address": "Fidelity - Benicia\n540 STONE ROAD\nBenicia, CA 94510",
+      "receiver_address": "P & R  Paper - Kent\n7008  S 212th Street\nKent, WA 98032",
+      "receiver_city": [
+        "Kent"
+      ],
+      "shipper_city": [
+        "Benicia"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/EMeSIzRxj4I7y3aHh1ekdB"
+      ],
+      "PU_date": "2022-11-15",
+      "DEL_date": "2022-11-16",
+      "shipper_zip": [
+        "94510"
+      ],
+      "receiver_zip": [
+        "98032"
+      ],
+      "current_dispatch": 27854
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "i - 3032 (Company)",
+      "Truck_reference": [
+        "recMxllyPHciuFYc8"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "ETA TO LAX AS PER LOCATION // \n",
+      "update": [
+        "PU Late",
+        "Good For DEL"
+      ],
+      "ETA": "2022-11-16T17:00:00.000Z",
+      "tracking_link": [
+        "https://cloud.samsara.com/o/37291/fleet/viewer/HPRNdgcU7LijOSumJL3c"
+      ],
+      "Lane": "WA > CA",
+      "receiver_state": [
+        "CA"
+      ],
+      "shipper_address": "Delta Cargo - Seatac\n18627 28th Ave S\nSeatac, WA 98158",
+      "receiver_address": "Delta Cargo - Los Angeles\n11101  Aviation Blvd\nLos Angeles, CA 90045",
+      "receiver_city": [
+        "Los Angeles"
+      ],
+      "shipper_city": [
+        "Seatac"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/G6rsVWIGDly5kNXsjrpJyN"
+      ],
+      "PU_date": "2022-11-15",
+      "DEL_date": "2022-11-16",
+      "shipper_zip": [
+        "98158"
+      ],
+      "receiver_zip": [
+        "90045"
+      ],
+      "current_dispatch": 27869
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "B - 105 - Turna",
+      "Truck_reference": [
+        "recGtwszUZ6vIT8Hd"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "ETA AS PER LOCATION //\n\n",
+      "update": [
+        "Good For DEL",
+        "Delivery Appt Missed"
+      ],
+      "ETA": "2022-11-16T19:00:00.000Z",
+      "tracking_link": [
+        "https://cloud.samsara.com/o/7000418/fleet/viewer/NScbHZOIPewGfAFyqcCw"
+      ],
+      "Lane": "CA > WA",
+      "receiver_state": [
+        "WA"
+      ],
+      "shipper_address": "RoadRunner - Commerce\n4501 E Washington Blvd \nCommerce, CA 90040",
+      "receiver_address": "RoadRunner - Sumner\n3520 142Nd Ave E\nSumner, WA 98390 ",
+      "receiver_city": [
+        "Sumner"
+      ],
+      "shipper_city": [
+        "Commerce"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/GfS4KIiki8mESrRXUS9cql"
+      ],
+      "PU_date": "2022-11-15",
+      "DEL_date": "2022-11-16",
+      "shipper_zip": [
+        "90040"
+      ],
+      "receiver_zip": [
+        "98390 "
+      ],
+      "current_dispatch": 27909
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "A - 7277",
+      "Truck_reference": [
+        "recuOH37bZgmKqPL7"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "ETA TO DEL\n",
+      "update": [
+        "PU Late"
+      ],
+      "tracking_link": [
+        "https://cloud.samsara.com/o/945/fleet/viewer/lOPcLz94MZk7bo3SqBz3"
+      ],
+      "Lane": "OR > OR",
+      "receiver_state": [
+        "OR"
+      ],
+      "shipper_address": "Fleetwash - Portland\n5430 N COLUMBIA CT\nPortland, OR ",
+      "receiver_address": "Home Depot - Portland\n1728 N TOMAHAWK ISLAND DR\nPortland, OR 97217",
+      "receiver_city": [
+        "Portland"
+      ],
+      "shipper_city": [
+        "Portland"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/BNZDbC3pjCXDgEX1SEKXHc"
+      ],
+      "PU_date": "2022-11-16",
+      "DEL_date": "2022-11-16",
+      "receiver_zip": [
+        "97217"
+      ],
+      "current_dispatch": 27977
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "B - 105 - Turna",
+      "Truck_reference": [
+        "recGtwszUZ6vIT8Hd"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "2 BOXES REJECTED \nBACHAN PAAJI WILL DROP IN YARD \nLOADED TRAILER IS IN AUBURN YARD AND HE WILL BE DELIVERING HIMSELF // LD NEEDED \n",
+      "update": [
+        "Checked in Receiver",
+        "Good For DEL"
+      ],
+      "tracking_link": [
+        "https://cloud.samsara.com/o/7000418/fleet/viewer/NScbHZOIPewGfAFyqcCw"
+      ],
+      "Lane": "CA > WA",
+      "receiver_state": [
+        "WA"
+      ],
+      "shipper_address": "Nissin  Foods - Gardena\n2001 W Rosecrans Ave\nGardena, CA 90249",
+      "receiver_address": "Costco 171  - Sumner\n4000B 142nd Ave E\nSumner, WA 98390 ",
+      "receiver_city": [
+        "Sumner"
+      ],
+      "shipper_city": [
+        "Gardena"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/GfS4KIiki8mESrRXUS9cql"
+      ],
+      "PU_date": "2022-11-11",
+      "DEL_date": "2022-11-14",
+      "shipper_zip": [
+        "90249"
+      ],
+      "receiver_zip": [
+        "98390 "
+      ],
+      "current_dispatch": 26677
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "B - 002 - Uday",
+      "Truck_reference": [
+        "rec4R1RW5K3ke1NfJ"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "LOAD DELIVERED // DEDUCTED $250 FOR LP//\nETA NEED CONFIRMATION// T chavez PU FOR T//LP NEEDED  \n",
+      "update": [
+        "Checked in Receiver",
+        "Need POD"
+      ],
+      "tracking_link": [
+        "https://cloud.samsara.com/o/63479/fleet/viewer/y0Y02TkGb9HItFkH1eDm"
+      ],
+      "Lane": "CA > WA",
+      "receiver_state": [
+        "WA"
+      ],
+      "shipper_address": "Komar Eastvale - Mira Loma\n12471 East Riverside dr\nMira Loma, CA  91752",
+      "receiver_address": "Costco 171  - Sumner\n4000B 142nd Ave E\nSumner, WA 98390 ",
+      "receiver_city": [
+        "Sumner"
+      ],
+      "shipper_city": [
+        "Mira Loma"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/BpVMj3RDthu66wtlW84JKl"
+      ],
+      "PU_date": "2022-11-11",
+      "DEL_date": "2022-11-14",
+      "shipper_zip": [
+        " 91752"
+      ],
+      "receiver_zip": [
+        "98390 "
+      ],
+      "current_dispatch": 27654
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "i - 3032 (Company)",
+      "Truck_reference": [
+        "recMxllyPHciuFYc8"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "**RECEIVER WILL EMAIL US POD// DELIVERED -EMPTY TRL IN KENT YARD //. T135 HARNEK DEL FOR T// **\n",
+      "update": [
+        "Checked in Receiver",
+        "LOCAL DELIVERY",
+        "Good PU",
+        "Good For DEL",
+        "Create LD Record",
+        "OTR LD Rate Deduction"
+      ],
+      "tracking_link": [
+        "https://cloud.samsara.com/o/37291/fleet/viewer/HPRNdgcU7LijOSumJL3c"
+      ],
+      "Lane": "CA > WA",
+      "receiver_state": [
+        "WA"
+      ],
+      "shipper_address": "Fragilepak - Perris\n4150  Patterson Ave\nPerris, CA 92571",
+      "receiver_address": "Bodgan Delivery - Kent\n7058 S 188th ST\nKent, WA 98032",
+      "receiver_city": [
+        "Kent"
+      ],
+      "shipper_city": [
+        "Perris"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/G6rsVWIGDly5kNXsjrpJyN"
+      ],
+      "PU_date": "2022-11-11",
+      "DEL_date": "2022-11-14",
+      "shipper_zip": [
+        "92571"
+      ],
+      "receiver_zip": [
+        "98032"
+      ],
+      "current_dispatch": 27657
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "B - 320 - Aarav",
+      "Truck_reference": [
+        "recpXFTVfVkTXzoLZ"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "**DROPPED AT RECEIVER // T280 HARVINDER DEL FOR T320**// LD NEEDED \n",
+      "update": [
+        "Checked in Receiver",
+        "LOCAL DELIVERY",
+        "Good For DEL",
+        "Create LD Record",
+        "OTR LD Rate Deduction"
+      ],
+      "Lane": "CA > WA",
+      "receiver_state": [
+        "WA"
+      ],
+      "shipper_address": "HD Supply - City of Industry - Proctor\n14505  Proctor Ave\nCity of Industry, CA 91746",
+      "receiver_address": "SERVICE PAPER COMP - Renton\n3324 LIND AVE SW\nRenton, WA 98055",
+      "receiver_city": [
+        "Renton"
+      ],
+      "shipper_city": [
+        "City of Industry"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/K2uhBPYqRLxHrIUFAkbfBo"
+      ],
+      "PU_date": "2022-11-11",
+      "DEL_date": "2022-11-14",
+      "shipper_zip": [
+        "91746"
+      ],
+      "receiver_zip": [
+        "98055"
+      ],
+      "current_dispatch": 27686
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "B - 105 - Turna",
+      "Truck_reference": [
+        "recGtwszUZ6vIT8Hd"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "NEED NEW APPT \nDRIVER PULLED AT SCALE \nETA AS PER DRIVER // NEED NEW DEL APPT //\nFAKE BREAK DOWN SHOWN TO BROKER //DRIVER LOADED NEED TO ASK ABOUT BOL // T127 LOCAL PU// \n\n",
+      "update": [
+        "NEED NEW APPOINMENT"
+      ],
+      "tracking_link": [
+        "https://cloud.samsara.com/o/7000418/fleet/viewer/NScbHZOIPewGfAFyqcCw"
+      ],
+      "Lane": "WA > CA",
+      "receiver_state": [
+        "CA"
+      ],
+      "shipper_address": "Holman Warehouse - Kent\n22408  76Th Avenue South\nKent, WA 98032",
+      "receiver_address": "Pearson Sales - Pomona\n2303 Mount Vernon Ave\nPomona, CA 91768",
+      "receiver_city": [
+        "Pomona"
+      ],
+      "shipper_city": [
+        "Kent"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/GfS4KIiki8mESrRXUS9cql"
+      ],
+      "PU_date": "2022-11-07",
+      "DEL_date": "2022-11-10",
+      "shipper_zip": [
+        "98032"
+      ],
+      "receiver_zip": [
+        "91768"
+      ],
+      "current_dispatch": 27116
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "B - Roadlight",
+      "Truck_reference": [
+        "rec4HyetnWIUgVkkh"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "1 PALLET REJECTED \nNEED TO HOLD PAYMENT \nNeed update from broker \nETA NEED TO CONFIRM// Arthur 9492346739 ex522\nEmail dispatcher for updates \nDriver Edgar \nTruck 35\nTrailer 047\n304-254-6974 \n",
+      "update": [
+        "Checked in Receiver",
+        "NEED DETENTION",
+        "Need BOL",
+        "Outsourced",
+        "Sent Driver Information "
+      ],
+      "Lane": "AZ > WA",
+      "receiver_state": [
+        "WA"
+      ],
+      "shipper_address": "Blue Buffalo - Goodyear\n16811 West Commerce Drive\nGoodyear, AZ 85338",
+      "receiver_address": "Costco 171  - Sumner\n4000B 142nd Ave E\nSumner, WA 98390 ",
+      "receiver_city": [
+        "Sumner"
+      ],
+      "shipper_city": [
+        "Goodyear"
+      ],
+      "Driver_whatsapp": [],
+      "PU_date": "2022-11-04",
+      "DEL_date": "2022-11-07",
+      "shipper_zip": [
+        "85338"
+      ],
+      "receiver_zip": [
+        "98390 "
+      ],
+      "current_dispatch": 26601
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "B - 304 - Jammu",
+      "Truck_reference": [
+        "recj1FaW9adHjLxCq"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "REQUESTED NEW APPT.// T430 PU FOR T//LP NEEDED \n",
+      "update": [
+        "NEED NEW APPOINMENT",
+        "Delivery late",
+        "Dispatch Confirmed"
+      ],
+      "Lane": "CA > WA",
+      "receiver_state": [
+        "WA"
+      ],
+      "shipper_address": "NFI Industries - Chino\n15710 San Antonio Ave.\nChino, CA 91708",
+      "receiver_address": "Schylling Inc - Lakewood\n14702 Woodbrook Drive SW.\nLakewood, WA 98439",
+      "receiver_city": [
+        "Lakewood"
+      ],
+      "shipper_city": [
+        "Chino"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/IXGEFBKt24NGq5Bz6Oy9Qi"
+      ],
+      "PU_date": "2022-11-02",
+      "DEL_date": "2022-11-04",
+      "shipper_zip": [
+        "91708"
+      ],
+      "receiver_zip": [
+        "98439"
+      ],
+      "current_dispatch": 26706
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "i - 935 (Company)",
+      "Truck_reference": [
+        "recIqjeT84VAurB0d"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "DROPPED AT WHIPLASH///FREIGHT 12 PALLETS REJECTED\nT646 HARVINDER LD FOR T935 ////DROPPING TRAILER IN YARD//\nETA NEED TO _CONFIRM_ //CHECK IN  BUT THE LOAD WILL BE READY AT APPOINTMENT TIME// \n(Need to pay waiting for 5 hours to the driver)\n\n\n",
+      "update": [
+        "FREIGHT REJECTED ",
+        "Good PU",
+        "Good For DEL"
+      ],
+      "tracking_link": [
+        "https://cloud.samsara.com/o/37291/fleet/viewer/ysA2xm9QOlFeVFNoOvrr"
+      ],
+      "Lane": "AZ > WA",
+      "receiver_state": [
+        "WA"
+      ],
+      "shipper_address": "Blue  Buffalo Dc - Goodyear\n16811  W Commerce Drive\nGoodyear, AZ 85338",
+      "receiver_address": "Costco 171  - Sumner\n4000B 142nd Ave E\nSumner, WA 98390 ",
+      "receiver_city": [
+        "Sumner"
+      ],
+      "shipper_city": [
+        "Goodyear"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/LXBOEDufzotFDPfYCK99Tc"
+      ],
+      "PU_date": "2022-10-27",
+      "DEL_date": "2022-11-01",
+      "shipper_zip": [
+        "85338"
+      ],
+      "receiver_zip": [
+        "98390 "
+      ],
+      "current_dispatch": 26166
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "A - 3028 (Company)",
+      "Truck_reference": [
+        "rec6roYy55Jwk4vnw"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "FREIGHT REJECTED WAITING FOR RESPONSE//\nDELIVERING HIMSELF //need to confirm // Com check#05613 $600 T3028 for Fuel//PLEASE PAY $52.89 FOR TRAILER REPAIR, // Com Check # 05617, T3028. $600  for f\n",
+      "update": [
+        "FREIGHT REJECTED ",
+        "Good PU",
+        "Good For DEL"
+      ],
+      "tracking_link": [
+        "https://cloud.samsara.com/o/945/fleet/viewer/Jh0IJ9F5dILCUztG1XvS"
+      ],
+      "Lane": "CA > WA",
+      "receiver_state": [
+        "WA"
+      ],
+      "shipper_address": "Nissin  Foods - Gardena\n2001 W Rosecrans Ave\nGardena, CA 90249",
+      "receiver_address": "Costco 171  - Sumner\n4000B 142nd Ave E\nSumner, WA 98390 ",
+      "receiver_city": [
+        "Sumner"
+      ],
+      "shipper_city": [
+        "Gardena"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/DDYldTOIB7rEvNBQUgFj2x"
+      ],
+      "PU_date": "2022-10-28",
+      "DEL_date": "2022-10-31",
+      "shipper_zip": [
+        "90249"
+      ],
+      "receiver_zip": [
+        "98390 "
+      ],
+      "current_dispatch": 25690
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "B - 114 - GAS",
+      "Truck_reference": [
+        "recVrEm4VHkm2fdyT"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "Paid in payroll 11/15/22 LOAD IS DROPPEPD AT YRC SEATTLE // \n** LOADED TRAILER DROPPED AT THE RECEIVER** \nNEED TO DROP IT AT SUMNER AS PER BROKER BUT DELIVERED AT PORTLAND//\nLOADED TRAILER DROPED AT RECEIVER NEED PAPERS FROM BROKER  // NEED BOL\n",
+      "update": [
+        "PU Late",
+        "Need BOL",
+        "Delivery Appt Missed"
+      ],
+      "tracking_link": [
+        "https://cloud.samsara.com/o/45984/fleet/viewer/xHuZrwGWixHGOABsKZy1"
+      ],
+      "Lane": "CA > OR",
+      "receiver_state": [
+        "OR"
+      ],
+      "shipper_address": "YRC - Pico Rivera\n9933 Beverly Blvd\nPico Rivera, CA 90660",
+      "receiver_address": "YRC Freight - Portland\n6845  North Cutter Circle\nPortland, OR 97217",
+      "receiver_city": [
+        "Portland"
+      ],
+      "shipper_city": [
+        "Pico Rivera"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/DOq7oLw34sk7whRR5d5ygQ"
+      ],
+      "PU_date": "2022-10-29",
+      "DEL_date": "2022-10-30",
+      "shipper_zip": [
+        "90660"
+      ],
+      "receiver_zip": [
+        "97217"
+      ],
+      "current_dispatch": 25907
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "B - 001 - Uday",
+      "Truck_reference": [
+        "recZ3O5EN6eW6BXOw"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "Paid in payroll 10/31/2022 Need to destroy one pallet & COD required with Product, quantity, and location of disposal on the BOL////1 PALLET REFUSED - DROPPED AT W36604\nDELIVER HIMSELF AS PER DRIVER // LOADED TRAILER IS IN AUBURN YARD \n",
+      "update": [
+        "PU Late",
+        "Good For DEL"
+      ],
+      "tracking_link": [
+        "https://cloud.samsara.com/o/63479/fleet/viewer/mVLWnuJX6spJHQnaX9a5"
+      ],
+      "Lane": "CA > WA",
+      "receiver_state": [
+        "WA"
+      ],
+      "shipper_address": "States Logistics - Fontana\n13405 Marlay Ave\nFontana, CA 92337",
+      "receiver_address": "Costco 171  - Sumner\n4000B 142nd Ave E\nSumner, WA 98390 ",
+      "receiver_city": [
+        "Sumner"
+      ],
+      "shipper_city": [
+        "Fontana"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/CA8Vq6N1f15K9TJHUugKES"
+      ],
+      "PU_date": "2022-10-08",
+      "DEL_date": "2022-10-11",
+      "shipper_zip": [
+        "92337"
+      ],
+      "receiver_zip": [
+        "98390 "
+      ],
+      "current_dispatch": 24866
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "B - 102 - Turna",
+      "Truck_reference": [
+        "recgDUquBZSejqp2d"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "**CLAIM IS UNDER PROCESS //TRUCK ACCIDENT-FREIGHT TOTAL//** T630 HARWINDER LP FOR Y???// The 2 BOLs are attached. The BOL ending in “1” goes to the shipper and the BOL ending in “2” goes to the receiver.\n",
+      "update": [
+        "Truck Breakdown",
+        "Delivery late",
+        "Local Pickup",
+        "Create LP Record",
+        "OTR LP Rate Deduction"
+      ],
+      "tracking_link": [
+        "https://cloud.samsara.com/o/78346/fleet/viewer/wv1XVtzpctvj02Db7pZD"
+      ],
+      "Lane": "WA > CA",
+      "receiver_state": [
+        "CA"
+      ],
+      "shipper_address": "Atlas  Columbia Warehouse - Tacoma\n922  E 11Th St Ste 300\nTacoma, WA 98421",
+      "receiver_address": "H & W Pacific Marketing - Commerce\n4525 Sheila Street\nCommerce, CA 90040",
+      "receiver_city": [
+        "Commerce"
+      ],
+      "shipper_city": [
+        "Tacoma"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/CwtneeidNvL8Y6IWoUrHWa"
+      ],
+      "PU_date": "2022-07-20",
+      "DEL_date": "2022-07-22",
+      "shipper_zip": [
+        "98421"
+      ],
+      "receiver_zip": [
+        "90040"
+      ],
+      "current_dispatch": 17580
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "B - 3650 - Tiger",
+      "Truck_reference": [
+        "rec464bGnqkGtLl4d"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "**AS PER BROKER LOAD IS ALREADY VOIDED //T280 SANDEEP WILL BRING THIS LOADED AT KENT YARD  //NEED TO DISPOSE SHIPMENT ///////// BROKER REJECTED THE FREIGHT DUE TO DAMAGES - NEED TO FIND FOOD GRADE FACILITY TO REWORK // T660 LP FOR T3650 // DEDUCTED $400 FOR LP AND LD**\n",
+      "update": [
+        "Checked in Receiver",
+        "Delivery late",
+        "OTR LP Rate Deduction"
+      ],
+      "tracking_link": [
+        "https://cloud.samsara.com/o/72491/fleet/viewer/5Fq5Tn3nxXx0aUcdHPge"
+      ],
+      "Lane": "CA > WA",
+      "receiver_state": [
+        "WA"
+      ],
+      "shipper_address": "Niagara  Bottling - Rialto\n1401  Alder Ave\nRialto , CA 92376",
+      "receiver_address": "Whirlpool - Spanaway\n19700  38th Ave E\nSpanaway, WA 98387",
+      "receiver_city": [
+        "Spanaway"
+      ],
+      "shipper_city": [
+        "Rialto "
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/EMeSIzRxj4I7y3aHh1ekdB"
+      ],
+      "PU_date": "2022-06-11",
+      "DEL_date": "2022-06-13",
+      "shipper_zip": [
+        "92376"
+      ],
+      "receiver_zip": [
+        "98387"
+      ],
+      "current_dispatch": 14872
+    }
+  },
+  {
+    "truckBasicDetails": {
+      "Truck_name": "i - 805 (Company)",
+      "Truck_reference": [
+        "rec7KccoC4brMVEIp"
+      ]
+    },
+    "truckCurrentState": {
+      "Notes": "**CLAIM IS IN UNDER PROCESS//12 PALLETS REJECTED BY FACILITY AT COSTCO// NEED TO REWORK AGAIN//**\nT-280 SANDEEP WILL DELIVER THIS LOAD // LD CREATED// DEDUCT $250 FOR LOCAL DELIVERY//\n\n_Deduct $250 fro local delivery// _\n",
+      "tracking_link": [
+        "https://cloud.samsara.com/o/37291/fleet/viewer/IonRj7zFJkLk9p1JZgig"
+      ],
+      "Lane": "CA > WA",
+      "receiver_state": [
+        "WA"
+      ],
+      "shipper_address": "Kreassive LLC- Santa fe Spring\n14071 Stage Road\nSanta Fe Springs, CA 90670",
+      "receiver_address": "Costco 171  - Sumner\n4000B 142nd Ave E\nSumner, WA 98390 ",
+      "receiver_city": [
+        "Sumner"
+      ],
+      "shipper_city": [
+        "Santa Fe Springs"
+      ],
+      "Driver_whatsapp": [
+        "https://chat.whatsapp.com/CkttU96eZfOKsViET9tyV2"
+      ],
+      "PU_date": "2022-01-21",
+      "DEL_date": "2022-02-18",
+      "shipper_zip": [
+        "90670"
+      ],
+      "receiver_zip": [
+        "98390 "
+      ],
+      "current_dispatch": 2776
+    }
+  },
+  {
+    "truckBasicDetails": {},
+    "truckCurrentState": {
+      "Lane": " > ",
+      "Driver_whatsapp": [],
+      "current_dispatch": 28030
+    }
+  }
+]
