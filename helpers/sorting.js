@@ -29,7 +29,7 @@ async function sorted(arr) {
 
 function truckComparator(a,b){
     
-    console.log(a.data.truckCurrentState.DEL_date);
+    // console.log(a.data.truckCurrentState.DEL_date);
     
     if(a.data.truckCurrentState.DEL_date==undefined) return 1;
 
