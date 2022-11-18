@@ -630,6 +630,7 @@ function TruckData(){
         let data=[];
        await querySnapshot.docChanges().forEach(change => {
             //triggered when new data added
+            console.log("change in trucks data");
             if (change.type === 'added') {
                 let arr=change.doc.data();
                 data.push({
