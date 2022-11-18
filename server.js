@@ -660,6 +660,9 @@ function TruckData(){
 
 }
 
+TruckData()
+
+
 server.listen(Port, () => {
     console.log("server is running", Port);
 
