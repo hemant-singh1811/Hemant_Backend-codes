@@ -184,7 +184,7 @@ async function truckdata(){
             data:doc.data()
            }
 
-           console.log("doc : ",doc);
+        //    console.log("doc : ",doc);
 
            data1.push(obj)  
         // }
