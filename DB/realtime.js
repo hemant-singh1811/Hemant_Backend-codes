@@ -2,7 +2,7 @@
 const {db}=require('./db1')
 
 const doc1 = db.collection('LoadEntry')
-const truckdb=db.collection('Trucks');
+const truckdb=db.collection('MasterTrucks');
 
 // const observer = doc1.onSnapshot(querySnapshot => {
 // querySnapshot.docChanges().forEach(change => {

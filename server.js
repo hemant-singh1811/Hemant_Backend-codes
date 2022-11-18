@@ -626,7 +626,7 @@ LOADDATA()
 
 function TruckData(){
     try{
-    const observer = TruckData.onSnapshot( async querySnapshot => {
+    const observer = truckdb.onSnapshot( async querySnapshot => {
         let data=[];
        await querySnapshot.docChanges().forEach(change => {
             //triggered when new data added
