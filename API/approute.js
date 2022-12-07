@@ -52,7 +52,8 @@ let arr = [
             'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiTWFuaXNoIn0.bzkXpCdV7VBWAaHG7ZiLdiOYjw0APsykQmWwYFmLtgI',
             channel_id:'Load5115104',
         channel_type:'messaging',
-        chatinit:'true'
+        chatinit:'true' 
+        
         }
     },
     
