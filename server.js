@@ -1,6 +1,8 @@
 const express = require("express")
 require("dotenv").config() 
+const os=require("os")
 const app = express();
+const requestIp = require('request-ip')
 const http = require("http");
 const server = http.createServer(app);
 const socket = require('socket.io')
@@ -18,8 +20,7 @@ const SCHIO = io.of("/SCH");
 const {Comparator,sorted,trucksort}=require("./helpers/sorting")
 const load =require("./load_ddlj.json")
 const truck=require("./ddlj.json")
-
-
+ 
 
 SCHIO.on("connection", (socket) => {
     console.log("sch new connect : ",socket.id);
@@ -43,6 +44,32 @@ SCHIO.on("connection", (socket) => {
       let data1=await GetData();
        socket.emit("setdataloads",data1);
     })
+
+
+    socket.emit("newconnect", {
+        id: socket.id
+    })
+
+    socket.on("msg", (data) => {
+        console.log(data);
+    })
+
+
+    socket.on("joinroom", (data) => {
+        console.log(data);
+        try {
+            if (data.user_token != undefined) {
+                socket.join(data.user_token);
+                console.log("joined channel : ",data.user_token);
+            } else {
+                socket.join(data);
+            }
+            socket.emit("channel joined", "joined "+data.user_token)
+            console.log(data.user_token, ' join in channel');
+        } catch {
+
+        }
+    });
 
   });
 
@@ -393,7 +420,9 @@ function getname(self) {
 }
 
 io.on("connection", async (socket) => {
-    console.log("socket id : ", socket.id);
+    console.log("socket idss : ", socket.id);
+
+    // socket.emit("connect","chandan is connected to hemant server")
 
     socket.emit("newconnect", {
         id: socket.id
@@ -407,13 +436,19 @@ io.on("connection", async (socket) => {
     socket.on("joinroom", (data) => {
         console.log(data);
         try {
-            if (data.stream_user_id != undefined) {
-                socket.join(data.stream_user_id);
+            if (data.user_token != undefined) {
+                // socket.join(data.user_token);
+                socket.join("room")
+                console.log("joined channel : ",data.user_token);
             } else {
                 socket.join(data);
             }
-            socket.emit("channel joined", "joined")
-            console.log(data.stream_user_id, ' join in channel');
+            socket.emit("room_response",{
+                data:data.user_token+" joined",
+                message:"success"
+            })
+            // socket.emit("channel joined", "joined "+data.user_token)
+            console.log(data.user_token, ' join in channel');
         } catch {
 
         }
@@ -431,7 +466,55 @@ io.on("connection", async (socket) => {
         console.log("Received");
     })
 
+    socket.on("send_msg",(data)=>{
+
+        console.log("got the messages ",data);
+
+        socket.emit("msg_response",data)
+        
+
+        // console.log("got the messages user_id : ",data.user_token);
+
+        let box={
+            file_name:data.file_name,
+            message_id:data.message_id,
+            created_at:data.created_at,
+            user_token:data.user_token, 
+            deletedForEveryone:'',
+            deletedForMe:'', 
+            from:data.from,
+            isSeen:'',
+            msqBody:data.msgBody,
+            url:data.url,
+            userId:data.userId,
+            text:data.text,
+            file:data.file,
+
+            seenBy:[
+
+            ],
+
+            to:'sumit',
+            typeOfMsg:data.typeOfMsg 
+
+        } 
+
+        // console.log("send data box : ",box);
+
+        io.to("room").emit("rec_msg",{
+           message:box
+        })
+         
+    })
+
+    
 })
+
+// function joined(url,data){
+//     io.to("room").emit(url,{
+//         data:data
+//     })
+// }
 
 let driver_user_id = [
     {
@@ -515,17 +598,21 @@ app.post("/sendload", async (req, res) => {
     let loadnumber = req.body.loadnumber; 
 
     try {
+        var clientIp = requestIp.getClientIp(req) 
+       console.log("IP : ",clientIp);
         let found = false; 
         await getload(loadnumber).then(async (load) => {
             await driver_user_id.forEach(async (element) => {
                 if (element.data.stream_user_id == driverid) {
                     found = true;
-                    console.log('load assign to : ', element.data.stream_user_token);
-                    await io.to(element.data.stream_user_token).emit("assignload", load)
-                    // console.log("load data : ",load);
+                    // console.log('load assign to : ', element.data.stream_user_token);
+
+                        console.log(load);
+
+                      io.to("room").emit("assignload", load)
+                    // console.log("load data : ",load); 
                     return res.send("load sended to assign driver")
                 }
-
             });
         }).catch((err) => {
             return res.status(404).send("load number not found"); 
@@ -555,6 +642,46 @@ app.get("/getfile", async (req, res) => {
 
     res.send("data received")
 
+})
+
+app.get("/dispatch", async (req, res) => {
+
+    
+
+})
+
+async function IsValid(user_token){
+    return true;
+}
+
+app.post("/getload", async (req, res) => {
+
+    //master load
+
+    console.log("get left side data ");
+
+    let user_token=req.user_token;
+
+
+    if(IsValid(user_token)){
+
+        const MasterLoad = db.collection('MasterLoad');
+        const snapshot = await MasterLoad.get();
+   
+        let dbdata=[];
+
+         await snapshot.forEach(doc => { 
+                 // if(doc.data().Status=="Active"){ 
+                // console.log("doc :",doc);
+            
+                let obj={
+                    id:doc.id,
+                    data:doc.data()
+                }
+                dbdata.push(obj);
+         })
+      res.send(dbdata);
+    }
 })
 
 
@@ -619,8 +746,7 @@ function LOADDATA() {
     }catch(e){
 
     }
-}
-
+} 
 
 LOADDATA()
 
@@ -630,7 +756,7 @@ function TruckData(){
         let data=[];
        await querySnapshot.docChanges().forEach(change => {
             //triggered when new data added
-            console.log("change in trucks data");
+            // console.log("change in trucks data");
             if (change.type === 'added') {
                 let arr=change.doc.data();
                 data.push({
@@ -666,5 +792,4 @@ TruckData()
 
 server.listen(Port, () => {
     console.log("server is running", Port);
-
 })
