@@ -1,5 +1,7 @@
-var admin = require("firebase-admin");
+// code for configre to databases 
+// and connecting server to database
 
+var admin = require("firebase-admin");
 var serviceAccount = require(__dirname+'/AlphaDatabase.json');
 
 

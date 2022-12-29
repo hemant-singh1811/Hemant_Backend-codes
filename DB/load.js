@@ -1,5 +1,10 @@
 const {db,doc} =require("./db1")
 
+// Load Database operations 
+
+
+// setLoadConfirmation data adding to database
+
 async function setLoadConfirmationDoc(data) {
     return new Promise(async function(resolve,reject){
         try{
@@ -26,6 +31,7 @@ async function setLoadConfirmationDoc(data) {
     // Add a new document in collection "Load Confirmations" with ID 'hemantKAload'
 }
 
+// setting driver data to database
 
 async function setDr(data) {
     return new Promise(async function(resolve,reject){
@@ -53,7 +59,7 @@ async function setDr(data) {
     // Add a new document in collection "Load Confirmations" with ID 'hemantKAload'
 }
 
-//get data by collection
+//get data of a particular collection from database
 
 async function read(){
    
@@ -67,9 +73,10 @@ async function read(){
     }); 
 
 }
+ 
 
-// read()
 
+// get the particular load from database
 
 async function getload(load_number){
     console.log("load : ",load_number);
@@ -95,6 +102,7 @@ async function getload(load_number){
 // }).catch((err)=>{
 //     console.log(err);
 // })
+
 
 async function listCollections(){
     db.listCollections()

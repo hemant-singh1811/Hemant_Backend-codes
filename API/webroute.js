@@ -1,15 +1,15 @@
 let express=require("express")
 let router =express.Router();
- 
+
+// API of doing database
 
 const { setLoadConfirmationDoc ,getload} = require('./../DB/load')
 
+// API for set Load confirmation doc to database
+
 router.post("/load",async (req,res)=>{
-
     console.log("new load comes");
-
     let load = req.body;
-
     try {
         await setLoadConfirmationDoc(load).then((d) => {
             console.log(d);

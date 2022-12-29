@@ -22,6 +22,9 @@ const load =require("./load_ddlj.json")
 const truck=require("./ddlj.json")
  
 
+
+// socket conenction 
+
 SCHIO.on("connection", (socket) => {
     console.log("sch new connect : ",socket.id);
 
@@ -72,6 +75,8 @@ SCHIO.on("connection", (socket) => {
     });
 
   });
+
+//  
 
 async function GetData(){
     console.log("1");
@@ -140,6 +145,8 @@ app.use(bodyParser.json('application/json'));
 //     console.log(err);
 //   })
 
+
+
 async function loaddata(){
 
     // let data1=load;
@@ -186,11 +193,14 @@ async function loaddata(){
     return data;
 }
 
+// API getting load data from database
 
 app.post("/getloadsdata",async (req,res)=>{ 
     let data=await loaddata();
     res.send(data);   
 })
+
+// API getting truck data from database 
 
 async function truckdata(){
 
@@ -231,10 +241,14 @@ async function truckdata(){
 
 }
 
+// API for getting truck data from database
+
 app.post("/gettrucksdata",async (req,res)=>{
     let data=await truckdata();
     res.status(200).send(data);
 })
+
+
 
 app.post("/ackload",async(req,res)=>{
 
@@ -245,6 +259,8 @@ app.post("/ackload",async(req,res)=>{
     res.send({response: "sucess"});
 
 })
+
+// API for getting all required data from schedule page
 
 app.post("/getSCHdata",async(req,res)=>{
 
@@ -265,11 +281,13 @@ app.post("/getSCHdata",async(req,res)=>{
     res.status(200).send(resdata);
 })
 
+// All request comming from web are mounted to this folder 
+
 app.use("/API/V1/", webroutes);
 
-app.use("/API/V2/", approutes);
+// All request comming from mobile app are mounted to this folder 
 
-app.use("API/V2/", approutes)
+app.use("/API/V2/", approutes);
 
 app.get("/", (req, res) => {
     res.send("i can hear you")
@@ -373,6 +391,8 @@ app.post('/signup', async (req, res) => {
 
 })
 
+// API for current load
+
 app.get('/currentload', (req, res) => {
     res.json({
         'loadno': '2333',
@@ -382,7 +402,6 @@ app.get('/currentload', (req, res) => {
     })
 
     // working on load assignment
-
 })
 
 app.get("/test", (req, res) => {
@@ -390,6 +409,8 @@ app.get("/test", (req, res) => {
     let response = "No. of time api hit : " + notimetestapihit;
     res.status(200).json({ 'res': response });
 })
+
+
 
 app.post("/postreq", (req, res) => {
     let phoneno = req.body.phoneno;
@@ -418,6 +439,9 @@ function getname(self) {
     }
     return value;
 }
+
+
+// Chatting code (by socket done)
 
 io.on("connection", async (socket) => {
     console.log("socket idss : ", socket.id);
@@ -592,6 +616,9 @@ let driver_user_id1 = [
     }
 ]
 
+
+//  send load to a particular driver ( accept / reject)
+
 app.post("/sendload", async (req, res) => {
 
     let driverid = req.body.driverid;
@@ -626,6 +653,7 @@ app.post("/sendload", async (req, res) => {
     }
 })
 
+// 
 
 app.get("/getfile", async (req, res) => {
 
@@ -644,15 +672,12 @@ app.get("/getfile", async (req, res) => {
 
 })
 
-app.get("/dispatch", async (req, res) => {
-
-    
-
-})
 
 async function IsValid(user_token){
     return true;
 }
+
+// API for getting load 
 
 app.post("/getload", async (req, res) => {
 
@@ -661,7 +686,6 @@ app.post("/getload", async (req, res) => {
     console.log("get left side data ");
 
     let user_token=req.user_token;
-
 
     if(IsValid(user_token)){
 
@@ -684,6 +708,7 @@ app.post("/getload", async (req, res) => {
     }
 })
 
+// Load data 
 
 function LOADDATA() {
     try{
@@ -748,6 +773,9 @@ function LOADDATA() {
     }
 } 
 
+
+// access real-time data of load data
+
 LOADDATA()
 
 function TruckData(){
@@ -786,6 +814,8 @@ function TruckData(){
     }
 
 }
+
+// access real-time data of truck data
 
 TruckData()
 

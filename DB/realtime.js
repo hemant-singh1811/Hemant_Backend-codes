@@ -1,8 +1,10 @@
-//server side realtime data reads
+//server side realtime data reads to database
 const {db}=require('./db1')
 
 const doc1 = db.collection('LoadEntry')
 const truckdb=db.collection('MasterTrucks');
+
+
 
 // const observer = doc1.onSnapshot(querySnapshot => {
 // querySnapshot.docChanges().forEach(change => {
@@ -32,5 +34,5 @@ const truckdb=db.collection('MasterTrucks');
 module.exports={
   doc1,
   truckdb,
-db
+  db
 }
